@@ -1,0 +1,94 @@
+]0;~/my_stuff/current work/afl_prediction[?1034hSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ mv[K[Kmv data /schedules.RDS data/schedules.RDS [K[K[K[Krds
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ mv data /past_results.RDS data/past_results.RDS [K[K[K[Krds
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ ls
+README.html          [1m[34mdata[39;49m[0m                 [1m[34mmunge[39;49m[0m
+README.md            [1m[34mdiagnostics[39;49m[0m          [1m[34mprofiling[39;49m[0m
+TODO                 [1m[34mdocs[39;49m[0m                 [1m[34mreports[39;49m[0m
+afl_prediction.Rproj [1m[34mgraphs[39;49m[0m               [1m[34msrc[39;49m[0m
+[1m[34mcache[39;49m[0m                [1m[34mlib[39;49m[0m                  [1m[34mtests[39;49m[0m
+[1m[34mconfig[39;49m[0m               [1m[34mlogs[39;49m[0m
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git n[Kini t
+Initialized empty Git repository in /Users/sachintha/my_stuff/current work/afl_prediction/.git/
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ oast[K[K[K[Kpast_re sults
+bash: past_results: command not found
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.Rproj.user/[m
+	[31mREADME.html[m
+	[31mREADME.md[m
+	[31mTODO[m
+	[31mafl_prediction.Rproj[m
+	[31mcache/[m
+	[31mconfig/[m
+	[31mdata/[m
+	[31mdiagnostics/[m
+	[31mdocs/[m
+	[31mgraphs/[m
+	[31mlib/[m
+	[31mlogs/[m
+	[31mmunge/[m
+	[31mprofiling/[m
+	[31mreports/[m
+	[31msrc/[m
+	[31mtests/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sho w remotes
+fatal: ambiguous argument 'remotes': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem otes
+git: 'remotes' is not a git command. See 'git --help'.
+
+The most similar command is
+	remote
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote -b
+error: unknown switch `b'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git remoote -b[Kv
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote add origin git@bitbucket.org:sachintha/afl_prediction.git
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git log [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg
+fatal: your current branch 'master' does not have any commits yet
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git a[K[K[K[K[Kls
+README.html          [1m[34mdata[39;49m[0m                 [1m[34mmunge[39;49m[0m
+README.md            [1m[34mdiagnostics[39;49m[0m          [1m[34mprofiling[39;49m[0m
+TODO                 [1m[34mdocs[39;49m[0m                 [1m[34mreports[39;49m[0m
+afl_prediction.Rproj [1m[34mgraphs[39;49m[0m               [1m[34msrc[39;49m[0m
+[1m[34mcache[39;49m[0m                [1m[34mlib[39;49m[0m                  [1m[34mtests[39;49m[0m
+[1m[34mconfig[39;49m[0m               [1m[34mlogs[39;49m[0m
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  .
