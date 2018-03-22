@@ -92,3 +92,272 @@ afl_prediction.Rproj [1m[34mgraphs[39;49m[0m               [1m[34msrc[39;
 [1m[34mcache[39;49m[0m                [1m[34mlib[39;49m[0m                  [1m[34mtests[39;49m[0m
 [1m[34mconfig[39;49m[0m               [1m[34mlogs[39;49m[0m
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  .
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git s[Klog [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg
+fatal: your current branch 'master' does not have any commits yet
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	[32mnew file:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[32mnew file:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[32mnew file:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/1CA329EC[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/24AC79FB[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/44FB177A[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/54328B27[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/638C9761[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/6777419E[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/85785B7D[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/A6DC05C2[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/DB31BD33[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/EC8D6F29[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/EE9337EB[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/FC823608[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
+	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
+	[32mnew file:   .Rproj.user/shared/notebooks/patch-chunk-names[m
+	[32mnew file:   .Rproj.user/shared/notebooks/paths[m
+	[32mnew file:   README.html[m
+	[32mnew file:   README.md[m
+	[32mnew file:   TODO[m
+	[32mnew file:   afl_prediction.Rproj[m
+	[32mnew file:   cache/README.md[m
+	[32mnew file:   config/README.md[m
+	[32mnew file:   config/global.dcf[m
+	[32mnew file:   data/README.md[m
+	[32mnew file:   data/past_results.rds[m
+	[32mnew file:   data/schedules.rds[m
+	[32mnew file:   diagnostics/1.R[m
+	[32mnew file:   diagnostics/README.md[m
+	[32mnew file:   docs/README.md[m
+	[32mnew file:   graphs/README.md[m
+	[32mnew file:   lib/README.md[m
+	[32mnew file:   lib/elo_functions.R[m
+	[32mnew file:   lib/globals.R[m
+	[32mnew file:   lib/helpers.R[m
+	[32mnew file:   logs/README.md[m
+	[32mnew file:   munge/01-A.R[m
+	[32mnew file:   munge/README.md[m
+	[32mnew file:   profiling/1.R[m
+	[32mnew file:   profiling/README.md[m
+	[32mnew file:   reports/README.md[m
+	[32mnew file:   src/README.md[m
+	[32mnew file:   src/main.R[m
+	[32mnew file:   src/scrape_afl_tables.R[m
+	[32mnew file:   tests/1.R[m
+	[32mnew file:   tests/README.md[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git a[Kco, m[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm mit -m 'initial commit'
+[master (root-commit) b6d3f99] initial commit
+ 80 files changed, 1083 insertions(+)
+ create mode 100644 .Rproj.user/3F54B192/console06/C03844D5
+ create mode 100644 .Rproj.user/3F54B192/console06/C03844D5.env
+ create mode 100644 .Rproj.user/3F54B192/console06/INDEX001
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/1CA329EC
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/24AC79FB
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/2DBC1606
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/44FB177A
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/54328B27
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/638C9761
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/6777419E
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/85785B7D
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/9C1C5578
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/A2FD72A7
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/A6DC05C2
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/D378A54B
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/DB31BD33
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/EC8D6F29
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/EE9337EB
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/FC823608
+ create mode 100644 .Rproj.user/3F54B192/sources/prop/INDEX
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents
+ create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 README.html
+ create mode 100644 README.md
+ create mode 100644 TODO
+ create mode 100644 afl_prediction.Rproj
+ create mode 100644 cache/README.md
+ create mode 100644 config/README.md
+ create mode 100644 config/global.dcf
+ create mode 100644 data/README.md
+ create mode 100644 data/past_results.rds
+ create mode 100644 data/schedules.rds
+ create mode 100644 diagnostics/1.R
+ create mode 100644 diagnostics/README.md
+ create mode 100644 docs/README.md
+ create mode 100644 graphs/README.md
+ create mode 100644 lib/README.md
+ create mode 100644 lib/elo_functions.R
+ create mode 100644 lib/globals.R
+ create mode 100644 lib/helpers.R
+ create mode 100644 logs/README.md
+ create mode 100644 munge/01-A.R
+ create mode 100644 munge/README.md
+ create mode 100644 profiling/1.R
+ create mode 100644 profiling/README.md
+ create mode 100644 reports/README.md
+ create mode 100644 src/README.md
+ create mode 100644 src/main.R
+ create mode 100644 src/scrape_afl_tables.R
+ create mode 100644 tests/1.R
+ create mode 100644 tests/README.md
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pus h -u origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+git@bitbucket.org: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pushh -u origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+git@bitbucket.org: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pushh -u origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 70, done.
+Delta compression using up to 4 threads.
+Compressing objects:   1% (1/59)   Compressing objects:   3% (2/59)   Compressing objects:   5% (3/59)   Compressing objects:   6% (4/59)   Compressing objects:   8% (5/59)   Compressing objects:  10% (6/59)   Compressing objects:  11% (7/59)   Compressing objects:  13% (8/59)   Compressing objects:  15% (9/59)   Compressing objects:  16% (10/59)   Compressing objects:  18% (11/59)   Compressing objects:  20% (12/59)   Compressing objects:  22% (13/59)   Compressing objects:  23% (14/59)   Compressing objects:  25% (15/59)   Compressing objects:  27% (16/59)   Compressing objects:  28% (17/59)   Compressing objects:  30% (18/59)   Compressing objects:  32% (19/59)   Compressing objects:  33% (20/59)   Compressing objects:  35% (21/59)   Compressing objects:  37% (22/59)   Compressing objects:  38% (23/59)   Compressing objects:  40% (24/59)   Compressing objects:  42% (25/59)   Compressing objects:  44% (26/59)   Compressing objects:  45% (27/59)   Compressing objects:  47% (28/59)   Compressing objects:  49% (29/59)   Compressing objects:  50% (30/59)   Compressing objects:  52% (31/59)   Compressing objects:  54% (32/59)   Compressing objects:  55% (33/59)   Compressing objects:  57% (34/59)   Compressing objects:  59% (35/59)   Compressing objects:  61% (36/59)   Compressing objects:  62% (37/59)   Compressing objects:  64% (38/59)   Compressing objects:  66% (39/59)   Compressing objects:  67% (40/59)   Compressing objects:  69% (41/59)   Compressing objects:  71% (42/59)   Compressing objects:  72% (43/59)   Compressing objects:  74% (44/59)   Compressing objects:  76% (45/59)   Compressing objects:  77% (46/59)   Compressing objects:  79% (47/59)   Compressing objects:  81% (48/59)   Compressing objects:  83% (49/59)   Compressing objects:  84% (50/59)   Compressing objects:  86% (51/59)   Compressing objects:  88% (52/59)   Compressing objects:  89% (53/59)   Compressing objects:  91% (54/59)   Compressing objects:  93% (55/59)   Compressing objects:  94% (56/59)   Compressing objects:  96% (57/59)   Compressing objects:  98% (58/59)   Compressing objects: 100% (59/59)   Compressing objects: 100% (59/59), done.
+Writing objects:   1% (1/70)   Writing objects:   2% (2/70)   Writing objects:   4% (3/70)   Writing objects:   5% (4/70)   Writing objects:   7% (5/70)   Writing objects:   8% (6/70)   Writing objects:  10% (7/70)   Writing objects:  11% (8/70)   Writing objects:  12% (9/70)   Writing objects:  14% (10/70)   Writing objects:  15% (11/70)   Writing objects:  17% (12/70)   Writing objects:  18% (13/70)   Writing objects:  20% (14/70)   Writing objects:  21% (15/70)   Writing objects:  22% (16/70)   Writing objects:  24% (17/70)   Writing objects:  25% (18/70)   Writing objects:  27% (19/70)   Writing objects:  28% (20/70)   Writing objects:  30% (21/70)   Writing objects:  31% (22/70)   Writing objects:  32% (23/70)   Writing objects:  34% (24/70)   Writing objects:  35% (25/70)   Writing objects:  37% (26/70)   Writing objects:  38% (27/70)   Writing objects:  40% (28/70)   Writing objects:  41% (29/70)   Writing objects:  42% (30/70)   Writing objects:  44% (31/70)   Writing objects:  47% (33/70)   Writing objects:  48% (34/70)   Writing objects:  50% (35/70)   Writing objects:  51% (36/70)   Writing objects:  52% (37/70)   Writing objects:  54% (38/70)   Writing objects:  55% (39/70)   Writing objects:  57% (40/70)   Writing objects:  58% (41/70)   Writing objects:  60% (42/70)   Writing objects:  61% (43/70)   Writing objects:  62% (44/70)   Writing objects:  64% (45/70)   Writing objects:  65% (46/70)   Writing objects:  67% (47/70)   Writing objects:  68% (48/70)   Writing objects:  70% (49/70)   Writing objects:  71% (50/70)   Writing objects:  72% (51/70)   Writing objects:  74% (52/70)   Writing objects:  75% (53/70)   Writing objects:  77% (54/70)   Writing objects:  78% (55/70)   Writing objects:  80% (56/70)   Writing objects:  81% (57/70)   Writing objects:  82% (58/70)   Writing objects:  84% (59/70)   Writing objects:  85% (60/70)   Writing objects:  87% (61/70)   Writing objects:  88% (62/70)   Writing objects:  90% (63/70)   Writing objects:  91% (64/70)   Writing objects:  92% (65/70)   Writing objects:  94% (66/70)   Writing objects:  95% (67/70)   Writing objects:  97% (68/70)   Writing objects:  98% (69/70)   Writing objects: 100% (70/70)   Writing objects: 100% (70/70), 373.22 KiB | 2.12 MiB/s, done.
+Total 70 (delta 4), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+[KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
+	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   src/main.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31mlib/simple_point_spread_regression.R[m
+	[31msimulate_tournaments.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u

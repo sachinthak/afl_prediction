@@ -69,30 +69,40 @@ update_elo <- function(elo_rating_1, elo_rating_2,
 return_elo_scores <- function(results, initial_ratings, K, lambda,
                               autocorrelation_adjust = FALSE,
                               margin_of_victory_adjust = FALSE,
-                              scoring_method = c('classic','point_based')[1])
+                              scoring_method = c('classic','point_based')[1],
+                              reg_to_mean_factor = 0.75)
 {
   ratings <- copy(initial_ratings)
-  n_games <-  nrow(results)
-
-  # loop over each game and update ratings
-  for (game in 1:n_games){
+  seasons <- sort(results[,unique(season)])
+  for (sn in seasons){
     
-    team_1 <- results[game,team1]
-    team_2 <- results[game,team2]
-    score_1 <- results[game,score_team1]
-    score_2 <- results[game,score_team2]
-    
-    elo_team_1 <- ratings[team == team_1,elo]
-    elo_team_2 <- ratings[team == team_2,elo]
-    
-    updated_elo <- update_elo(elo_team_1, elo_team_2, 
-                              score_1, score_2,K,lambda,
-                              autocorrelation_adjust,
-                              margin_of_victory_adjust,
-                              scoring_method)
-    
-    ratings[team == team_1, elo := updated_elo[1]]
-    ratings[team == team_2, elo := updated_elo[2]]
-  }  
+        n_games <-  nrow(season_results)
+        season_results[season == sn]
+        
+        #regression to the mean adjustment
+        ratings[,elo := elo*reg_to_mean_factor + 1500*(1-reg_to_mean_factor)]  
+        
+        
+        # loop over each game and update ratings
+        for (game in 1:n_games){
+          
+          team_1 <- season_results[game,team1]
+          team_2 <- season_results[game,team2]
+          score_1 <- season_results[game,score_team1]
+          score_2 <- season_results[game,score_team2]
+          
+          elo_team_1 <- ratings[team == team_1,elo]
+          elo_team_2 <- ratings[team == team_2,elo]
+          
+          updated_elo <- update_elo(elo_team_1, elo_team_2, 
+                                    score_1, score_2,K,lambda,
+                                    autocorrelation_adjust,
+                                    margin_of_victory_adjust,
+                                    scoring_method)
+          
+          ratings[team == team_1, elo := updated_elo[1]]
+          ratings[team == team_2, elo := updated_elo[2]]
+        }  
+  }
   return(ratings)
 }
