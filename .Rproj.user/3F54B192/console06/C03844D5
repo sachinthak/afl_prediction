@@ -361,3 +361,138 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  lib/simple_point_spread_regression.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[32mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[32mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[32mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
+	[32mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
+	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
+	[32mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[32mrenamed:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents -> lib/elo_functions.R[m
+	[32mnew file:   lib/simple_point_spread_regression.R[m
+	[32mmodified:   src/main.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31mlib/simulate_tournaments.R[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  lib/simulate_tournaments.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git com mit -m 'added a crapy[Kpy model'
+[master 9a3ae86] added a crappy model
+ 39 files changed, 627 insertions(+), 310 deletions(-)
+ rewrite .Rproj.user/3F54B192/console06/INDEX001 (100%)
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents
+ delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/lock_file
+ rename .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents => lib/elo_functions.R (66%)
+ create mode 100644 lib/simple_point_spread_regression.R
+ create mode 100644 lib/simulate_tournaments.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pus h origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 22, done.
+Delta compression using up to 4 threads.
+Compressing objects:   5% (1/20)   Compressing objects:  10% (2/20)   Compressing objects:  15% (3/20)   Compressing objects:  20% (4/20)   Compressing objects:  25% (5/20)   Compressing objects:  30% (6/20)   Compressing objects:  35% (7/20)   Compressing objects:  40% (8/20)   Compressing objects:  45% (9/20)   Compressing objects:  50% (10/20)   Compressing objects:  55% (11/20)   Compressing objects:  60% (12/20)   Compressing objects:  65% (13/20)   Compressing objects:  70% (14/20)   Compressing objects:  75% (15/20)   Compressing objects:  80% (16/20)   Compressing objects:  85% (17/20)   Compressing objects:  90% (18/20)   Compressing objects:  95% (19/20)   Compressing objects: 100% (20/20)   Compressing objects: 100% (20/20), done.
+Writing objects:   4% (1/22)   Writing objects:   9% (2/22)   Writing objects:  13% (3/22)   Writing objects:  18% (4/22)   Writing objects:  22% (5/22)   Writing objects:  27% (6/22)   Writing objects:  31% (7/22)   Writing objects:  36% (8/22)   Writing objects:  40% (9/22)   Writing objects:  45% (10/22)   Writing objects:  50% (11/22)   Writing objects:  54% (12/22)   Writing objects:  59% (13/22)   Writing objects:  63% (14/22)   Writing objects:  68% (15/22)   Writing objects:  72% (16/22)   Writing objects:  77% (17/22)   Writing objects:  81% (18/22)   Writing objects:  86% (19/22)   Writing objects:  90% (20/22)   Writing objects:  95% (21/22)   Writing objects: 100% (22/22)   Writing objects: 100% (22/22), 8.87 KiB | 302.00 KiB/s, done.
+Total 22 (delta 7), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   b6d3f99..9a3ae86  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   lib/simple_point_spread_regression.R[m
+	[31mmodified:   lib/simulate_tournaments.R[m
+	[31mmodified:   src/main.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u

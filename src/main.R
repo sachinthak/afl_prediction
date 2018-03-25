@@ -32,7 +32,7 @@ team_list <- union(results$team1,results$team2)
 initial_elo_ratings <- data.table(team = team_list, elo = 1500)
 autocorrelation_adjust <- TRUE
 margin_of_victory_adjust <- TRUE
-scoring_method <-  'point_based'
+scoring_method <-  'classic'
 reg_to_mean_factor <- 0.75
 
 K <- 25
@@ -53,5 +53,55 @@ simple_point_spread_fit <- simple_point_spread_regression (results, initial_elo_
                                 scoring_method = scoring_method,
                                 reg_to_mean_factor = reg_to_mean_factor)
 
-elo_diff <- elo_ratings[team=='Adelaide',elo] - elo_ratings[team=='Essendon',elo]
-predict.lm(simple_point_spread_fit, newdata = data.table(elo_diff = elo_diff)) # 25.58966
+simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results, initial_elo_ratings,
+                                                           K, lambda, autocorrelation_adjust = autocorrelation_adjust,
+                                                           margin_of_victory_adjust = margin_of_victory_adjust,
+                                                           scoring_method = scoring_method,
+                                                           reg_to_mean_factor = reg_to_mean_factor)
+
+
+elo_diff <- elo_ratings[team=='St Kilda',elo] - elo_ratings[team=='Brisbane Lions',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 19.0488
+predict.lm(simple_point_spread_fit, newdata = data.table(elo_diff = elo_diff)) # 19.0488 
+
+
+elo_diff <- elo_ratings[team=='Port Adelaide',elo] - elo_ratings[team=='Fremantle',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 47.55421
+
+
+elo_diff <- elo_ratings[team=='North Melbourne',elo] - elo_ratings[team=='Gold Coast',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 25.07803 
+
+
+
+elo_diff <- elo_ratings[team=='Collingwood',elo] - elo_ratings[team=='Hawthorn',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 3.20062 
+
+
+elo_diff <- elo_ratings[team=='Greater Western Sydney',elo] - elo_ratings[team=='Western Bulldogs',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 17.49244
+
+
+elo_diff <- elo_ratings[team=='Geelong',elo] - elo_ratings[team=='Melbourne',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 14.68036
+
+
+elo_diff <- elo_ratings[team=='Sydney',elo] - elo_ratings[team=='West Coast',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 21.04902
+
+
+

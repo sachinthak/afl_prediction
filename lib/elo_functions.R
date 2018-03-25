@@ -1,11 +1,11 @@
 # This file contains ELO rating related functions
 
 # evaluating the overall result based only on win/loose/draw without considering the margins
-scoring_evaluation_classical <- function(score_1, score_2)
+scoring_evaluation_classical <- function(score_diff)
 {
-  if (score_1 > score_2) {
+  if (score_diff > 0) {
     res <- 1
-  } else if (score_2 > score_1){
+  } else if (score_diff < 0){
     res <- 0
   } else {
     res <- 0.5
@@ -17,25 +17,37 @@ scoring_evaluation_classical <- function(score_1, score_2)
 # evaluating the overall result after considering the individual points
 scoring_evaluation_point_based <- function(score_1, score_2)
 {
+  if(is.null(score_1) | is.null(score_2)){
+    stop('Point based scoring evaluation requires individual scores to be provided.')
+  }
   res <- (score_1 + 1)/(score_1 + score_2 + 2)
   return(res)
 }
 
 # update the ELO scores
 update_elo <- function(elo_rating_1, elo_rating_2, 
-                       score_1, score_2,
+                       score_1 = NULL, score_2 = NULL,
+                       score_diff = NULL, 
                        K = 25, lambda = 400,
                        autocorrelation_adjust = FALSE,
                        margin_of_victory_adjust = FALSE,
                        scoring_method = c('classic','point_based')[1])
 {
+  
+  if (is.null(score_diff)){
+    if(is.null(score_1) | is.null(score_2)){
+      stop('Either the individual team scores should be provided or the score_diff should be set.')
+    }
+    score_diff <- score_1 - score_2
+  }
+  
   # evaluate the result
   if (scoring_method == 'classic'){
-    s <- scoring_evaluation_classical(score_1,score_2)
+    s <- scoring_evaluation_classical(score_diff)
   } else if (scoring_method == 'point_based'){
     s <- scoring_evaluation_point_based(score_1,score_2)
   } else{
-    s <- scoring_evaluation_classical(score_1,score_2)
+    s <- scoring_evaluation_classical(score_diff)
   }
   
   # evaluate the expected result
@@ -44,12 +56,12 @@ update_elo <- function(elo_rating_1, elo_rating_2,
   
   k_adj <- K
   if (margin_of_victory_adjust == TRUE){
-    k_adj <- k_adj*log(abs(score_1-score_2)+1)
+    
+    k_adj <- k_adj*log(abs(score_diff)+1)
     
     # adjustment for the fact that higher rated team tends to win more with higher margin.
     # only applicable if margin of victory adjustment is applied
     if (autocorrelation_adjust == TRUE) { # this needs further thinking.formula from 538
-      score_diff <- score_1 - score_2
       # calculate the ELO difference of winner and loser
       if (score_diff >=0){
         elo_diff <- elo_rating_1 - elo_rating_2

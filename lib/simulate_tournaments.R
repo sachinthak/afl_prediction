@@ -1,11 +1,29 @@
 # simulate the outcome of a match
-simulate_match <- function(elo_team_1,elo_team_2,lambda, point_spread_regression)
+simulate_match <- function(elo_team_1,elo_team_2,lambda, point_spread_regression = NULL)
 {
-  diff <- elo_team_1 - elo_team_2
-  p <- 1/(1+10^(-diff/lambda))
-  sim_winner <- rbinom(n=1, size = 1 , prob = p)
+  if (is.null(point_spread_regression)) {
+    diff <- elo_team_1 - elo_team_2
+    p <- 1/(1+10^(-diff/lambda))
+    sim_winner <- rbinom(n=1, size = 1 , prob = p)
+    if (sim_winner == 1){
+      score_team_1 <- 1
+      score_team_2 <- 0
+      score_diff <- 1
+    } else {
+      score_team_1 <- 0
+      score_team_2 <- 1
+      score_diff <- -1  
+    }
+  } else { 
+    # simulate the winner from drawing point_spread_regression and observing the sign of the point spread.
+    # this will be the better approach. but i need to get a good regression working.
+  }
   
-  return(sim_winner)
+  result <- list(winner = sim_winner,
+                 score_team_1 = score_team_1,
+                 score_team_2 = score_team_2,
+                 score_diff = score_diff) 
+  return(result)
 }
   
 # simulate a tournament for a given schedule and results so far.
@@ -14,6 +32,10 @@ simulate_match <- function(elo_team_1,elo_team_2,lambda, point_spread_regression
 # also currently this supports only results_so_far to contain only the preliminary rounds. 
 simulate_tournament <- function(schedule, K, lambda, elo_ratings, 
                                 results_so_far, point_spread_regression,
+                                scoring_method = 'classic',
+                                autocorrelation_adjust = FALSE,
+                                margin_of_victory_adjust = FALSE,
+                                point_spread_regression = NULL,
                                 n_sim_tournaments = 100)
 {
   matches_played_so_far <- nrow(results_so_far)
@@ -30,28 +52,20 @@ simulate_tournament <- function(schedule, K, lambda, elo_ratings,
     elo_team_1 <- simulate_elo[team == team_1,elo]
     elo_team_2 <- simulate_elo[team == team_2,elo]
     
-    winner <- simulate_match(elo_team_1,elo_team_2,lambda)
+    game_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = elo_team_1,
+                                                                        team_2 = elo_team_2,
+                                                                        elo_ratings = elo_ratings,
+                                                                        K = K, lambda = lambda,
+                                                                        autocorrelation_adjust = autocorrelation_adjust,
+                                                                        margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                        scoring_method = scoring_method,
+                                                                        point_spread_regression = point_spread_regression)
     
-    if (winner == 1) {
-      score_team_1 <- 1
-      score_team_2 <- 0
-    }else {
-      score_team_1 <- 0
-      score_team_2 <- 1
-    }
     
     random_results <- rbind(random_results, data.table(team1=team_1,team2=team_2,
-                            score_team1=score_team_1,score_team2=score_team_2))
+                            score_team1=game_results$score_1,score_team2=score_1))
     # update elo
-    new_elo <- update_elo(elo_team_1, elo_team_2, 
-               score_team_1, score_team_2,
-               K = K, lambda = lambda,
-               autocorrelation_adjust = FALSE,
-               margin_of_victory_adjust = FALSE,
-               scoring_method = 'classic')
-    
-    simulate_elo[team == team_1, elo := new_elo[1]]
-    simulate_elo[team == team_2, elo := new_elo[2]]
+    simulate_elo <- game_results$updated_elo_ratings
   }
   
   complete_results <- rbind(fixed_results,random_results)
@@ -62,39 +76,52 @@ simulate_tournament <- function(schedule, K, lambda, elo_ratings,
 }
 
 
-# calculate the points table for a given results table
-calculate_team_points <- function(results)
+# play a single match and return a list with a winner and the updated elo
+play_single_match_and_return_winner_and_updated_elo <- function(team_1,team_2,
+                                                                elo_ratings, K, lambda, 
+                                                                autocorrelation_adjust = FALSE,
+                                                                margin_of_victory_adjust = FALSE,
+                                                                scoring_method = 'classic',
+                                                                point_spread_regression = NULL)
 {
-  team_list <- union(results$team1,results$team2)
-  points_table <- data.table(team = team_list, points = 0)
   
-  for (game in 1:nrow(results)){
-    team_1 <- results[game,team1]
-    team_2 <- results[game,team2]
-    
-    score_1 <- results[game,score_team1]
-    score_2 <- results[game,score_team2]
-    
-    if (score_1 > score_2){ # team 1 wins
-      points_table[team==team_1, points := points + 4]
-    }else if (score_2 > score_1) {# team 2 wins
-        points_table[team==team_2, points := points + 4]
-    }else { # draw
-      points_table[team==team_1, points := points + 2]
-      points_table[team==team_2, points := points + 2]
-    }
-  }
+  elo_team_1 <- elo_ratings[team == team_1,elo]
+  elo_team_2 <- elo_ratings[team == team_2,elo]
   
-  return(points_table)
+  # simulate a match
+  game_results <- simulate_match(elo_team_1,elo_team_2,lambda, point_spread_regression)
+  
+  # get the updated elo ratings for the two teams based on the results
+  new_elo <- update_elo(elo_team_1, elo_team_2, 
+                        score_1 =  game_results$score_team_1,
+                        score_2 = game_results$score_team_2,
+                        score_diff = game_results$score_diff,
+                        K = K, lambda = lambda,
+                        autocorrelation_adjust = autocorrelation_adjust,
+                        margin_of_victory_adjust = margin_of_victory_adjust,
+                        scoring_method = scoring_method)
+  
+  # updated the entire elo ratings table
+  updated_elo_ratings <- copy(elo_ratings)
+  updated_elo_ratings[team == team_1, elo := new_elo[1]]
+  updated_elo_ratings[team == team_2, elo := new_elo[2]]
+  
+  # return results
+  results <- list( winner = game_results$winner,
+                   score_1 =  game_results$score_team_1,
+                   score_2 = game_results$score_team_2,
+                   score_diff = game_results$score_diff,
+                   updated_elo_ratings = updated_elo_ratings)
 }
 
 # play the final series
-play_finals_series <- function(finalists, elo, K, lambda)
+play_finals_series <- function(finalists, elo, K, lambda, scoring_method = 'classic')
 {
  
    # play QF 1
   first <- finalists[1,team]
   fourth <- finalists[4,team]
+  
   elo_first <- elo[team == first, elo]
   elo_fourth <- elo[team == fourth, elo]
   winner <- simulate_match(elo_first,elo_fourth,lambda)
@@ -196,4 +223,31 @@ play_finals_series <- function(finalists, elo, K, lambda)
                         scoring_method = 'classic')
   elo[team == sixth, elo := new_elo[1]]
   elo[team == seventh, elo := new_elo[2]]
+}
+
+
+# calculate the points table for a given results table
+calculate_team_points <- function(results)
+{
+  team_list <- union(results$team1,results$team2)
+  points_table <- data.table(team = team_list, points = 0)
+  
+  for (game in 1:nrow(results)){
+    team_1 <- results[game,team1]
+    team_2 <- results[game,team2]
+    
+    score_1 <- results[game,score_team1]
+    score_2 <- results[game,score_team2]
+    
+    if (score_1 > score_2){ # team 1 wins
+      points_table[team==team_1, points := points + 4]
+    }else if (score_2 > score_1) {# team 2 wins
+      points_table[team==team_2, points := points + 4]
+    }else { # draw
+      points_table[team==team_1, points := points + 2]
+      points_table[team==team_2, points := points + 2]
+    }
+  }
+  
+  return(points_table)
 }

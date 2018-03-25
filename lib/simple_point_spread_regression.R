@@ -64,7 +64,26 @@ simple_point_spread_regression <- function(results, initial_elo_ratings,
                           margin_of_victory_adjust = margin_of_victory_adjust,
                           scoring_method = scoring_method, reg_to_mean_factor = reg_to_mean_factor)
   
-  fit <- lm(formula = 'spread ~ 1 + elo_diff', data = modelling_data)
+  # it doesn't make sense to include a constant term 
+  fit <- lm(formula = 'spread ~ 0 + elo_diff', data = modelling_data)
+  
+  return(fit)
+}
+
+simple_logit_point_spread_regression <- function(results, initial_elo_ratings,
+                                           K, lambda, autocorrelation_adjust = TRUE,
+                                           margin_of_victory_adjust = TRUE,
+                                           scoring_method = 'classic',reg_to_mean_factor = 0.75)
+{
+  modelling_data <- generate_modelling_data(results, initial_elo_ratings,
+                                            K, lambda,autocorrelation_adjust = autocorrelation_adjust,
+                                            margin_of_victory_adjust = margin_of_victory_adjust,
+                                            scoring_method = scoring_method, reg_to_mean_factor = reg_to_mean_factor)
+  
+  modelling_data[, p := 1/(1+ 10^(-(elo_diff/lambda)))]
+  modelling_data[, logit_p := log(p/(1-p))]
+  # it doesn't make sense to include a constant term 
+  fit <- lm(formula = 'spread ~ 0 + logit_p', data = modelling_data)
   
   return(fit)
 }
