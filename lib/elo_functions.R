@@ -106,11 +106,13 @@ return_elo_scores <- function(results, initial_ratings, K, lambda,
           elo_team_1 <- ratings[team == team_1,elo]
           elo_team_2 <- ratings[team == team_2,elo]
           
-          updated_elo <- update_elo(elo_team_1, elo_team_2, 
-                                    score_1, score_2,K,lambda,
-                                    autocorrelation_adjust,
-                                    margin_of_victory_adjust,
-                                    scoring_method)
+          updated_elo <- update_elo(elo_rating_1 = elo_team_1, 
+                                    elo_rating_2 = elo_team_2, 
+                                    score_1 = score_1, score_2 = score_2,
+                                    K = K,lambda = lambda,
+                                    autocorrelation_adjust = autocorrelation_adjust,
+                                    margin_of_victory_adjust = margin_of_victory_adjust,
+                                    scoring_method = scoring_method)
           
           ratings[team == team_1, elo := updated_elo[1]]
           ratings[team == team_2, elo := updated_elo[2]]

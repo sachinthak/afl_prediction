@@ -2,6 +2,7 @@ library(ProjectTemplate)
 load.project()
 
 
+
 # just playing with elo functions -----------------------------------------
 
 
@@ -12,16 +13,16 @@ schedule = schedules[season == sn]
 # play with  the following to choose matches_played_so_far for simulation purposes
 past_results[season==sn][grep('Round',round), cbind(.SD,.I)][round == 'Round 4']
 
-matches_played_so_far <- 0
-results_so_far <- past_results[season==sn][grep('Round',round)][1:matches_played_so_far]
+matches_played_so_far <- 5
+results_so_far <- past_results[season==sn][grep('Round',round)][0:matches_played_so_far]
 
 initial_elo_ratings <- data.table(team = team_list, elo = 1500)
 updated_elo_ratings <- return_elo_scores(results = results_so_far, 
                                          initial_elo_ratings, 
                                          K = 25, 
                                          lambda = 400,
-                                         autocorrelation_adjust = TRUE,
-                                         margin_of_victory_adjust = TRUE,
+                                         autocorrelation_adjust = FALSE,
+                                         margin_of_victory_adjust = FALSE,
                                          scoring_method = 'classic')
 
 
