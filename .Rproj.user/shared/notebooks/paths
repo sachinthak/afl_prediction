@@ -6,6 +6,7 @@
 /Users/sachintha/my_stuff/current work/afl_prediction/lib/globals.R="C8263501"
 /Users/sachintha/my_stuff/current work/afl_prediction/lib/helpers.R="C03E3DC"
 /Users/sachintha/my_stuff/current work/afl_prediction/lib/simple_point_spread_regression.R="5735C149"
+/Users/sachintha/my_stuff/current work/afl_prediction/lib/simulate_tournaments.R="E1955C57"
 /Users/sachintha/my_stuff/current work/afl_prediction/munge/01-A.R="43BB7D40"
 /Users/sachintha/my_stuff/current work/afl_prediction/munge/README.md="96A48528"
 /Users/sachintha/my_stuff/current work/afl_prediction/profiling/1.R="A0A128B0"
@@ -14,4 +15,5 @@
 /Users/sachintha/my_stuff/current work/afl_prediction/src/README.md="81934913"
 /Users/sachintha/my_stuff/current work/afl_prediction/src/main.R="670AD2AE"
 /Users/sachintha/my_stuff/current work/afl_prediction/src/scrape_afl_tables.R="7D467334"
+/Users/sachintha/my_stuff/current work/afl_prediction/src/season_2018_predictions.R="571EC0F5"
 /Users/sachintha/my_stuff/current work/afl_prediction/src/simulate_2017_season.R="438548E8"

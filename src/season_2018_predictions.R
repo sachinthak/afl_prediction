@@ -1,6 +1,4 @@
 
-# use 2016 season to calculate ELO at beginning of season  ------------------------------------------------
-
 library(ProjectTemplate)
 load.project()
 
@@ -15,15 +13,16 @@ margin_of_victory_adjust <- FALSE
 scoring_method <- 'classic'
 point_spread_regression <- NULL
 n_sim_tournaments <- 300
+reg_to_mean_factor <- 0.75
 
-# calculate elo at the end of 2016 ----------------------------------------
+# calculate elo by using the data after 2016 ----------------------------------------
 
 
 sn <- 2016
-team_list <- union(past_results[season==sn]$team1,past_results[season==season]$team2)
-schedule = schedules[season == sn]
+team_list <- union(past_results[season>=sn]$team1,past_results[season>=season]$team2)
 
-results <- past_results[season==sn]
+
+results <- past_results[season>=sn]
 
 initial_elo_ratings <- data.table(team = team_list, elo = 1500)
 updated_elo_ratings <- return_elo_scores(results = results, 
@@ -35,24 +34,14 @@ updated_elo_ratings <- return_elo_scores(results = results,
                                          scoring_method = scoring_method)
 
 
-# simulate 2017 season ----------------------------------------------------
+# simulate 2018 season ----------------------------------------------------
 
-sn <- 2017
+sn <- 2018
 schedule = schedules[season == sn]
 
-matches_so_far <- 20
+matches_so_far <- nrow(past_results[season == sn])
 results_so_far <- past_results[season==sn][1:matches_so_far]
 
-# update_elo after matches_so_far
-
-initial_elo_ratings <- updated_elo_ratings
-updated_elo_ratings <- return_elo_scores(results = results_so_far, 
-                                         initial_elo_ratings, 
-                                         K = K, 
-                                         lambda = lambda,
-                                         autocorrelation_adjust = autocorrelation_adjust,
-                                         margin_of_victory_adjust = margin_of_victory_adjust,
-                                         scoring_method = scoring_method)
 
 
 sim_results <- simulate_tournament(schedule = schedule, 
@@ -72,5 +61,21 @@ ggplot(sim_results$championship_frequency_table) +
   theme(axis.text.x=element_text(angle = -90, hjust = 0)) + scale_x_discrete(name = 'team') +
   scale_y_continuous(name = paste0('Probability of winning the premiership after ',matches_so_far,' matches'))
 
-ggsave(paste0('premiership_prob_after_',matches_so_far,'_matches.pdf'))
-       
+ggsave(paste0('2018_premiership_prob_after_',matches_so_far,'_matches.pdf'))
+
+
+
+# round 2 match predictions -----------------------------------------------
+
+simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results, initial_elo_ratings,
+                                                                      K, lambda, autocorrelation_adjust = autocorrelation_adjust,
+                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                      scoring_method = scoring_method,
+                                                                      reg_to_mean_factor = reg_to_mean_factor)
+
+
+elo_diff <- elo_ratings[team=='St Kilda',elo] - elo_ratings[team=='Brisbane Lions',elo]
+p <- 1/(1+10^(-elo_diff/lambda))
+logit_p <- log(p/(1-p))
+predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 19.0488
+predict.lm(simple_point_spread_fit, newdata = data.table(elo_diff = elo_diff)) # 19.0488 

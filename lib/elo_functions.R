@@ -87,9 +87,9 @@ return_elo_scores <- function(results, initial_ratings, K, lambda,
   ratings <- copy(initial_ratings)
   seasons <- sort(results[,unique(season)])
   for (sn in seasons){
-    
+        season_results <- results[season == sn]
         n_games <-  nrow(season_results)
-        season_results[season == sn]
+      
         
         #regression to the mean adjustment
         ratings[,elo := elo*reg_to_mean_factor + 1500*(1-reg_to_mean_factor)]  
