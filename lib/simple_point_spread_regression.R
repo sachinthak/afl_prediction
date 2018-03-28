@@ -34,7 +34,7 @@ generate_modelling_data <- function(results, initial_elo_ratings,
       elo_team_2 <- elo_ratings[team == team_2,elo]
       
       updated_elo <- update_elo(elo_team_1, elo_team_2, 
-                                score_1, score_2,K,lambda,
+                                score_1, score_2, score_diff = score_1-score_2,K,lambda,
                                 autocorrelation_adjust = autocorrelation_adjust,
                                 margin_of_victory_adjust = margin_of_victory_adjust,
                                 scoring_method = scoring_method)

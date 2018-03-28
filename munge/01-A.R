@@ -26,6 +26,9 @@ results_2018[, season := '2018']
 results_2018[, score_team1 := as.numeric(gsub('([0-9]*)\\s+-\\s([0-9]*)','\\1',Result))]
 results_2018[, score_team2 := as.numeric(gsub('([0-9]*)\\s+-\\s([0-9]*)','\\2',Result))]
 
+results_2018[, team1 := as.character(team1)]
+results_2018[, team2 := as.character(team2)]
+
 results_2018[, Result := NULL]
 
 # still need to make sure the venues match

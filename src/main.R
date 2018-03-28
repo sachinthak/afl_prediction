@@ -48,17 +48,21 @@ elo_ratings <- return_elo_scores(results = results,
                                  scoring_method = scoring_method,
                                  reg_to_mean_factor = reg_to_mean_factor)
 
-simple_point_spread_fit <- simple_point_spread_regression (results, initial_elo_ratings,
-                                K, lambda, autocorrelation_adjust = autocorrelation_adjust,
-                                margin_of_victory_adjust = margin_of_victory_adjust,
-                                scoring_method = scoring_method,
-                                reg_to_mean_factor = reg_to_mean_factor)
 
-simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results, initial_elo_ratings,
-                                                           K, lambda, autocorrelation_adjust = autocorrelation_adjust,
+
+simple_point_spread_fit <- simple_point_spread_regression(results = results, 
+                                                           initial_elo_ratings = initial_elo_ratings,K = K, 
+                                                           lambda = lambda, autocorrelation_adjust = autocorrelation_adjust,
                                                            margin_of_victory_adjust = margin_of_victory_adjust,
                                                            scoring_method = scoring_method,
                                                            reg_to_mean_factor = reg_to_mean_factor)
+
+simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results = results[season < 2018], 
+                                                                      initial_elo_ratings = initial_elo_ratings,
+                                                                      K =K, lambda =lambda, autocorrelation_adjust = autocorrelation_adjust,
+                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                      scoring_method = scoring_method,
+                                                                      reg_to_mean_factor = reg_to_mean_factor)
 
 
 elo_diff <- elo_ratings[team=='St Kilda',elo] - elo_ratings[team=='Brisbane Lions',elo]
