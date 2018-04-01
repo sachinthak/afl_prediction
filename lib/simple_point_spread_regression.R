@@ -1,7 +1,10 @@
 
 generate_modelling_data <- function(results, initial_elo_ratings,
+                                    home_field_advantage_stats = NULL,
                                     K, lambda,autocorrelation_adjust = TRUE,
                                     margin_of_victory_adjust = TRUE,
+                                    home_field_advantage_adjust = FALSE,                                         
+                                    home_field_advantage_coeff = 6,
                                     scoring_method = 'classic',reg_to_mean_factor = 0.75)
 {
   seasons <- sort(results[,unique(season)])
@@ -23,6 +26,7 @@ generate_modelling_data <- function(results, initial_elo_ratings,
     # loop over each game and update ratings
     for (game in 1:n_games){
       
+      ground <- season_results[game,venue]
       round <- season_results[game,round]
       
       team_1 <- season_results[game,team1]
@@ -33,10 +37,22 @@ generate_modelling_data <- function(results, initial_elo_ratings,
       elo_team_1 <- elo_ratings[team == team_1,elo]
       elo_team_2 <- elo_ratings[team == team_2,elo]
       
-      updated_elo <- update_elo(elo_team_1, elo_team_2, 
-                                score_1, score_2, score_diff = score_1-score_2,K,lambda,
+      home_field_advantage <- 0
+      if (!is.null(home_field_advantage_stats) & home_field_advantage_adjust == T){
+        num_matches_team1 <- home_field_advantage_stats[season == sn & team == team_1 & venue == ground,
+                                                        num_past_matches]
+        num_matches_team2 <- home_field_advantage_stats[season == sn & team == team_2 & venue == ground,
+                                                        num_past_matches]
+        home_field_advantage <- home_field_advantage_coeff*(log(1+num_matches_team1)-log(1+num_matches_team2))
+      }
+      
+      updated_elo <- update_elo(elo_rating_1 = elo_team_1, 
+                                elo_rating_2 = elo_team_2, 
+                                score_1 = score_1, score_2 = score_2,
+                                K = K,lambda = lambda,
                                 autocorrelation_adjust = autocorrelation_adjust,
                                 margin_of_victory_adjust = margin_of_victory_adjust,
+                                home_field_advantage = home_field_advantage,
                                 scoring_method = scoring_method)
       
       elo_ratings[team == team_1, elo := updated_elo[1]]
@@ -55,14 +71,20 @@ generate_modelling_data <- function(results, initial_elo_ratings,
 }
 
 simple_point_spread_regression <- function(results, initial_elo_ratings,
+                                           home_field_advantage_stats = NULL,
                                            K, lambda, autocorrelation_adjust = TRUE,
                                            margin_of_victory_adjust = TRUE,
+                                           home_field_advantage_adjust = FALSE,                                         
+                                           home_field_advantage_coeff = 6,
                                            scoring_method = 'classic',reg_to_mean_factor = 0.75)
 {
-  modelling_data <- generate_modelling_data(results, initial_elo_ratings,
-                          K, lambda,autocorrelation_adjust = autocorrelation_adjust,
-                          margin_of_victory_adjust = margin_of_victory_adjust,
-                          scoring_method = scoring_method, reg_to_mean_factor = reg_to_mean_factor)
+  modelling_data <- generate_modelling_data(results = results, initial_elo_ratings = initial_elo_ratings,
+                                            home_field_advantage_stats = home_field_advantage_stats,
+                                            K, lambda,autocorrelation_adjust = autocorrelation_adjust,
+                                            margin_of_victory_adjust = margin_of_victory_adjust, 
+                                            home_field_advantage_adjust = home_field_advantage_adjust,
+                                            home_field_advantage_coeff = home_field_advantage_coeff,
+                                            scoring_method = scoring_method, reg_to_mean_factor = reg_to_mean_factor)
   
   # it doesn't make sense to include a constant term 
   fit <- lm(formula = 'spread ~ 0 + elo_diff', data = modelling_data)
@@ -71,13 +93,19 @@ simple_point_spread_regression <- function(results, initial_elo_ratings,
 }
 
 simple_logit_point_spread_regression <- function(results, initial_elo_ratings,
-                                           K, lambda, autocorrelation_adjust = TRUE,
-                                           margin_of_victory_adjust = TRUE,
-                                           scoring_method = 'classic',reg_to_mean_factor = 0.75)
+                                                 home_field_advantage_stats = NULL,
+                                                 K, lambda, autocorrelation_adjust = TRUE,
+                                                 margin_of_victory_adjust = TRUE,
+                                                 home_field_advantage_adjust = FALSE,                                         
+                                                 home_field_advantage_coeff = 6,
+                                                 scoring_method = 'classic',reg_to_mean_factor = 0.75)
 {
-  modelling_data <- generate_modelling_data(results, initial_elo_ratings,
+  modelling_data <- generate_modelling_data(results = results, initial_elo_ratings = initial_elo_ratings,
+                                            home_field_advantage_stats = home_field_advantage_stats,
                                             K, lambda,autocorrelation_adjust = autocorrelation_adjust,
-                                            margin_of_victory_adjust = margin_of_victory_adjust,
+                                            margin_of_victory_adjust = margin_of_victory_adjust, 
+                                            home_field_advantage_adjust = home_field_advantage_adjust,
+                                            home_field_advantage_coeff = home_field_advantage_coeff,
                                             scoring_method = scoring_method, reg_to_mean_factor = reg_to_mean_factor)
   
   modelling_data[, p := 1/(1+ 10^(-(elo_diff/lambda)))]

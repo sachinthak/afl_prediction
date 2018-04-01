@@ -29,6 +29,7 @@ update_elo <- function(elo_rating_1, elo_rating_2,
                        score_1 = NULL, score_2 = NULL,
                        score_diff = NULL, 
                        K = 25, lambda = 400,
+                       home_field_advantage = 0,
                        autocorrelation_adjust = FALSE,
                        margin_of_victory_adjust = FALSE,
                        scoring_method = c('classic','point_based')[1])
@@ -51,7 +52,7 @@ update_elo <- function(elo_rating_1, elo_rating_2,
   }
   
   # evaluate the expected result
-  diff <- (elo_rating_1 - elo_rating_2)/lambda
+  diff <- (elo_rating_1 - elo_rating_2 + home_field_advantage)/lambda
   u <- 1/(1+10^(-diff))
   
   k_adj <- K
@@ -78,9 +79,12 @@ update_elo <- function(elo_rating_1, elo_rating_2,
 }
 
 # return the elo ratings after  game results
-return_elo_scores <- function(results, initial_ratings, K, lambda,
+return_elo_scores <- function(results, initial_ratings, 
+                              home_field_advantage_stats = NULL, K, lambda,
                               autocorrelation_adjust = FALSE,
                               margin_of_victory_adjust = FALSE,
+                              home_field_advantage_adjust = FALSE,
+                              home_field_advantage_coeff = 6,
                               scoring_method = c('classic','point_based')[1],
                               reg_to_mean_factor = 0.75)
 {
@@ -98,6 +102,8 @@ return_elo_scores <- function(results, initial_ratings, K, lambda,
         # loop over each game and update ratings
         for (game in 1:n_games){
           
+          ground <- season_results[game,venue]
+          
           team_1 <- season_results[game,team1]
           team_2 <- season_results[game,team2]
           score_1 <- season_results[game,score_team1]
@@ -106,12 +112,22 @@ return_elo_scores <- function(results, initial_ratings, K, lambda,
           elo_team_1 <- ratings[team == team_1,elo]
           elo_team_2 <- ratings[team == team_2,elo]
           
+          home_field_advantage <- 0
+          if (!is.null(home_field_advantage_stats) & home_field_advantage_adjust == T){
+            num_matches_team1 <- home_field_advantage_stats[season == sn & team == team_1 & venue == ground,
+                                                            num_past_matches]
+            num_matches_team2 <- home_field_advantage_stats[season == sn & team == team_2 & venue == ground,
+                                                            num_past_matches]
+            home_field_advantage <- home_field_advantage_coeff*(log(1+num_matches_team1)-log(1+num_matches_team2))
+          }
+            
           updated_elo <- update_elo(elo_rating_1 = elo_team_1, 
                                     elo_rating_2 = elo_team_2, 
                                     score_1 = score_1, score_2 = score_2,
                                     K = K,lambda = lambda,
                                     autocorrelation_adjust = autocorrelation_adjust,
                                     margin_of_victory_adjust = margin_of_victory_adjust,
+                                    home_field_advantage = home_field_advantage,
                                     scoring_method = scoring_method)
           
           ratings[team == team_1, elo := updated_elo[1]]
