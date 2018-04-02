@@ -1,8 +1,9 @@
 # simulate the outcome of a match
-simulate_match <- function(elo_team_1,elo_team_2,lambda, point_spread_regression = NULL)
+simulate_match <- function(elo_team_1,elo_team_2,home_field_advantage = 0,
+                           lambda, point_spread_regression = NULL)
 {
+  diff <- elo_team_1 - elo_team_2 + home_field_advantage
   if (is.null(point_spread_regression)) {
-    diff <- elo_team_1 - elo_team_2
     p <- 1/(1+10^(-diff/lambda))
     sim_winner <- rbinom(n=1, size = 1 , prob = p)
     if (sim_winner == 1){
@@ -33,11 +34,17 @@ simulate_match <- function(elo_team_1,elo_team_2,lambda, point_spread_regression
 simulate_tournament <- function(schedule, K, lambda, elo_ratings, 
                                 results_so_far,
                                 scoring_method = 'classic',
+                                home_field_advantage_stats = NULL,
+                                home_field_advantage_adjust = FALSE,                                         
+                                home_field_advantage_coeff = 6,
                                 autocorrelation_adjust = FALSE,
                                 margin_of_victory_adjust = FALSE,
                                 point_spread_regression = NULL,
                                 n_sim_tournaments = 100)
 {
+  
+  sn = schedule[1,season]
+  
   matches_played_so_far <- nrow(results_so_far)
   fixed_results <- results_so_far[,.(team1,team2,score_team1,score_team2)]
   
@@ -54,10 +61,12 @@ simulate_tournament <- function(schedule, K, lambda, elo_ratings,
       random_results <- data.table(team1=character(0),team2=character(0),
                                    score_team1=numeric(0),score_team2=numeric(0))
       for (match in (matches_played_so_far+1):nrow(schedule)){
+       
+        ground <- schedule[match,venue]
+        
         team_1 <- schedule[match,team1]
         team_2 <- schedule[match,team2]
       
-        
         elo_team_1 <- simulate_elo[team == team_1,elo]
         elo_team_2 <- simulate_elo[team == team_2,elo]
         
@@ -68,6 +77,10 @@ simulate_tournament <- function(schedule, K, lambda, elo_ratings,
                                                                             autocorrelation_adjust = autocorrelation_adjust,
                                                                             margin_of_victory_adjust = margin_of_victory_adjust,
                                                                             scoring_method = scoring_method,
+                                                                            ground = ground,
+                                                                            home_field_advantage_stats = home_field_advantage_stats[season == sn],
+                                                                            home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                            home_field_advantage_coeff = home_field_advantage_coeff,
                                                                             point_spread_regression = point_spread_regression)
         
         
@@ -113,14 +126,27 @@ play_single_match_and_return_winner_and_updated_elo <- function(team_1,team_2,
                                                                 autocorrelation_adjust = FALSE,
                                                                 margin_of_victory_adjust = FALSE,
                                                                 scoring_method = 'classic',
+                                                                ground = '',
+                                                                home_field_advantage_stats = NULL,
+                                                                home_field_advantage_adjust = FALSE,                                         
+                                                                home_field_advantage_coeff = 6,
                                                                 point_spread_regression = NULL)
 {
   
   elo_team_1 <- elo_ratings[team == team_1,elo]
   elo_team_2 <- elo_ratings[team == team_2,elo]
   
+  home_field_advantage <- 0
+  if (!is.null(home_field_advantage_stats) & home_field_advantage_adjust == T){
+    num_matches_team1 <- home_field_advantage_stats[team == team_1 & venue == ground,
+                                                    num_past_matches]
+    num_matches_team2 <- home_field_advantage_stats[team == team_2 & venue == ground,
+                                                    num_past_matches]
+    home_field_advantage <- home_field_advantage_coeff*(log(1+num_matches_team1)-log(1+num_matches_team2))
+  }
+  
   # simulate a match
-  game_results <- simulate_match(elo_team_1,elo_team_2,lambda, point_spread_regression)
+  game_results <- simulate_match(elo_team_1,elo_team_2,home_field_advantage,lambda, point_spread_regression)
   
   # get the updated elo ratings for the two teams based on the results
   new_elo <- update_elo(elo_team_1, elo_team_2, 
@@ -128,6 +154,7 @@ play_single_match_and_return_winner_and_updated_elo <- function(team_1,team_2,
                         score_2 = game_results$score_team_2,
                         score_diff = game_results$score_diff,
                         K = K, lambda = lambda,
+                        home_field_advantage = home_field_advantage,
                         autocorrelation_adjust = autocorrelation_adjust,
                         margin_of_victory_adjust = margin_of_victory_adjust,
                         scoring_method = scoring_method)

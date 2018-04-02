@@ -13,7 +13,7 @@ margin_of_victory_adjust <- TRUE
 home_field_advantage_adjust <- TRUE
 scoring_method <- 'classic'
 point_spread_regression <- NULL
-n_sim_tournaments <- 200
+n_sim_tournaments <- 20
 reg_to_mean_factor <- 0.75
 home_field_advantage_coeff <- 6
 
@@ -56,6 +56,9 @@ sim_results <- simulate_tournament(schedule = schedule,
                                    elo_ratings = updated_elo_ratings, 
                                    results_so_far = results_so_far,
                                    scoring_method = scoring_method,
+                                   home_field_advantage_stats = hfa_helper_dataset,
+                                   home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                   home_field_advantage_coeff = home_field_advantage_coeff,
                                    autocorrelation_adjust = autocorrelation_adjust,
                                    margin_of_victory_adjust = margin_of_victory_adjust,
                                    point_spread_regression = NULL,
