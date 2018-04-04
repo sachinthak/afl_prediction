@@ -98,6 +98,10 @@ simulate_tournament <- function(schedule, K, lambda, elo_ratings,
       final_series_results <- play_finals_series(finalists = top_8, elo = simulate_elo, K = K, lambda = lambda,
                          scoring_method = scoring_method, autocorrelation_adjust = autocorrelation_adjust,
                          margin_of_victory_adjust = margin_of_victory_adjust,
+                         home_field_advantage_stats = home_field_advantage_stats[season == sn],
+                         home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                         home_field_advantage_coeff = home_field_advantage_coeff,
+                         home_grounds = home_grounds[season == sn],
                          point_spread_regression = point_spread_regression)
       # update counts
       final_eight_frequency_table[team %in% final_series_results$final_eight, count := count + 1 ]
@@ -129,7 +133,7 @@ play_single_match_and_return_winner_and_updated_elo <- function(team_1,team_2,
                                                                 ground = '',
                                                                 home_field_advantage_stats = NULL,
                                                                 home_field_advantage_adjust = FALSE,                                         
-                                                                home_field_advantage_coeff = 6,
+                                                                home_field_advantage_coeff = 15,
                                                                 point_spread_regression = NULL)
 {
   
@@ -177,132 +181,200 @@ play_finals_series <- function(finalists, elo, K, lambda,
                                scoring_method = 'classic',
                                autocorrelation_adjust = FALSE,
                                margin_of_victory_adjust = FALSE,
+                               home_field_advantage_stats = NULL,
+                               home_field_advantage_adjust = FALSE,                                         
+                               home_field_advantage_coeff = 15,
+                               home_grounds = NULL,
                                point_spread_regression = NULL)
 {
  
   elo_ratings <- elo
   
   # play QF 1
-  qf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = finalists[1,team],
-                                                                      team_2 = finalists[4,team],
-                                                                      elo_ratings = elo_ratings,
-                                                                      K = K, lambda = lambda,
-                                                                      autocorrelation_adjust = autocorrelation_adjust,
-                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
-                                                                      scoring_method = scoring_method,
-                                                                      point_spread_regression = point_spread_regression)
+  team_1 <- finalists[1,team]
+  team_2 <- finalists[4,team]
+  ground <- home_grounds[team == team_1, venue]
+  qf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
+                                                                     elo_ratings = elo_ratings,
+                                                                     K = K, lambda = lambda,
+                                                                     autocorrelation_adjust = autocorrelation_adjust,
+                                                                     margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                     scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
+                                                                     point_spread_regression = point_spread_regression)
   
-  qf1_winner <- ifelse(qf1_results$winner == 1,finalists[1,team],finalists[4,team])
-  qf1_loser <- ifelse(qf1_results$winner == 1,finalists[4,team],finalists[1,team])
+  qf1_winner <- ifelse(qf1_results$winner == 1,team_1,team_2)
+  qf1_loser <- ifelse(qf1_results$winner == 1,team_2,team_1)
   elo_ratings <- qf1_results$updated_elo_ratings
   
   
   # play QF 2
-  qf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = finalists[2,team],
-                                                                     team_2 = finalists[3,team],
+  team_1 <- finalists[2,team]
+  team_2 <- finalists[3,team]
+  ground <- home_grounds[team == team_1, venue]
+  qf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
                                                                      elo_ratings = elo_ratings,
                                                                      K = K, lambda = lambda,
                                                                      autocorrelation_adjust = autocorrelation_adjust,
                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
                                                                      scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
                                                                      point_spread_regression = point_spread_regression)
   
-  qf2_winner <- ifelse(qf2_results$winner == 1,finalists[2,team],finalists[3,team])
-  qf2_loser <- ifelse(qf2_results$winner == 1,finalists[3,team],finalists[2,team])
+  qf2_winner <- ifelse(qf2_results$winner == 1,team_1,team_2)
+  qf2_loser <- ifelse(qf2_results$winner == 1,team_2,team_1)
   elo_ratings <- qf2_results$updated_elo_ratings
   
   # play EF 1
-  ef1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = finalists[5,team],
-                                                                     team_2 = finalists[8,team],
-                                                                     elo_ratings = elo_ratings,
-                                                                     K = K, lambda = lambda,
-                                                                     autocorrelation_adjust = autocorrelation_adjust,
-                                                                     margin_of_victory_adjust = margin_of_victory_adjust,
-                                                                     scoring_method = scoring_method,
-                                                                     point_spread_regression = point_spread_regression)
+  team_1 <- finalists[5,team]
+  team_2 <- finalists[8,team]
+  ground <- home_grounds[team == team_1, venue]
+  ef1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                    team_2 = team_2,
+                                                                    elo_ratings = elo_ratings,
+                                                                    K = K, lambda = lambda,
+                                                                    autocorrelation_adjust = autocorrelation_adjust,
+                                                                    margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                    scoring_method = scoring_method,
+                                                                    ground = ground,
+                                                                    home_field_advantage_stats = home_field_advantage_stats,
+                                                                    home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                    home_field_advantage_coeff = home_field_advantage_coeff,
+                                                                    point_spread_regression = point_spread_regression)
   
-  ef1_winner <- ifelse(ef1_results$winner == 1,finalists[5,team],finalists[8,team])
+  ef1_winner <- ifelse(ef1_results$winner == 1,team_1,team_2)
   elo_ratings <- ef1_results$updated_elo_ratings
   
   
   # play EF 2
-  ef2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = finalists[6,team],
-                                                                     team_2 = finalists[7,team],
-                                                                     elo_ratings = elo_ratings,
-                                                                     K = K, lambda = lambda,
-                                                                     autocorrelation_adjust = autocorrelation_adjust,
-                                                                     margin_of_victory_adjust = margin_of_victory_adjust,
-                                                                     scoring_method = scoring_method,
-                                                                     point_spread_regression = point_spread_regression)
+  team_1 <- finalists[6,team]
+  team_2 <- finalists[7,team]
+  ground <- home_grounds[team == team_1, venue]
+  ef2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                    team_2 = team_2,
+                                                                    elo_ratings = elo_ratings,
+                                                                    K = K, lambda = lambda,
+                                                                    autocorrelation_adjust = autocorrelation_adjust,
+                                                                    margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                    scoring_method = scoring_method,
+                                                                    ground = ground,
+                                                                    home_field_advantage_stats = home_field_advantage_stats,
+                                                                    home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                    home_field_advantage_coeff = home_field_advantage_coeff,
+                                                                    point_spread_regression = point_spread_regression)
   
-  ef2_winner <- ifelse(ef2_results$winner == 1,finalists[6,team],finalists[7,team])
+  ef2_winner <- ifelse(ef2_results$winner == 1,team_1,team_2)
   elo_ratings <- ef2_results$updated_elo_ratings
   
   # play SF 1
-  sf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = qf1_loser,
-                                                                     team_2 = ef1_winner,
+  team_1 <- qf1_loser
+  team_2 <- ef1_winner
+  ground <- home_grounds[team == team_1, venue]
+  sf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
                                                                      elo_ratings = elo_ratings,
                                                                      K = K, lambda = lambda,
                                                                      autocorrelation_adjust = autocorrelation_adjust,
                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
                                                                      scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
                                                                      point_spread_regression = point_spread_regression)
   
-  sf1_winner <- ifelse(sf1_results$winner == 1,qf1_loser,ef1_winner)
+  sf1_winner <- ifelse(sf1_results$winner == 1,team_1,team_2)
   elo_ratings <- sf1_results$updated_elo_ratings
   
   # play SF 2
-  sf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = qf2_loser,
-                                                                     team_2 = ef2_winner,
+  team_1 <- qf2_loser
+  team_2 <- ef2_winner
+  ground <- home_grounds[team == team_1, venue]
+  sf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
                                                                      elo_ratings = elo_ratings,
                                                                      K = K, lambda = lambda,
                                                                      autocorrelation_adjust = autocorrelation_adjust,
                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
                                                                      scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
                                                                      point_spread_regression = point_spread_regression)
   
-  sf2_winner <- ifelse(sf2_results$winner == 1,qf2_loser,ef2_winner)
+  
+  sf2_winner <- ifelse(sf2_results$winner == 1,team_1,team_2)
   elo_ratings <- sf2_results$updated_elo_ratings
  
   # play PF 1
-  pf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = qf1_winner,
-                                                                     team_2 = sf2_winner,
+  team_1 <- qf1_winner
+  team_2 <- sf2_winner
+  ground <- home_grounds[team == team_1, venue]
+  pf1_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
                                                                      elo_ratings = elo_ratings,
                                                                      K = K, lambda = lambda,
                                                                      autocorrelation_adjust = autocorrelation_adjust,
                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
                                                                      scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
                                                                      point_spread_regression = point_spread_regression)
   
-  pf1_winner <- ifelse(pf1_results$winner == 1,qf1_winner,sf2_winner)
+  pf1_winner <- ifelse(pf1_results$winner == 1,team_1,team_2)
   elo_ratings <- pf1_results$updated_elo_ratings
   
   
   # play PF 2
-  pf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = qf2_winner,
-                                                                     team_2 = sf1_winner,
+  team_1 <- qf2_winner
+  team_2 <- sf1_winner
+  ground <- home_grounds[team == team_1, venue]
+  pf2_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                     team_2 = team_2,
                                                                      elo_ratings = elo_ratings,
                                                                      K = K, lambda = lambda,
                                                                      autocorrelation_adjust = autocorrelation_adjust,
                                                                      margin_of_victory_adjust = margin_of_victory_adjust,
                                                                      scoring_method = scoring_method,
+                                                                     ground = ground,
+                                                                     home_field_advantage_stats = home_field_advantage_stats,
+                                                                     home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                     home_field_advantage_coeff = home_field_advantage_coeff,
                                                                      point_spread_regression = point_spread_regression)
   
-  pf2_winner <- ifelse(pf2_results$winner == 1,qf2_winner,sf1_winner)
+  pf2_winner <- ifelse(pf2_results$winner == 1,team_1,team_2)
   elo_ratings <- pf2_results$updated_elo_ratings
   
   
   # play GF
-  gf_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = pf1_winner,
-                                                                     team_2 = pf2_winner,
-                                                                     elo_ratings = elo_ratings,
-                                                                     K = K, lambda = lambda,
-                                                                     autocorrelation_adjust = autocorrelation_adjust,
-                                                                     margin_of_victory_adjust = margin_of_victory_adjust,
-                                                                     scoring_method = scoring_method,
-                                                                     point_spread_regression = point_spread_regression)
+  team_1 <- pf1_winner
+  team_2 <- pf2_winner
+  ground <- 'M.C.G.'
+  gf_results <- play_single_match_and_return_winner_and_updated_elo(team_1 = team_1,
+                                                                    team_2 = team_2,
+                                                                    elo_ratings = elo_ratings,
+                                                                    K = K, lambda = lambda,
+                                                                    autocorrelation_adjust = autocorrelation_adjust,
+                                                                    margin_of_victory_adjust = margin_of_victory_adjust,
+                                                                    scoring_method = scoring_method,
+                                                                    ground = ground,
+                                                                    home_field_advantage_stats = home_field_advantage_stats,
+                                                                    home_field_advantage_adjust = home_field_advantage_adjust,                                         
+                                                                    home_field_advantage_coeff = home_field_advantage_coeff,
+                                                                    point_spread_regression = point_spread_regression)
   
-  gf_winner <- ifelse(gf_results$winner == 1,pf1_winner,pf2_winner)
+  gf_winner <- ifelse(gf_results$winner == 1,team_1,team_2)
   elo_ratings <- gf_results$updated_elo_ratings
   
   results <- list( final_eight = finalists$team,

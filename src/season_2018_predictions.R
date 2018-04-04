@@ -13,9 +13,9 @@ margin_of_victory_adjust <- TRUE
 home_field_advantage_adjust <- TRUE
 scoring_method <- 'classic'
 point_spread_regression <- NULL
-n_sim_tournaments <- 20
+n_sim_tournaments <- 300
 reg_to_mean_factor <- 0.75
-home_field_advantage_coeff <- 6
+home_field_advantage_coeff <- 15
 
 
 # calculate elo by using the data after 2016 ----------------------------------------
@@ -74,7 +74,7 @@ ggsave(paste0('2018_premiership_prob_after_',matches_so_far,'_matches.pdf'))
 
 
 
-# round 2 match predictions -----------------------------------------------
+# round 3 match predictions -----------------------------------------------
 
 simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results = results, initial_elo_ratings = initial_elo_ratings,
                                                                       home_field_advantage_stats = hfa_helper_dataset,
@@ -85,71 +85,30 @@ simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results = 
                                                                       home_field_advantage_adjust = home_field_advantage_adjust,                                         
                                                                       home_field_advantage_coeff = home_field_advantage_coeff,
                                                                       reg_to_mean_factor = reg_to_mean_factor)
-
-
-elo_diff <- updated_elo_ratings[team=='Adelaide',elo] - updated_elo_ratings[team=='Richmond',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -14.18807 
-
-
-elo_diff <- updated_elo_ratings[team=='North Melbourne',elo] - updated_elo_ratings[team=='St Kilda',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -20.31522
-
-
-elo_diff <- updated_elo_ratings[team=='Carlton',elo] - updated_elo_ratings[team=='Gold Coast',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 0.4718978
-
-
-
-elo_diff <- updated_elo_ratings[team=='Collingwood',elo] - updated_elo_ratings[team=='Greater Western Sydney',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -20.1379 
-
-
-
-elo_diff <- updated_elo_ratings[team=='Brisbane Lions',elo] - updated_elo_ratings[team=='Melbourne',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -23.78697
-
-
-elo_diff <- updated_elo_ratings[team=='Fremantle',elo] - updated_elo_ratings[team=='Essendon',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -27.55141
-
-
-
-elo_diff <- updated_elo_ratings[team=='Western Bulldogs',elo] - updated_elo_ratings[team=='West Coast',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # -6.040386
-
-
-
-elo_diff <- updated_elo_ratings[team=='Sydney',elo] - updated_elo_ratings[team=='Port Adelaide',elo]
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 10.76364
-
-
 sn <- 2018
-t1 <- 'Geelong'
-t2 <-  'Hawthorn'
-ground <- schedules[season == sn & round == 'Round 2'  & team1 == t1 & team2 == t2, venue]
-num_matches_team1 <- hfa_helper_dataset[season == sn & team == t1 & venue == ground,
-                                                num_past_matches]
-num_matches_team2 <- hfa_helper_dataset[season == sn & team == t2 & venue == ground,
-                                                num_past_matches]
-home_field_advantage <- home_field_advantage_coeff*(log(1+num_matches_team1)-log(1+num_matches_team2))
-elo_diff <- updated_elo_ratings[team==t1,elo] - updated_elo_ratings[team==t2,elo] + home_field_advantage
-p <- 1/(1+10^(-elo_diff/lambda))
-logit_p <- log(p/(1-p))
-predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) # 8.986679
+rnd <- 'Round 3'
 
+schedule_for_the_round <- schedules[season == sn & round == rnd]
+round_prediction <- data.table(team1 = character(0), team2 = character(0), 
+                               venue = character(0), margin = numeric(0))
+for (match in 1:nrow(schedule_for_the_round)) {
+  
+  team_1 <- schedule_for_the_round[match,team1]
+  team_2 <-  schedule_for_the_round[match,team2]
+  ground <- schedules[season == sn & round == rnd & team1 == team_1 & team2 == team_2, venue]
+  num_past_matches_team_1 <- hfa_helper_dataset[season == sn & venue == ground & team == team_1, num_past_matches]
+  num_past_matches_team_2 <- hfa_helper_dataset[season == sn & venue == ground & team == team_2, num_past_matches]
+  home_field_advantage <- home_field_advantage_coeff*(log(1+num_past_matches_team_1)-log(1+num_past_matches_team_2))
+  elo_diff <- updated_elo_ratings[team==team_1,elo] - updated_elo_ratings[team==team_2,elo] 
+  if (home_field_advantage_adjust) {
+    elo_diff <- elo_diff + home_field_advantage
+  }
+  p <- 1/(1+10^(-elo_diff/lambda))
+  logit_p <- log(p/(1-p))
+  margin <- predict.lm(simple_logit_point_spread_fit, newdata = data.table(logit_p = logit_p)) 
+  
+  round_prediction <- rbind(round_prediction, data.table(team1 = team_1, team2 = team_2,
+                                                         venue = ground, margin = margin))
+}
+
+round_prediction
