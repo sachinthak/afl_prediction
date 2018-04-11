@@ -13,7 +13,7 @@ margin_of_victory_adjust <- TRUE
 home_field_advantage_adjust <- TRUE
 scoring_method <- 'classic'
 point_spread_regression <- NULL
-n_sim_tournaments <- 300
+n_sim_tournaments <- 2000
 reg_to_mean_factor <- 0.75
 home_field_advantage_coeff <- 15
 
@@ -39,6 +39,7 @@ updated_elo_ratings <- return_elo_scores(results = results,
                                          home_field_advantage_coeff = home_field_advantage_coeff,
                                          scoring_method = scoring_method)
 
+updated_elo_ratings <- updated_elo_ratings$ratings
 
 # simulate 2018 season ----------------------------------------------------
 
@@ -74,7 +75,7 @@ ggsave(paste0('2018_premiership_prob_after_',matches_so_far,'_matches.pdf'))
 
 
 
-# round 3 match predictions -----------------------------------------------
+# round 4 match predictions -----------------------------------------------
 
 simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results = results, initial_elo_ratings = initial_elo_ratings,
                                                                       home_field_advantage_stats = hfa_helper_dataset,
@@ -86,7 +87,7 @@ simple_logit_point_spread_fit <- simple_logit_point_spread_regression(results = 
                                                                       home_field_advantage_coeff = home_field_advantage_coeff,
                                                                       reg_to_mean_factor = reg_to_mean_factor)
 sn <- 2018
-rnd <- 'Round 3'
+rnd <- 'Round 4'
 
 schedule_for_the_round <- schedules[season == sn & round == rnd]
 round_prediction <- data.table(team1 = character(0), team2 = character(0), 

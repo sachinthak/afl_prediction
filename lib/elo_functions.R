@@ -78,7 +78,7 @@ update_elo <- function(elo_rating_1, elo_rating_2,
   return(elo_scores)
 }
 
-# return the elo ratings after  game results
+# return the elo ratings after  game results and also some performance metrics
 return_elo_scores <- function(results, initial_ratings, 
                               home_field_advantage_stats = NULL, K, lambda,
                               autocorrelation_adjust = FALSE,
@@ -89,7 +89,8 @@ return_elo_scores <- function(results, initial_ratings,
                               reg_to_mean_factor = 0.75)
 {
   ratings <- copy(initial_ratings)
-  seasons <- sort(results[,unique(season)])
+  seasons <- sort(results[,unique(season)]) 
+  num_success_predictions <- 0
   for (sn in seasons){
         season_results <- results[season == sn]
         n_games <-  nrow(season_results)
@@ -132,7 +133,12 @@ return_elo_scores <- function(results, initial_ratings,
           
           ratings[team == team_1, elo := updated_elo[1]]
           ratings[team == team_2, elo := updated_elo[2]]
+          
+          # keep track of the successful predictions for performance tuning
+          if ((elo_team_1-elo_team_2)*(score_1-score_2) >= 0){
+            num_success_predictions <- num_success_predictions + 1
+          }
         }  
   }
-  return(ratings)
+  return(list(ratings = ratings, head_to_head_accuracy = num_success_predictions/nrow(results)))
 }
