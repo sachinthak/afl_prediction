@@ -1,5 +1,5 @@
-library(ProjectTemplate)
-load.project()
+#library(ProjectTemplate)
+#load.project()
 
 expert_tips_cpy <- copy(expert_tips)
 tipster_scores <- unique(expert_tips_cpy[, .(season,round,tipster,tipster_score)])
