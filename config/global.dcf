@@ -8,7 +8,7 @@ munging: TRUE
 logging: FALSE
 logging_level: INFO
 load_libraries: TRUE
-libraries: data.table, ggplot2, stringr, lubridate, rvest
+libraries: data.table, ggplot2, stringr, lubridate, rvest, rstan
 as_factors: TRUE
 data_tables: FALSE
 attach_internal_libraries: FALSE

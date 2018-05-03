@@ -1,3 +1,5 @@
+library(ProjectTemplate)
+load.project()
 
 # analyse different model performances ------------------------------------
 
@@ -5,7 +7,7 @@ retro_score_cpy <- copy(retro_scores)
 
 # merge results to evaluate
 retro_score_cpy[, season := as.numeric(season)]
-retro_score_cpy <- past_results[retro_score_cpy, on = .(season,round,team1,team2)]
+retro_score_cpy <- past_results[retro_score_cpy, on = .(season,round,team1,team2), nomatch = 0]
 
 # convert prob to 1 or 0 
 retro_score_cpy[, team1_tipped := ifelse(team1_win_prob > .5,1,-1)]

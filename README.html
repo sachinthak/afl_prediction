@@ -121,20 +121,53 @@ $(document).ready(function () {
 </div>
 
 
-<div id="afl_prediction" class="section level1">
-<h1>afl_prediction</h1>
-<p>Welcome to ProjectTemplate!</p>
-<p>This file introduces you to ProjectTemplate, but you should eventually replace the contents of this file with an introduction to your project. People who work with your data in the future will thank you for it, including your future self.</p>
-<p>ProjectTemplate is an R package that helps you organize your statistical analysis projects. Since you’re reading this file, we’ll assume that you’ve already called <code>create.project()</code> to set up this project and all of its contents.</p>
-<p>To load your new project, you’ll first need to <code>setwd()</code> into the directory where this README file is located. Then you need to run the following two lines of R code:</p>
-<pre><code>library('ProjectTemplate')
-load.project()</code></pre>
-<p>After you enter the second line of code, you’ll see a series of automated messages as ProjectTemplate goes about doing its work. This work involves: * Reading in the global configuration file contained in <code>config</code>. * Loading any R packages you listed in he configuration file. * Reading in any datasets stored in <code>data</code> or <code>cache</code>. * Preprocessing your data using the files in the <code>munge</code> directory.</p>
-<p>Once that’s done, you can execute any code you’d like. For every analysis you create, we’d recommend putting a separate file in the <code>src</code> directory. If the files start with the two lines mentioned above:</p>
-<pre><code>library('ProjectTemplate')
-load.project()</code></pre>
-<p>You’ll have access to all of your data, already fully preprocessed, and all of the libraries you want to use.</p>
-<p>For more details about ProjectTemplate, see <a href="http://projecttemplate.net" class="uri">http://projecttemplate.net</a></p>
+<div id="main-data-sources" class="section level1">
+<h1>Main data sources</h1>
+<ul>
+<li>AFL tables for the past results <a href="https://afltables.com/afl/afl_index.html" class="uri">https://afltables.com/afl/afl_index.html</a></li>
+<li>current schedule from <a href="https://fixturedownload.com" class="uri">https://fixturedownload.com</a></li>
+<li>Expert tipster data from Herald Sun</li>
+</ul>
+</div>
+<div id="updating-the-model-data-weekly" class="section level1">
+<h1>Updating the model data weekly</h1>
+<ul>
+<li>Download the csv file from <a href="https://fixturedownload.com" class="uri">https://fixturedownload.com</a> and copy it to the data folder. Filename looks like afl.2018.AUSEasternStandardTime</li>
+<li>Get the herald sun expert tipsters data
+<ul>
+<li>Edit the download_expert_tips_run_script.R in src folder and add the new link and edit the round and link_str.</li>
+<li>Run the script and make sure that the expert_tips variable looks OK. The script would save the results to an RDS file.</li>
+</ul></li>
+<li>Run clear.cache() and (re)run
+<ul>
+<li>library(ProjectTemplate)</li>
+<li>load project()</li>
+</ul></li>
+</ul>
+</div>
+<div id="run-retro-analysis-for-the-previous-rounds" class="section level1">
+<h1>Run retro analysis for the previous rounds</h1>
+<ul>
+<li>Run src/reto_score_weighted_expert_tips.R</li>
+<li>Run src/retro_score_simple_elo.R (make sure to update the round to the most recent completed round)</li>
+<li>Run the ensemble models
+<ul>
+<li>logistic: Run src/retro_score_ensemble_logistic.R after editing the round</li>
+<li>Bayesian: Run src/retro_score_ensemble_bayesian.R after editing the round</li>
+</ul></li>
+</ul>
+</div>
+<div id="plot-graphs-to-compare-different-models-for-the-current-season" class="section level1">
+<h1>Plot graphs to compare different models for the current season</h1>
+<ul>
+<li>Run profiling/compare_models_historical_head_to_head.R</li>
+</ul>
+</div>
+<div id="run-the-predictions-for-the-current-round" class="section level1">
+<h1>Run the predictions for the current round</h1>
+<ul>
+<li>Run src/season_2018_predictions.R after editing the round</li>
+</ul>
 </div>
 
 

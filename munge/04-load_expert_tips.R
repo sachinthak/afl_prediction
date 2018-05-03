@@ -1,6 +1,6 @@
 # load expert tips that was previously downloaded -------------------------
 
-files <- list.files('data/',pattern = 'expert_tips.*.RDS')
+files <- list.files('data/',pattern = '^expert_tips.*.RDS')
 expert_tips <- rbindlist(lapply(files, function(file){readRDS(paste0('data/',file))}))
 
 

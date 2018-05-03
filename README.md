@@ -1,39 +1,31 @@
-# afl_prediction
 
-Welcome to ProjectTemplate!
+# Main data sources
 
-This file introduces you to ProjectTemplate, but you should eventually replace
-the contents of this file with an introduction to your project. People who
-work with your data in the future will thank you for it, including your future
-self.
+- AFL tables for the past results https://afltables.com/afl/afl_index.html
+- current schedule from https://fixturedownload.com
+- Expert tipster data from Herald Sun
 
-ProjectTemplate is an R package that helps you organize your statistical
-analysis projects. Since you're reading this file, we'll assume that you've
-already called `create.project()` to set up this project and all of its
-contents.
 
-To load your new project, you'll first need to `setwd()` into the directory
-where this README file is located. Then you need to run the following two
-lines of R code:
+# Updating the model data weekly
 
-	library('ProjectTemplate')
-	load.project()
+- Download the csv file from https://fixturedownload.com and copy it to the data folder. Filename looks like afl.2018.AUSEasternStandardTime
+- Get the herald sun expert tipsters data
+    - Edit the download_expert_tips_run_script.R in src folder and add the new link and edit the round and link_str. 
+    - Run the script and make sure that the expert_tips variable looks OK. The script would save the results to an RDS file.
+- Run clear.cache() and (re)run 
+    - library(ProjectTemplate)
+    - load project()
 
-After you enter the second line of code, you'll see a series of automated
-messages as ProjectTemplate goes about doing its work. This work involves:
-* Reading in the global configuration file contained in `config`.
-* Loading any R packages you listed in he configuration file.
-* Reading in any datasets stored in `data` or `cache`.
-* Preprocessing your data using the files in the `munge` directory.
 
-Once that's done, you can execute any code you'd like. For every analysis
-you create, we'd recommend putting a separate file in the `src` directory.
-If the files start with the two lines mentioned above:
+# Run retro analysis for the previous rounds
+ - Run src/reto_score_weighted_expert_tips.R
+ - Run src/retro_score_simple_elo.R (make sure to update the round to the most recent completed round)
+ - Run the ensemble models
+    - logistic: Run src/retro_score_ensemble_logistic.R after editing the round
+    - Bayesian: Run src/retro_score_ensemble_bayesian.R after editing the round
+    
+# Plot graphs to compare different models for the current season
+  - Run profiling/compare_models_historical_head_to_head.R
 
-	library('ProjectTemplate')
-	load.project()
-
-You'll have access to all of your data, already fully preprocessed, and
-all of the libraries you want to use.
-
-For more details about ProjectTemplate, see http://projecttemplate.net
+# Run the predictions for the current round 
+  - Run src/season_2018_predictions.R after editing the round

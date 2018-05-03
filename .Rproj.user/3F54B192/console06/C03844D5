@@ -1,455 +1,4 @@
-]0;~/my_stuff/current work/afl_prediction[?1034hSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ mv[K[Kmv data /schedules.RDS data/schedules.RDS [K[K[K[Krds
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ mv data /past_results.RDS data/past_results.RDS [K[K[K[Krds
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ ls
-README.html          [1m[34mdata[39;49m[0m                 [1m[34mmunge[39;49m[0m
-README.md            [1m[34mdiagnostics[39;49m[0m          [1m[34mprofiling[39;49m[0m
-TODO                 [1m[34mdocs[39;49m[0m                 [1m[34mreports[39;49m[0m
-afl_prediction.Rproj [1m[34mgraphs[39;49m[0m               [1m[34msrc[39;49m[0m
-[1m[34mcache[39;49m[0m                [1m[34mlib[39;49m[0m                  [1m[34mtests[39;49m[0m
-[1m[34mconfig[39;49m[0m               [1m[34mlogs[39;49m[0m
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git n[Kini t
-Initialized empty Git repository in /Users/sachintha/my_stuff/current work/afl_prediction/.git/
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ oast[K[K[K[Kpast_re sults
-bash: past_results: command not found
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
 
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.Rproj.user/[m
-	[31mREADME.html[m
-	[31mREADME.md[m
-	[31mTODO[m
-	[31mafl_prediction.Rproj[m
-	[31mcache/[m
-	[31mconfig/[m
-	[31mdata/[m
-	[31mdiagnostics/[m
-	[31mdocs/[m
-	[31mgraphs/[m
-	[31mlib/[m
-	[31mlogs/[m
-	[31mmunge/[m
-	[31mprofiling/[m
-	[31mreports/[m
-	[31msrc/[m
-	[31mtests/[m
-
-nothing added to commit but untracked files present (use "git add" to track)
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sho w remotes
-fatal: ambiguous argument 'remotes': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]'
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem otes
-git: 'remotes' is not a git command. See 'git --help'.
-
-The most similar command is
-	remote
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote -b
-error: unknown switch `b'
-usage: git remote [-v | --verbose]
-   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
-   or: git remote rename <old> <new>
-   or: git remote remove <name>
-   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
-   or: git remote [-v | --verbose] show [-n] <name>
-   or: git remote prune [-n | --dry-run] <name>
-   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
-   or: git remote set-branches [--add] <name> <branch>...
-   or: git remote get-url [--push] [--all] <name>
-   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
-   or: git remote set-url --add <name> <newurl>
-   or: git remote set-url --delete <name> <url>
-
-    -v, --verbose         be verbose; must be placed before a subcommand
-
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git remoote -b[Kv
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git rem ote add origin git@bitbucket.org:sachintha/afl_prediction.git
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git log [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg
-fatal: your current branch 'master' does not have any commits yet
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git a[K[K[K[K[Kls
-README.html          [1m[34mdata[39;49m[0m                 [1m[34mmunge[39;49m[0m
-README.md            [1m[34mdiagnostics[39;49m[0m          [1m[34mprofiling[39;49m[0m
-TODO                 [1m[34mdocs[39;49m[0m                 [1m[34mreports[39;49m[0m
-afl_prediction.Rproj [1m[34mgraphs[39;49m[0m               [1m[34msrc[39;49m[0m
-[1m[34mcache[39;49m[0m                [1m[34mlib[39;49m[0m                  [1m[34mtests[39;49m[0m
-[1m[34mconfig[39;49m[0m               [1m[34mlogs[39;49m[0m
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  .
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git s[Klog [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kg
-fatal: your current branch 'master' does not have any commits yet
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-	[32mnew file:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[32mnew file:   .Rproj.user/3F54B192/console06/C03844D5.env[m
-	[32mnew file:   .Rproj.user/3F54B192/console06/INDEX001[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/1CA329EC[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/24AC79FB[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/44FB177A[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/54328B27[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/638C9761[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/6777419E[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/85785B7D[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/A6DC05C2[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/DB31BD33[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/EC8D6F29[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/EE9337EB[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/FC823608[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/prop/INDEX[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
-	[32mnew file:   .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
-	[32mnew file:   .Rproj.user/shared/notebooks/patch-chunk-names[m
-	[32mnew file:   .Rproj.user/shared/notebooks/paths[m
-	[32mnew file:   README.html[m
-	[32mnew file:   README.md[m
-	[32mnew file:   TODO[m
-	[32mnew file:   afl_prediction.Rproj[m
-	[32mnew file:   cache/README.md[m
-	[32mnew file:   config/README.md[m
-	[32mnew file:   config/global.dcf[m
-	[32mnew file:   data/README.md[m
-	[32mnew file:   data/past_results.rds[m
-	[32mnew file:   data/schedules.rds[m
-	[32mnew file:   diagnostics/1.R[m
-	[32mnew file:   diagnostics/README.md[m
-	[32mnew file:   docs/README.md[m
-	[32mnew file:   graphs/README.md[m
-	[32mnew file:   lib/README.md[m
-	[32mnew file:   lib/elo_functions.R[m
-	[32mnew file:   lib/globals.R[m
-	[32mnew file:   lib/helpers.R[m
-	[32mnew file:   logs/README.md[m
-	[32mnew file:   munge/01-A.R[m
-	[32mnew file:   munge/README.md[m
-	[32mnew file:   profiling/1.R[m
-	[32mnew file:   profiling/README.md[m
-	[32mnew file:   reports/README.md[m
-	[32mnew file:   src/README.md[m
-	[32mnew file:   src/main.R[m
-	[32mnew file:   src/scrape_afl_tables.R[m
-	[32mnew file:   tests/1.R[m
-	[32mnew file:   tests/README.md[m
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git a[Kco, m[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm mit -m 'initial commit'
-[master (root-commit) b6d3f99] initial commit
- 80 files changed, 1083 insertions(+)
- create mode 100644 .Rproj.user/3F54B192/console06/C03844D5
- create mode 100644 .Rproj.user/3F54B192/console06/C03844D5.env
- create mode 100644 .Rproj.user/3F54B192/console06/INDEX001
- create mode 100644 .Rproj.user/3F54B192/sources/prop/1CA329EC
- create mode 100644 .Rproj.user/3F54B192/sources/prop/24AC79FB
- create mode 100644 .Rproj.user/3F54B192/sources/prop/2DBC1606
- create mode 100644 .Rproj.user/3F54B192/sources/prop/44FB177A
- create mode 100644 .Rproj.user/3F54B192/sources/prop/54328B27
- create mode 100644 .Rproj.user/3F54B192/sources/prop/638C9761
- create mode 100644 .Rproj.user/3F54B192/sources/prop/6777419E
- create mode 100644 .Rproj.user/3F54B192/sources/prop/85785B7D
- create mode 100644 .Rproj.user/3F54B192/sources/prop/9C1C5578
- create mode 100644 .Rproj.user/3F54B192/sources/prop/A2FD72A7
- create mode 100644 .Rproj.user/3F54B192/sources/prop/A6DC05C2
- create mode 100644 .Rproj.user/3F54B192/sources/prop/D378A54B
- create mode 100644 .Rproj.user/3F54B192/sources/prop/DB31BD33
- create mode 100644 .Rproj.user/3F54B192/sources/prop/EC8D6F29
- create mode 100644 .Rproj.user/3F54B192/sources/prop/EE9337EB
- create mode 100644 .Rproj.user/3F54B192/sources/prop/FC823608
- create mode 100644 .Rproj.user/3F54B192/sources/prop/INDEX
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents
- create mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/lock_file
- create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
- create mode 100644 .Rproj.user/shared/notebooks/paths
- create mode 100644 README.html
- create mode 100644 README.md
- create mode 100644 TODO
- create mode 100644 afl_prediction.Rproj
- create mode 100644 cache/README.md
- create mode 100644 config/README.md
- create mode 100644 config/global.dcf
- create mode 100644 data/README.md
- create mode 100644 data/past_results.rds
- create mode 100644 data/schedules.rds
- create mode 100644 diagnostics/1.R
- create mode 100644 diagnostics/README.md
- create mode 100644 docs/README.md
- create mode 100644 graphs/README.md
- create mode 100644 lib/README.md
- create mode 100644 lib/elo_functions.R
- create mode 100644 lib/globals.R
- create mode 100644 lib/helpers.R
- create mode 100644 logs/README.md
- create mode 100644 munge/01-A.R
- create mode 100644 munge/README.md
- create mode 100644 profiling/1.R
- create mode 100644 profiling/README.md
- create mode 100644 reports/README.md
- create mode 100644 src/README.md
- create mode 100644 src/main.R
- create mode 100644 src/scrape_afl_tables.R
- create mode 100644 tests/1.R
- create mode 100644 tests/README.md
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pus h -u origin master
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-git@bitbucket.org: Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pushh -u origin master
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-git@bitbucket.org: Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pushh -u origin master
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Counting objects: 70, done.
-Delta compression using up to 4 threads.
-Compressing objects:   1% (1/59)   Compressing objects:   3% (2/59)   Compressing objects:   5% (3/59)   Compressing objects:   6% (4/59)   Compressing objects:   8% (5/59)   Compressing objects:  10% (6/59)   Compressing objects:  11% (7/59)   Compressing objects:  13% (8/59)   Compressing objects:  15% (9/59)   Compressing objects:  16% (10/59)   Compressing objects:  18% (11/59)   Compressing objects:  20% (12/59)   Compressing objects:  22% (13/59)   Compressing objects:  23% (14/59)   Compressing objects:  25% (15/59)   Compressing objects:  27% (16/59)   Compressing objects:  28% (17/59)   Compressing objects:  30% (18/59)   Compressing objects:  32% (19/59)   Compressing objects:  33% (20/59)   Compressing objects:  35% (21/59)   Compressing objects:  37% (22/59)   Compressing objects:  38% (23/59)   Compressing objects:  40% (24/59)   Compressing objects:  42% (25/59)   Compressing objects:  44% (26/59)   Compressing objects:  45% (27/59)   Compressing objects:  47% (28/59)   Compressing objects:  49% (29/59)   Compressing objects:  50% (30/59)   Compressing objects:  52% (31/59)   Compressing objects:  54% (32/59)   Compressing objects:  55% (33/59)   Compressing objects:  57% (34/59)   Compressing objects:  59% (35/59)   Compressing objects:  61% (36/59)   Compressing objects:  62% (37/59)   Compressing objects:  64% (38/59)   Compressing objects:  66% (39/59)   Compressing objects:  67% (40/59)   Compressing objects:  69% (41/59)   Compressing objects:  71% (42/59)   Compressing objects:  72% (43/59)   Compressing objects:  74% (44/59)   Compressing objects:  76% (45/59)   Compressing objects:  77% (46/59)   Compressing objects:  79% (47/59)   Compressing objects:  81% (48/59)   Compressing objects:  83% (49/59)   Compressing objects:  84% (50/59)   Compressing objects:  86% (51/59)   Compressing objects:  88% (52/59)   Compressing objects:  89% (53/59)   Compressing objects:  91% (54/59)   Compressing objects:  93% (55/59)   Compressing objects:  94% (56/59)   Compressing objects:  96% (57/59)   Compressing objects:  98% (58/59)   Compressing objects: 100% (59/59)   Compressing objects: 100% (59/59), done.
-Writing objects:   1% (1/70)   Writing objects:   2% (2/70)   Writing objects:   4% (3/70)   Writing objects:   5% (4/70)   Writing objects:   7% (5/70)   Writing objects:   8% (6/70)   Writing objects:  10% (7/70)   Writing objects:  11% (8/70)   Writing objects:  12% (9/70)   Writing objects:  14% (10/70)   Writing objects:  15% (11/70)   Writing objects:  17% (12/70)   Writing objects:  18% (13/70)   Writing objects:  20% (14/70)   Writing objects:  21% (15/70)   Writing objects:  22% (16/70)   Writing objects:  24% (17/70)   Writing objects:  25% (18/70)   Writing objects:  27% (19/70)   Writing objects:  28% (20/70)   Writing objects:  30% (21/70)   Writing objects:  31% (22/70)   Writing objects:  32% (23/70)   Writing objects:  34% (24/70)   Writing objects:  35% (25/70)   Writing objects:  37% (26/70)   Writing objects:  38% (27/70)   Writing objects:  40% (28/70)   Writing objects:  41% (29/70)   Writing objects:  42% (30/70)   Writing objects:  44% (31/70)   Writing objects:  47% (33/70)   Writing objects:  48% (34/70)   Writing objects:  50% (35/70)   Writing objects:  51% (36/70)   Writing objects:  52% (37/70)   Writing objects:  54% (38/70)   Writing objects:  55% (39/70)   Writing objects:  57% (40/70)   Writing objects:  58% (41/70)   Writing objects:  60% (42/70)   Writing objects:  61% (43/70)   Writing objects:  62% (44/70)   Writing objects:  64% (45/70)   Writing objects:  65% (46/70)   Writing objects:  67% (47/70)   Writing objects:  68% (48/70)   Writing objects:  70% (49/70)   Writing objects:  71% (50/70)   Writing objects:  72% (51/70)   Writing objects:  74% (52/70)   Writing objects:  75% (53/70)   Writing objects:  77% (54/70)   Writing objects:  78% (55/70)   Writing objects:  80% (56/70)   Writing objects:  81% (57/70)   Writing objects:  82% (58/70)   Writing objects:  84% (59/70)   Writing objects:  85% (60/70)   Writing objects:  87% (61/70)   Writing objects:  88% (62/70)   Writing objects:  90% (63/70)   Writing objects:  91% (64/70)   Writing objects:  92% (65/70)   Writing objects:  94% (66/70)   Writing objects:  95% (67/70)   Writing objects:  97% (68/70)   Writing objects:  98% (69/70)   Writing objects: 100% (70/70)   Writing objects: 100% (70/70), 373.22 KiB | 2.12 MiB/s, done.
-Total 70 (delta 4), reused 0 (delta 0)
-To bitbucket.org:sachintha/afl_prediction.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-[KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
-	[31mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
-	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
-	[31mmodified:   lib/elo_functions.R[m
-	[31mmodified:   src/main.R[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.gitignore[m
-	[31mlib/simple_point_spread_regression.R[m
-	[31msimulate_tournaments.R[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  lib/simple_point_spread_regression.R
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
-	[32mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
-	[32mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
-	[32mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
-	[32mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E2E198D1-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/E3B066F1-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/EE2E8570-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/FA9D18AC-contents[m
-	[32mdeleted:    .Rproj.user/3F54B192/sources/s-35A609FF/lock_file[m
-	[32mmodified:   .Rproj.user/shared/notebooks/paths[m
-	[32mrenamed:    .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33-contents -> lib/elo_functions.R[m
-	[32mnew file:   lib/simple_point_spread_regression.R[m
-	[32mmodified:   src/main.R[m
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.gitignore[m
-	[31mlib/simulate_tournaments.R[m
-
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  lib/simulate_tournaments.R
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git com mit -m 'added a crapy[Kpy model'
-[master 9a3ae86] added a crappy model
- 39 files changed, 627 insertions(+), 310 deletions(-)
- rewrite .Rproj.user/3F54B192/console06/INDEX001 (100%)
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/1C546751-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3774BE12-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/3A5A41FB-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/435F5362-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/4A416FD7-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/5A09D8BB-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/65A4F887-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/66C1114C-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/6D7F0BD6-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/761A872B-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/7D6702CF-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/803142CC-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/8694F6FE-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/9ECBDFC3-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A695523E-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/A9B2DA4F-contents
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/B7F4EA33
- delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B
  delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/BEC42D2B-contents
  delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/CDB11BFE-contents
  delete mode 100644 .Rproj.user/3F54B192/sources/s-35A609FF/D62CF4E3-contents
@@ -910,6 +459,599 @@ Untracked files:
 	[31mcache/mismatched.venue.names.2018.hash[m
 	[31mparameter_tuning.R[m
 	[31mpremiership_prob_after_20_matches.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add -u
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add [K[K[K[K[K[K[K[Kgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[32mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[32mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[32mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[32mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[32mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[32mmodified:   lib/elo_functions.R[m
+	[32mmodified:   src/season_2018_predictions.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/parameter_tuning.R[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add pa[K[Ksrc/parameteer_tuning.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git ad[K[Kcommit -m 'pred ictions for round 4 and also getting the par[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Koptimizing the paramaters'
+[master e47862a] predictions for round 4 and also optimizing the paramaters
+ 10 files changed, 163 insertions(+), 25 deletions(-)
+ rewrite .Rproj.user/3F54B192/console06/INDEX001 (86%)
+ create mode 100644 src/parameter_tuning.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git log
+[?1h=[33mcommit e47862a56d305c46c85198f1740ea6e34fd53a1e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Wed Apr 11 22:06:46 2018 +1000[m
+[m
+    predictions for round 4 and also optimizing the paramaters[m
+[m
+[33mcommit 16b7373da3107143c250f49787f7ea7472ac1832[m[33m ([m[1;31morigin/master[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Wed Apr 4 23:44:09 2018 +1000[m
+[m
+    added home field advantage stuff to the finals series[m
+[m
+:[K[K[?1l>]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin mas ter
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mdata/expert_tips_2018_Round_1.RDS[m
+	[31mdata/expert_tips_2018_Round_2.RDS[m
+	[31mdata/expert_tips_2018_Round_3.RDS[m
+	[31mdata/expert_tips_2018_Round_4.RDS[m
+	[31mdata/expert_tips_2018_Round_5.RDS[m
+	[31mdata/param_grid.rds[m
+	[31mlib/expert_tips_download_helper.R[m
+	[31mlib/scrape_expert_tips.R[m
+	[31mmunge/03-load_parameter_tuning_results.R[m
+	[31mmunge/04-load_expert_tips.R[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/download_expert_tips_run_script.R[m
+	[31msrc/retro_score_weighted_expert_tips.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add datasr[K[K src/da[Kownload_eexpert_tips_run_script.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add data src/download_eexpert_tips_run_script.R [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[Kgit [K[K[K[K[K[K[K[K[K[K[K[K[Klib/expert_tips_dowwnload_helper.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add lib/scrape_expert_ttips.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add munge/03-load_parammeter_tuning_results.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add munge/04-load_experrt_tips.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[32mnew file:   data/expert_tips_2018_Round_1.RDS[m
+	[32mnew file:   data/expert_tips_2018_Round_2.RDS[m
+	[32mnew file:   data/expert_tips_2018_Round_3.RDS[m
+	[32mnew file:   data/expert_tips_2018_Round_4.RDS[m
+	[32mnew file:   data/expert_tips_2018_Round_5.RDS[m
+	[32mnew file:   data/param_grid.rds[m
+	[32mnew file:   lib/expert_tips_download_helper.R[m
+	[32mnew file:   lib/scrape_expert_tips.R[m
+	[32mnew file:   munge/03-load_parameter_tuning_results.R[m
+	[32mnew file:   munge/04-load_expert_tips.R[m
+	[32mnew file:   src/download_expert_tips_run_script.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/retro_score_weighted_expert_tips.R[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m 'wrote scrip s[Kts o[Kto scrape expert dat[K[K[Ktis[Kps from herals[Kd sun'
+[master 2e86f24] wrote scripts to scrape expert tips from herald sun
+ 12 files changed, 179 insertions(+), 11 deletions(-)
+ create mode 100644 data/expert_tips_2018_Round_1.RDS
+ create mode 100644 data/expert_tips_2018_Round_2.RDS
+ create mode 100644 data/expert_tips_2018_Round_3.RDS
+ create mode 100644 data/expert_tips_2018_Round_4.RDS
+ create mode 100644 data/expert_tips_2018_Round_5.RDS
+ create mode 100644 data/param_grid.rds
+ create mode 100644 lib/expert_tips_download_helper.R
+ create mode 100644 lib/scrape_expert_tips.R
+ create mode 100644 munge/03-load_parameter_tuning_results.R
+ create mode 100644 munge/04-load_expert_tips.R
+ create mode 100644 src/download_expert_tips_run_script.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit branch
+* [32mmaster[m
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin mastr[Ker
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 40, done.
+Delta compression using up to 4 threads.
+Compressing objects:   2% (1/38)   Compressing objects:   5% (2/38)   Compressing objects:   7% (3/38)   Compressing objects:  10% (4/38)   Compressing objects:  13% (5/38)   Compressing objects:  15% (6/38)   Compressing objects:  18% (7/38)   Compressing objects:  21% (8/38)   Compressing objects:  23% (9/38)   Compressing objects:  26% (10/38)   Compressing objects:  28% (11/38)   Compressing objects:  31% (12/38)   Compressing objects:  34% (13/38)   Compressing objects:  36% (14/38)   Compressing objects:  39% (15/38)   Compressing objects:  42% (16/38)   Compressing objects:  44% (17/38)   Compressing objects:  47% (18/38)   Compressing objects:  50% (19/38)   Compressing objects:  52% (20/38)   Compressing objects:  55% (21/38)   Compressing objects:  57% (22/38)   Compressing objects:  60% (23/38)   Compressing objects:  63% (24/38)   Compressing objects:  65% (25/38)   Compressing objects:  68% (26/38)   Compressing objects:  71% (27/38)   Compressing objects:  73% (28/38)   Compressing objects:  76% (29/38)   Compressing objects:  78% (30/38)   Compressing objects:  81% (31/38)   Compressing objects:  84% (32/38)   Compressing objects:  86% (33/38)   Compressing objects:  89% (34/38)   Compressing objects:  92% (35/38)   Compressing objects:  94% (36/38)   Compressing objects:  97% (37/38)   Compressing objects: 100% (38/38)   Compressing objects: 100% (38/38), done.
+Writing objects:   2% (1/40)   Writing objects:   5% (2/40)   Writing objects:   7% (3/40)   Writing objects:  10% (4/40)   Writing objects:  12% (5/40)   Writing objects:  15% (6/40)   Writing objects:  17% (7/40)   Writing objects:  20% (8/40)   Writing objects:  22% (9/40)   Writing objects:  25% (10/40)   Writing objects:  27% (11/40)   Writing objects:  30% (12/40)   Writing objects:  32% (13/40)   Writing objects:  35% (14/40)   Writing objects:  37% (15/40)   Writing objects:  40% (16/40)   Writing objects:  42% (17/40)   Writing objects:  45% (18/40)   Writing objects:  47% (19/40)   Writing objects:  50% (20/40)   Writing objects:  52% (21/40)   Writing objects:  55% (22/40)   Writing objects:  57% (23/40)   Writing objects:  60% (24/40)   Writing objects:  62% (25/40)   Writing objects:  65% (26/40)   Writing objects:  70% (28/40)   Writing objects:  72% (29/40)   Writing objects:  75% (30/40)   Writing objects:  77% (31/40)   Writing objects:  80% (32/40)   Writing objects:  82% (33/40)   Writing objects:  85% (34/40)   Writing objects:  87% (35/40)   Writing objects:  90% (36/40)   Writing objects:  92% (37/40)   Writing objects:  95% (38/40)   Writing objects:  97% (39/40)   Writing objects: 100% (40/40)   Writing objects: 100% (40/40), 24.05 KiB | 417.00 KiB/s, done.
+Total 40 (delta 18), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   16b7373..2e86f24  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mdata/retro_score_ensemble_logistic.RDS[m
+	[31mdata/retro_score_simple_elo.RDS[m
+	[31mdata/retro_score_weighted_expert_tips.RDS[m
+	[31mmunge/05-load_retro_scores.R[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31mprofiling/compare_models_historical_head_to_head.R[m
+	[31msrc/restro_score_simple_elo.R[m
+	[31msrc/retro_score_ensemble_logistic.R[m
+	[31msrc/retro_score_weighted_expert_tips.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add retro[K[K[K[K[Ksrc/retro_score_*
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add profiling/compare_mmodels_historical_head_to_head.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add munge/05-load_retroo_scores.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add ret[K[K[Kdata/retro_score_* .RDS
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   data/retro_score_ensemble_logistic.RDS[m
+	[32mnew file:   data/retro_score_simple_elo.RDS[m
+	[32mnew file:   data/retro_score_weighted_expert_tips.RDS[m
+	[32mnew file:   munge/05-load_retro_scores.R[m
+	[32mnew file:   profiling/compare_models_historical_head_to_head.R[m
+	[32mnew file:   src/retro_score_ensemble_logistic.R[m
+	[32mnew file:   src/retro_score_weighted_expert_tips.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/restro_score_simple_elo.R[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   data/retro_score_ensemble_logistic.RDS[m
+	[32mnew file:   data/retro_score_simple_elo.RDS[m
+	[32mnew file:   data/retro_score_weighted_expert_tips.RDS[m
+	[32mnew file:   munge/05-load_retro_scores.R[m
+	[32mnew file:   profiling/compare_models_historical_head_to_head.R[m
+	[32mnew file:   src/retro_score_ensemble_logistic.R[m
+	[32mnew file:   src/retro_score_weighted_expert_tips.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/retro_score_simple_elo.R[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/retro_score_si mple_elo.R 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   data/retro_score_ensemble_logistic.RDS[m
+	[32mnew file:   data/retro_score_simple_elo.RDS[m
+	[32mnew file:   data/retro_score_weighted_expert_tips.RDS[m
+	[32mnew file:   munge/05-load_retro_scores.R[m
+	[32mnew file:   profiling/compare_models_historical_head_to_head.R[m
+	[32mnew file:   src/retro_score_ensemble_logistic.R[m
+	[32mnew file:   src/retro_score_simple_elo.R[m
+	[32mnew file:   src/retro_score_weighted_expert_tips.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m 'added funca [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kct ionality to score [K[K[K[K[K[Kcompare multiple models. added an ensemble model using logistic regression' [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K'
+[master 05baba6] added functionality to compare multiple models. added an ensemble model using logistic regression
+ 8 files changed, 207 insertions(+)
+ create mode 100644 data/retro_score_ensemble_logistic.RDS
+ create mode 100644 data/retro_score_simple_elo.RDS
+ create mode 100644 data/retro_score_weighted_expert_tips.RDS
+ create mode 100644 munge/05-load_retro_scores.R
+ create mode 100644 profiling/compare_models_historical_head_to_head.R
+ create mode 100644 src/retro_score_ensemble_logistic.R
+ create mode 100644 src/retro_score_simple_elo.R
+ create mode 100644 src/retro_score_weighted_expert_tips.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 14, done.
+Delta compression using up to 4 threads.
+Compressing objects:   7% (1/14)   Compressing objects:  14% (2/14)   Compressing objects:  21% (3/14)   Compressing objects:  28% (4/14)   Compressing objects:  35% (5/14)   Compressing objects:  42% (6/14)   Compressing objects:  50% (7/14)   Compressing objects:  57% (8/14)   Compressing objects:  64% (9/14)   Compressing objects:  71% (10/14)   Compressing objects:  78% (11/14)   Compressing objects:  85% (12/14)   Compressing objects:  92% (13/14)   Compressing objects: 100% (14/14)   Compressing objects: 100% (14/14), done.
+Writing objects:   7% (1/14)   Writing objects:  14% (2/14)   Writing objects:  21% (3/14)   Writing objects:  28% (4/14)   Writing objects:  35% (5/14)   Writing objects:  42% (6/14)   Writing objects:  50% (7/14)   Writing objects:  57% (8/14)   Writing objects:  64% (9/14)   Writing objects:  71% (10/14)   Writing objects:  78% (11/14)   Writing objects:  85% (12/14)   Writing objects:  92% (13/14)   Writing objects: 100% (14/14)   Writing objects: 100% (14/14), 6.61 KiB | 211.00 KiB/s, done.
+Total 14 (delta 3), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   2e86f24..05baba6  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status[K[K[K[K[K[K[K[K[K[Kgit a[K[K status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   data/retro_score_weighted_expert_tips.RDS[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   lib/simple_point_spread_regression.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   profiling/compare_models_historical_head_to_head.R[m
+	[31mmodified:   src/download_expert_tips_run_script.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/retro_score_weighted_expert_tips.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mdata/expert_tips_2018_Round_6.RDS[m
+	[31mdata/retro_score_ensemble_bayesian.RDS[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+	[31msrc/bayesian_ensemble_fit.stan[m
+	[31msrc/retro_score_ensemble_bayesian.R[m
+	[31msrc/simulate_2018_season.R[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/simulate_2018_season.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/simulate_2018_season.R[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kretro_score_
+retro_score_ensemble_bayesian.R     retro_score_simple_elo.R            
+retro_score_ensemble_logistic.R     retro_score_weighted_expert_tips.R  
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/retro_score_*.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ gi [Kt add src/bayesian_ensemble_fit.stan 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add data/expert_tips_2018_Round_6.RDS 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add data/retro_score_ensemble_bayesian.RDS
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   data/expert_tips_2018_Round_6.RDS[m
+	[32mnew file:   data/retro_score_ensemble_bayesian.RDS[m
+	[32mnew file:   src/bayesian_ensemble_fit.stan[m
+	[32mnew file:   src/retro_score_ensemble_bayesian.R[m
+	[32mmodified:   src/retro_score_weighted_expert_tips.R[m
+	[32mnew file:   src/simulate_2018_season.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   data/retro_score_weighted_expert_tips.RDS[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   lib/simple_point_spread_regression.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   profiling/compare_models_historical_head_to_head.R[m
+	[31mmodified:   src/download_expert_tips_run_script.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git ci[Kommit -m 'added bayesian ensembling. fixd[Ked s ome bugs. aded[K[Kded round 6 predictions. refactored code. added[K[K[K[K[Kmain[K[K[K[K2018 predc[Kiction script now predicts for multiple methods '
+[master 3459f04] added bayesian ensembling. fixed some bugs. added round 6 predictions. refactored code. 2018 prediction script now predicts for multiple methods
+ 6 files changed, 180 insertions(+), 2 deletions(-)
+ create mode 100644 data/expert_tips_2018_Round_6.RDS
+ create mode 100644 data/retro_score_ensemble_bayesian.RDS
+ create mode 100644 src/bayesian_ensemble_fit.stan
+ create mode 100644 src/retro_score_ensemble_bayesian.R
+ create mode 100644 src/simulate_2018_season.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects:  10% (1/10)   Compressing objects:  20% (2/10)   Compressing objects:  30% (3/10)   Compressing objects:  40% (4/10)   Compressing objects:  50% (5/10)   Compressing objects:  60% (6/10)   Compressing objects:  70% (7/10)   Compressing objects:  80% (8/10)   Compressing objects:  90% (9/10)   Compressing objects: 100% (10/10)   Compressing objects: 100% (10/10), done.
+Writing objects:  10% (1/10)   Writing objects:  20% (2/10)   Writing objects:  30% (3/10)   Writing objects:  40% (4/10)   Writing objects:  50% (5/10)   Writing objects:  60% (6/10)   Writing objects:  70% (7/10)   Writing objects:  80% (8/10)   Writing objects:  90% (9/10)   Writing objects: 100% (10/10)   Writing objects: 100% (10/10), 4.96 KiB | 2.48 MiB/s, done.
+Total 10 (delta 4), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   05baba6..3459f04  master -> master
+[KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ g[Kget[K[K[Kgit stats[Kus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/54328B27[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   README.html[m
+	[31mmodified:   README.md[m
+	[31mmodified:   config/global.dcf[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   data/retro_score_ensemble_bayesian.RDS[m
+	[31mmodified:   data/retro_score_ensemble_logistic.RDS[m
+	[31mmodified:   data/retro_score_simple_elo.RDS[m
+	[31mmodified:   data/retro_score_weighted_expert_tips.RDS[m
+	[31mmodified:   lib/elo_functions.R[m
+	[31mmodified:   lib/simple_point_spread_regression.R[m
+	[31mmodified:   munge/04-load_expert_tips.R[m
+	[31mmodified:   profiling/compare_models_historical_head_to_head.R[m
+	[31mmodified:   src/download_expert_tips_run_script.R[m
+	[31mmodified:   src/parameter_tuning.R[m
+	[31mmodified:   src/retro_score_ensemble_bayesian.R[m
+	[31mmodified:   src/retro_score_ensemble_logistic.R[m
+	[31mmodified:   src/retro_score_simple_elo.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mdata/expert_tips_2018_Round_7.RDS[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add -u

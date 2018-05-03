@@ -18,13 +18,13 @@ home_field_advantage_coeff <- 15
 # current seasn
 sn_current <- 2018
 # how many rounds to retro score in the current seasn
-rounds_so_far <- 5
+rounds_so_far <- 6
 
 
 # calculate elo by using the data after 2016 ----------------------------------------
 
 sn_begin <- 2016
-team_list <- union(past_results[season>=sn]$team1,past_results[season>=sn_begin]$team2)
+team_list <- union(past_results[season>=sn_begin]$team1,past_results[season>=sn_begin]$team2)
 
 # get the elo ratings using previous seasons
 results <- copy(past_results[season >= sn_begin & season < sn_current])

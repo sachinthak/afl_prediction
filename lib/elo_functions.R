@@ -115,9 +115,9 @@ return_elo_scores <- function(results, initial_ratings,
           
           home_field_advantage <- 0
           if (!is.null(home_field_advantage_stats) & home_field_advantage_adjust == T){
-            num_matches_team1 <- home_field_advantage_stats[season == sn & team == team_1 & venue == ground,
+            num_matches_team1 <- home_field_advantage_stats[season == sn-1 & team == team_1 & venue == ground,
                                                             num_past_matches]
-            num_matches_team2 <- home_field_advantage_stats[season == sn & team == team_2 & venue == ground,
+            num_matches_team2 <- home_field_advantage_stats[season == sn-1 & team == team_2 & venue == ground,
                                                             num_past_matches]
             home_field_advantage <- home_field_advantage_coeff*(log(1+num_matches_team1)-log(1+num_matches_team2))
           }
