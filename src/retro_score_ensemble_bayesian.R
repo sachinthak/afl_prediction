@@ -9,7 +9,7 @@ rstan_options(auto_write = TRUE)
 # current seasn
 sn_current <- 2018
 # how many rounds to retro score in the current seasn
-rounds_so_far <- 6
+rounds_so_far <- 7
 # model names to ensemble
 ensemble_models <- c('weighted_expert_tips','simple_elo')
 
@@ -50,7 +50,7 @@ smps <- extract(stan_fit)
 theta <- apply(smps$theta,2,mean)
 
 for (rnd in 2:rounds_so_far){
-  # score the round using the most recent logistic fit
+  # score the round using the most recent bayesian  fit
   dat <- retro_score_cpy[season == sn_current & round == paste0('Round ',rnd)]
   dat[, team1_win_prob := theta[1]*simple_elo + theta[2]*weighted_expert_tips ]
   

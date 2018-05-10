@@ -1,7 +1,9 @@
 #library(ProjectTemplate)
 #load.project()
 
-expert_tips_cpy <- copy(expert_tips)
+tipsters_to_ignore <- 'KISS OF DEATH'
+expert_tips_cpy <- copy(expert_tips[!(tipster %in% tipsters_to_ignore)])
+
 tipster_scores <- unique(expert_tips_cpy[, .(season,round,tipster,tipster_score)])
 
 tipster_scores[, sum_score := sum(tipster_score), by = .(season,round)]

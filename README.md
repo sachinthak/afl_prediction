@@ -14,7 +14,7 @@
     - Run the script and make sure that the expert_tips variable looks OK. The script would save the results to an RDS file.
 - Run clear.cache() and (re)run 
     - library(ProjectTemplate)
-    - load project()
+    - load.project()
 
 
 # Run retro analysis for the previous rounds

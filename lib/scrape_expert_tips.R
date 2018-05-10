@@ -37,6 +37,7 @@ scrape_expert_tips <- function(link,
       tipped_team  <- gsub('.*>([[:alpha:]]*.*[[:alpha:]])(\\s?)([[:digit:]]*)</p.*','\\1',tip)
       tipped_margin <- gsub('.*>([[:alpha:]]*.*[[:alpha:]])(\\s?)([[:digit:]]*)</p.*','\\3',tip)
       tipped_margin <- as.numeric(tipped_margin)
+      
       scraped_result <- rbind(scraped_result,
                               data.table(tipster = tipster_name, 
                                          tipster_score = tipster_score,

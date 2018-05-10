@@ -6,7 +6,7 @@ load.project()
 # current seasn
 sn_current <- 2018
 # how many rounds to retro score in the current seasn
-rounds_so_far <- 6
+rounds_so_far <- 7
 # model names to ensemble
 ensemble_models <- c('weighted_expert_tips','simple_elo')
 

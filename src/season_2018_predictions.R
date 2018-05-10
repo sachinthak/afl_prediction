@@ -3,7 +3,7 @@ library(ProjectTemplate)
 load.project()
 
 sn <- 2018
-rnd <- 'Round 7'
+rnd <- 'Round 8'
 
 
 schedule_for_the_round <- schedules[season == sn & round == rnd]
