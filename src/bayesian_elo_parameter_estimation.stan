@@ -62,10 +62,15 @@ model{
     d = elo_diff/xi;
     logit_inv_d = 1/(1+ 10^(-d));
     
-    // modify the elo score for team 1
+    /* modify the elo score for team 1 and team 2. Will assign the modified value for all 
+    the future rounds. This is to handle the situations where some teams may not play in 
+    the imediate next rounds(s) */
     elo_delta_team1 = K*(team1_win_indictr[match]-logit_inv_d);
-    elo_score[rnd_id][team1_id] = prev_elo_team1 + elo_delta_team1;
-    elo_score[rnd_id][team2_id] = prev_elo_team2 - elo_delta_team1;
+    for (rnd in rnd_id:n_rounds){
+      elo_score[rnd][team1_id] = prev_elo_team1 + elo_delta_team1;
+      elo_score[rnd][team2_id] = prev_elo_team2 - elo_delta_team1;
+    }
+    
     
     /* increase the log probability */
     target +=  bernoulli_lpmf(team1_win_indictr[match] | logit_inv_d);
@@ -107,9 +112,13 @@ generated quantities {
     d = elo_diff/xi;
     logit_inv_d = 1/(1+ 10^(-d));
     
-    // modify the elo score for team 1
+    /* modify the elo score for team 1 and team 2. Will assign the modified value for all 
+    the future rounds. This is to handle the situations where some teams may not play in 
+    the imediate next rounds(s) */
     elo_delta_team1 = K*(team1_win_indictr[match]-logit_inv_d);
-    elo_score[rnd_id][team1_id] = prev_elo_team1 + elo_delta_team1;
-    elo_score[rnd_id][team2_id] = prev_elo_team2 - elo_delta_team1;
+    for (rnd in rnd_id:n_rounds){
+      elo_score[rnd][team1_id] = prev_elo_team1 + elo_delta_team1;
+      elo_score[rnd][team2_id] = prev_elo_team2 - elo_delta_team1;
+    }
   }
 }

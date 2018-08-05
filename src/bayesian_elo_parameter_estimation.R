@@ -22,7 +22,7 @@ team1_score <- results$score_team1
 team2_score <- results$score_team2
 team1_win_indictr <- as.numeric(team1_score >= team2_score)
 
-# assemble input data to a list for stan
+# assemble input data to a list to be passed onto stan
 input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = nrow(results),
                         n_teams = n_teams, team1_ids = as.numeric(team1_ids),
                         team2_ids = as.numeric(team2_ids), team1_win_indictr = team1_win_indictr)
@@ -35,8 +35,16 @@ fit <- stan(file = 'src/bayesian_elo_parameter_estimation.stan', data = input_li
 # do some plotting
 posterior <- as.matrix(fit)
 
-mcmc_dens(posterior, 
+mcmc_areas(posterior, 
            pars = c("xi","K"), 
            prob = 0.8) 
 
-mcmc_areas(posterior, regex_pars = "elo_score\\[[[:digit:]]+,1\\]") 
+# plot how ELO has changed for a given team
+team <- 'St Kilda'
+team_id <- which(team_list == team)
+mcmc_areas(posterior, regex_pars = paste0("elo_score\\[[[:digit:]]+,",team_id,"\\]")) 
+
+#  plot the ELO distributions for all teams as of last round
+rnd <- n_rounds
+mcmc_areas(posterior, regex_pars = paste0("elo_score\\[",n_rounds,",[[:digit:]]+\\]")) 
+

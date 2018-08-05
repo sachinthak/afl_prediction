@@ -18,7 +18,7 @@ home_field_advantage_coeff <- 15
 # current seasn
 sn_current <- 2018
 # how many rounds to retro score in the current seasn
-rounds_so_far <- 7
+rounds_so_far <- 8
 
 
 # calculate elo by using the data after 2016 ----------------------------------------

@@ -9,7 +9,8 @@
 # Updating the model data weekly
 
 - Download the csv file from https://fixturedownload.com and copy it to the data folder. Filename looks like afl.2018.AUSEasternStandardTime
-- Get the herald sun expert tipsters data
+- As of lately herald sun expert tips data is not available publicly so the following is not applicable.
+- Get the herald sun expert tipsters data (google for herald sun expert tips with the round number)
     - Edit the download_expert_tips_run_script.R in src folder and add the new link and edit the round and link_str. 
     - Run the script and make sure that the expert_tips variable looks OK. The script would save the results to an RDS file.
 - Run clear.cache() and (re)run 

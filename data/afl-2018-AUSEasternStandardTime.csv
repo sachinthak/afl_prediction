@@ -62,111 +62,111 @@ Round Number,Date,Location,Home Team,Away Team,Result
 7,06/05/2018 13:10,MCG,Richmond,Fremantle,110 - 33
 7,06/05/2018 15:20,Etihad Stadium,St Kilda,Melbourne,67 - 106
 7,06/05/2018 16:40,Gabba,Brisbane,Collingwood,114 - 121
-8,11/05/2018 19:50,MCG,Hawthorn,Sydney,
-8,12/05/2018 13:45,Spotless Stadium,GWS Giants,West Coast,
-8,12/05/2018 14:10,MCG,Carlton,Essendon,
-8,12/05/2018 16:35,Gabba,Gold Coast,Melbourne,
-8,12/05/2018 17:10,Adelaide Oval,Port Adelaide,Adelaide,
-8,12/05/2018 19:25,Etihad Stadium,Western Bulldogs,Brisbane,
-8,12/05/2018 20:10,Optus Stadium,Fremantle,St Kilda,
-8,13/05/2018 13:10,Etihad Stadium,North Melbourne,Richmond,
-8,13/05/2018 15:20,MCG,Collingwood,Geelong,
-9,18/05/2018 19:50,Adelaide Oval,Adelaide,Western Bulldogs,
-9,19/05/2018 13:45,Blundstone Arena,North Melbourne,GWS Giants,
-9,19/05/2018 15:15,"Adelaide Arena, Shanghai",Gold Coast,Port Adelaide,
-9,19/05/2018 16:35,MCG,Essendon,Geelong,
-9,19/05/2018 19:25,SCG,Sydney,Fremantle,
-9,19/05/2018 19:25,Etihad Stadium,St Kilda,Collingwood,
-9,20/05/2018 13:10,MCG,Carlton,Melbourne,
-9,20/05/2018 15:20,Gabba,Brisbane,Hawthorn,
-9,20/05/2018 16:40,Optus Stadium,West Coast,Richmond,
-10,25/05/2018 19:50,Etihad Stadium,Collingwood,Western Bulldogs,
-10,26/05/2018 13:45,MCG,Richmond,St Kilda,
-10,26/05/2018 16:35,Gabba,Brisbane,Sydney,
-10,26/05/2018 19:25,GMHBA Stadium,Geelong,Carlton,
-10,26/05/2018 19:25,Spotless Stadium,GWS Giants,Essendon,
-10,27/05/2018 13:10,Etihad Stadium,Hawthorn,West Coast,
-10,27/05/2018 15:20,TIO Traeger Park,Melbourne,Adelaide,
-10,27/05/2018 16:40,Optus Stadium,Fremantle,North Melbourne,
-11,01/06/2018 19:50,SCG,Sydney,Carlton,
-11,02/06/2018 13:45,Etihad Stadium,Western Bulldogs,Melbourne,
-11,02/06/2018 14:10,University of Tasmania Stadium,Hawthorn,Port Adelaide,
-11,02/06/2018 16:35,Metricon Stadium,Gold Coast,Geelong,
-11,02/06/2018 19:25,MCG,Essendon,Richmond,
-11,02/06/2018 20:10,Optus Stadium,West Coast,St Kilda,
-11,03/06/2018 13:10,Etihad Stadium,North Melbourne,Brisbane,
-11,03/06/2018 15:20,MCG,Collingwood,Fremantle,
-11,03/06/2018 16:40,Adelaide Oval,Adelaide,GWS Giants,
-12,08/06/2018 19:50,Adelaide Oval,Port Adelaide,Richmond,
-12,09/06/2018 13:45,GMHBA Stadium,Geelong,North Melbourne,
-12,09/06/2018 16:35,Spotless Stadium,GWS Giants,Gold Coast,
-12,09/06/2018 19:25,Etihad Stadium,St Kilda,Sydney,
-12,10/06/2018 13:10,Gabba,Brisbane,Essendon,
-12,10/06/2018 16:40,Optus Stadium,Fremantle,Adelaide,
-12,11/06/2018 15:20,MCG,Melbourne,Collingwood,
-13,14/06/2018 19:50,Adelaide Oval,Port Adelaide,Western Bulldogs,
-13,15/06/2018 19:50,SCG,Sydney,West Coast,
-13,16/06/2018 13:45,Etihad Stadium,Carlton,Fremantle,
-13,16/06/2018 16:35,Metricon Stadium,Gold Coast,St Kilda,
-13,16/06/2018 19:25,MCG,Hawthorn,Adelaide,
-13,17/06/2018 15:20,MCG,Geelong,Richmond,
-14,21/06/2018 20:10,Optus Stadium,West Coast,Essendon,
-14,22/06/2018 19:50,Adelaide Oval,Port Adelaide,Melbourne,
-14,23/06/2018 13:45,University of Tasmania Stadium,Hawthorn,Gold Coast,
-14,23/06/2018 16:35,Gabba,Brisbane,GWS Giants,
-14,23/06/2018 19:25,Etihad Stadium,Western Bulldogs,North Melbourne,
-14,24/06/2018 15:20,MCG,Collingwood,Carlton,
-15,28/06/2018 19:20,Etihad Stadium,Richmond,Sydney,
-15,29/06/2018 19:50,Etihad Stadium,Western Bulldogs,Geelong,
-15,30/06/2018 13:45,MCG,Carlton,Port Adelaide,
-15,30/06/2018 16:35,Adelaide Oval,Adelaide,West Coast,
-15,30/06/2018 19:25,Metricon Stadium,Gold Coast,Collingwood,
-15,30/06/2018 19:25,Spotless Stadium,GWS Giants,Hawthorn,
-15,01/07/2018 13:10,MCG,Melbourne,St Kilda,
-15,01/07/2018 15:20,Etihad Stadium,Essendon,North Melbourne,
-15,01/07/2018 16:40,Optus Stadium,Fremantle,Brisbane,
-16,05/07/2018 19:20,SCG,Sydney,Geelong,
-16,06/07/2018 19:50,MCG,Richmond,Adelaide,
-16,07/07/2018 13:45,Gabba,Brisbane,Carlton,
-16,07/07/2018 16:35,Adelaide Oval,Port Adelaide,St Kilda,
-16,07/07/2018 19:25,Etihad Stadium,Western Bulldogs,Hawthorn,
-16,07/07/2018 19:40,TIO Stadium,Melbourne,Fremantle,
-16,08/07/2018 13:10,Etihad Stadium,North Melbourne,Gold Coast,
-16,08/07/2018 15:20,MCG,Essendon,Collingwood,
-16,08/07/2018 16:40,Optus Stadium,West Coast,GWS Giants,
-17,12/07/2018 19:50,Adelaide Oval,Adelaide,Geelong,
-17,13/07/2018 19:50,Etihad Stadium,St Kilda,Carlton,
-17,14/07/2018 13:45,University of Tasmania Stadium,Hawthorn,Brisbane,
-17,14/07/2018 16:35,MCG,Melbourne,Western Bulldogs,
-17,14/07/2018 19:25,Metricon Stadium,Gold Coast,Essendon,
-17,14/07/2018 19:25,Spotless Stadium,GWS Giants,Richmond,
-17,15/07/2018 13:10,MCG,Collingwood,West Coast,
-17,15/07/2018 15:20,Etihad Stadium,North Melbourne,Sydney,
-17,15/07/2018 16:40,Optus Stadium,Fremantle,Port Adelaide,
-18,20/07/2018 19:50,Etihad Stadium,St Kilda,Richmond,
-18,21/07/2018 13:45,MCG,Collingwood,North Melbourne,
-18,21/07/2018 14:10,SCG,Sydney,Gold Coast,
-18,21/07/2018 16:35,Etihad Stadium,Essendon,Fremantle,
-18,21/07/2018 19:25,Gabba,Brisbane,Adelaide,
-18,21/07/2018 19:25,GMHBA Stadium,Geelong,Melbourne,
-18,22/07/2018 13:10,Etihad Stadium,Carlton,Hawthorn,
-18,22/07/2018 15:20,Optus Stadium,West Coast,Western Bulldogs,
-18,22/07/2018 16:40,Adelaide Oval,Port Adelaide,GWS Giants,
-19,27/07/2018 19:50,Etihad Stadium,Essendon,Sydney,
-19,28/07/2018 13:45,MCG,Richmond,Collingwood,
-19,28/07/2018 14:10,GMHBA Stadium,Geelong,Brisbane,
-19,28/07/2018 16:35,Spotless Stadium,GWS Giants,St Kilda,
-19,28/07/2018 19:25,Metricon Stadium,Gold Coast,Carlton,
-19,28/07/2018 19:40,Adelaide Oval,Adelaide,Melbourne,
-19,29/07/2018 13:10,Blundstone Arena,North Melbourne,West Coast,
-19,29/07/2018 15:20,Mars Stadium,Western Bulldogs,Port Adelaide,
-19,29/07/2018 16:40,Optus Stadium,Fremantle,Hawthorn,
-20,03/08/2018 19:50,MCG,Richmond,Geelong,
-20,04/08/2018 13:45,MCG,Hawthorn,Essendon,
-20,04/08/2018 14:10,Gabba,Brisbane,North Melbourne,
-20,04/08/2018 16:35,Adelaide Oval,Adelaide,Port Adelaide,
-20,04/08/2018 19:25,Etihad Stadium,St Kilda,Western Bulldogs,
-20,04/08/2018 19:25,SCG,Sydney,Collingwood,
+8,11/05/2018 19:50,MCG,Hawthorn,Sydney,71 - 79
+8,12/05/2018 13:45,Spotless Stadium,GWS Giants,West Coast,61 - 86
+8,12/05/2018 14:10,MCG,Carlton,Essendon,91 - 78
+8,12/05/2018 16:35,Gabba,Gold Coast,Melbourne,77 - 146
+8,12/05/2018 17:10,Adelaide Oval,Port Adelaide,Adelaide,95 - 90
+8,12/05/2018 19:25,Etihad Stadium,Western Bulldogs,Brisbane,107 - 93
+8,12/05/2018 20:10,Optus Stadium,Fremantle,St Kilda,89 - 59
+8,13/05/2018 13:10,Etihad Stadium,North Melbourne,Richmond,72 - 82
+8,13/05/2018 15:20,MCG,Collingwood,Geelong,45 - 66
+9,18/05/2018 19:50,Adelaide Oval,Adelaide,Western Bulldogs,63 - 26
+9,19/05/2018 13:45,Blundstone Arena,North Melbourne,GWS Giants,112 - 69
+9,19/05/2018 15:15,"Adelaide Arena, Shanghai",Gold Coast,Port Adelaide,42 - 82
+9,19/05/2018 16:35,MCG,Essendon,Geelong,84 - 50
+9,19/05/2018 19:25,SCG,Sydney,Fremantle,111 - 52
+9,19/05/2018 19:25,Etihad Stadium,St Kilda,Collingwood,72 - 100
+9,20/05/2018 13:10,MCG,Carlton,Melbourne,50 - 159
+9,20/05/2018 15:20,Gabba,Brisbane,Hawthorn,129 - 73
+9,20/05/2018 16:40,Optus Stadium,West Coast,Richmond,130 - 83
+10,25/05/2018 19:50,Etihad Stadium,Collingwood,Western Bulldogs,90 - 55
+10,26/05/2018 13:45,MCG,Richmond,St Kilda,105 - 77
+10,26/05/2018 16:35,Gabba,Brisbane,Sydney,49 - 67
+10,26/05/2018 19:25,GMHBA Stadium,Geelong,Carlton,73 - 45
+10,26/05/2018 19:25,Spotless Stadium,GWS Giants,Essendon,60 - 95
+10,27/05/2018 13:10,Etihad Stadium,Hawthorn,West Coast,60 - 75
+10,27/05/2018 15:20,TIO Traeger Park,Melbourne,Adelaide,146 - 55
+10,27/05/2018 16:40,Optus Stadium,Fremantle,North Melbourne,58 - 86
+11,01/06/2018 19:50,SCG,Sydney,Carlton,91 - 61
+11,02/06/2018 13:45,Etihad Stadium,Western Bulldogs,Melbourne,51 - 100
+11,02/06/2018 14:10,University of Tasmania Stadium,Hawthorn,Port Adelaide,64 - 61
+11,02/06/2018 16:35,Metricon Stadium,Gold Coast,Geelong,36 - 121
+11,02/06/2018 19:25,MCG,Essendon,Richmond,43 - 114
+11,02/06/2018 20:10,Optus Stadium,West Coast,St Kilda,101 - 88
+11,03/06/2018 13:10,Etihad Stadium,North Melbourne,Brisbane,141 - 87
+11,03/06/2018 15:20,MCG,Collingwood,Fremantle,138 - 77
+11,03/06/2018 16:40,Adelaide Oval,Adelaide,GWS Giants,81 - 97
+12,08/06/2018 19:50,Adelaide Oval,Port Adelaide,Richmond,72 - 58
+12,09/06/2018 13:45,GMHBA Stadium,Geelong,North Melbourne,96 - 59
+12,09/06/2018 16:35,Spotless Stadium,GWS Giants,Gold Coast,134 - 26
+12,09/06/2018 19:25,Etihad Stadium,St Kilda,Sydney,55 - 126
+12,10/06/2018 13:10,Gabba,Brisbane,Essendon,62 - 84
+12,10/06/2018 16:40,Optus Stadium,Fremantle,Adelaide,71 - 68
+12,11/06/2018 15:20,MCG,Melbourne,Collingwood,91 - 133
+13,14/06/2018 19:50,Adelaide Oval,Port Adelaide,Western Bulldogs,132 - 75
+13,15/06/2018 19:50,SCG,Sydney,West Coast,72 - 57
+13,16/06/2018 13:45,Etihad Stadium,Carlton,Fremantle,46 - 103
+13,16/06/2018 16:35,Metricon Stadium,Gold Coast,St Kilda,78 - 80
+13,16/06/2018 19:25,MCG,Hawthorn,Adelaide,88 - 32
+13,17/06/2018 15:20,MCG,Geelong,Richmond,65 - 83
+14,21/06/2018 20:10,Optus Stadium,West Coast,Essendon,52 - 80
+14,22/06/2018 19:50,Adelaide Oval,Port Adelaide,Melbourne,75 - 65
+14,23/06/2018 13:45,University of Tasmania Stadium,Hawthorn,Gold Coast,96 - 43
+14,23/06/2018 16:35,Gabba,Brisbane,GWS Giants,82 - 109
+14,23/06/2018 19:25,Etihad Stadium,Western Bulldogs,North Melbourne,75 - 77
+14,24/06/2018 15:20,MCG,Collingwood,Carlton,79 - 59
+15,28/06/2018 19:20,Etihad Stadium,Richmond,Sydney,93 - 67
+15,29/06/2018 19:50,Etihad Stadium,Western Bulldogs,Geelong,103 - 101
+15,30/06/2018 13:45,MCG,Carlton,Port Adelaide,69 - 90
+15,30/06/2018 16:35,Adelaide Oval,Adelaide,West Coast,88 - 78
+15,30/06/2018 19:25,Metricon Stadium,Gold Coast,Collingwood,60 - 99
+15,30/06/2018 19:25,Spotless Stadium,GWS Giants,Hawthorn,95 - 84
+15,01/07/2018 13:10,MCG,Melbourne,St Kilda,117 - 119
+15,01/07/2018 15:20,Etihad Stadium,Essendon,North Melbourne,125 - 108
+15,01/07/2018 16:40,Optus Stadium,Fremantle,Brisbane,64 - 119
+16,05/07/2018 19:20,SCG,Sydney,Geelong,59 - 71
+16,06/07/2018 19:50,MCG,Richmond,Adelaide,103 - 56
+16,07/07/2018 13:45,Gabba,Brisbane,Carlton,120 - 55
+16,07/07/2018 16:35,Adelaide Oval,Port Adelaide,St Kilda,86 - 50
+16,07/07/2018 19:25,Etihad Stadium,Western Bulldogs,Hawthorn,59 - 122
+16,07/07/2018 19:40,TIO Stadium,Melbourne,Fremantle,102 - 48
+16,08/07/2018 13:10,Etihad Stadium,North Melbourne,Gold Coast,95 - 58
+16,08/07/2018 15:20,MCG,Essendon,Collingwood,62 - 78
+16,08/07/2018 16:40,Optus Stadium,West Coast,GWS Giants,86 - 75
+17,12/07/2018 19:50,Adelaide Oval,Adelaide,Geelong,112 - 97
+17,13/07/2018 19:50,Etihad Stadium,St Kilda,Carlton,116 - 52
+17,14/07/2018 13:45,University of Tasmania Stadium,Hawthorn,Brisbane,65 - 98
+17,14/07/2018 16:35,MCG,Melbourne,Western Bulldogs,119 - 69
+17,14/07/2018 19:25,Metricon Stadium,Gold Coast,Essendon,51 - 95
+17,14/07/2018 19:25,Spotless Stadium,GWS Giants,Richmond,79 - 77
+17,15/07/2018 13:10,MCG,Collingwood,West Coast,67 - 102
+17,15/07/2018 15:20,Etihad Stadium,North Melbourne,Sydney,98 - 104
+17,15/07/2018 16:40,Optus Stadium,Fremantle,Port Adelaide,59 - 50
+18,20/07/2018 19:50,Etihad Stadium,St Kilda,Richmond,57 - 111
+18,21/07/2018 13:45,MCG,Collingwood,North Melbourne,130 - 64
+18,21/07/2018 14:10,SCG,Sydney,Gold Coast,64 - 88
+18,21/07/2018 16:35,Etihad Stadium,Essendon,Fremantle,99 - 70
+18,21/07/2018 19:25,Gabba,Brisbane,Adelaide,88 - 93
+18,21/07/2018 19:25,GMHBA Stadium,Geelong,Melbourne,100 - 98
+18,22/07/2018 13:10,Etihad Stadium,Carlton,Hawthorn,52 - 124
+18,22/07/2018 15:20,Optus Stadium,West Coast,Western Bulldogs,100 - 46
+18,22/07/2018 16:40,Adelaide Oval,Port Adelaide,GWS Giants,58 - 80
+19,27/07/2018 19:50,Etihad Stadium,Essendon,Sydney,109 - 66
+19,28/07/2018 13:45,MCG,Richmond,Collingwood,105 - 77
+19,28/07/2018 14:10,GMHBA Stadium,Geelong,Brisbane,120 - 78
+19,28/07/2018 16:35,Spotless Stadium,GWS Giants,St Kilda,86 - 61
+19,28/07/2018 19:25,Metricon Stadium,Gold Coast,Carlton,44 - 79
+19,28/07/2018 19:40,Adelaide Oval,Adelaide,Melbourne,77 - 90
+19,29/07/2018 13:10,Blundstone Arena,North Melbourne,West Coast,81 - 41
+19,29/07/2018 15:20,Mars Stadium,Western Bulldogs,Port Adelaide,34 - 78
+19,29/07/2018 16:40,Optus Stadium,Fremantle,Hawthorn,53 - 112
+20,03/08/2018 19:50,MCG,Richmond,Geelong,85 - 82
+20,04/08/2018 13:45,MCG,Hawthorn,Essendon,107 - 103
+20,04/08/2018 14:10,Gabba,Brisbane,North Melbourne,104 - 107
+20,04/08/2018 16:35,Adelaide Oval,Adelaide,Port Adelaide,96 - 93
+20,04/08/2018 19:25,Etihad Stadium,St Kilda,Western Bulldogs,68 - 103
+20,04/08/2018 19:25,SCG,Sydney,Collingwood,73 - 71
 20,05/08/2018 13:10,Etihad Stadium,Carlton,GWS Giants,
 20,05/08/2018 15:20,MCG,Melbourne,Gold Coast,
 20,05/08/2018 16:40,Optus Stadium,West Coast,Fremantle,
@@ -189,11 +189,11 @@ Round Number,Date,Location,Home Team,Away Team,Result
 22,19/08/2018 15:20,Optus Stadium,West Coast,Melbourne,
 22,19/08/2018 16:40,Adelaide Oval,Adelaide,North Melbourne,
 23,24/08/2018 19:50,Adelaide Oval,Port Adelaide,Essendon,
-23,24/08/2018 19:50,Etihad Stadium,Carlton,Adelaide,
-23,24/08/2018 19:50,GMHBA Stadium,Geelong,Gold Coast,
-23,24/08/2018 19:50,MCG,Richmond,Western Bulldogs,
-23,24/08/2018 19:50,SCG,Sydney,Hawthorn,
-23,24/08/2018 19:50,Gabba,Brisbane,West Coast,
-23,24/08/2018 19:50,Etihad Stadium,St Kilda,North Melbourne,
-23,24/08/2018 19:50,MCG,Melbourne,GWS Giants,
-23,24/08/2018 19:50,Optus Stadium,Fremantle,Collingwood,
+23,25/08/2018 13:45,GMHBA Stadium,Geelong,Gold Coast,
+23,25/08/2018 14:10,MCG,Richmond,Western Bulldogs,
+23,25/08/2018 16:35,Optus Stadium,Fremantle,Collingwood,
+23,25/08/2018 19:25,Etihad Stadium,Carlton,Adelaide,
+23,25/08/2018 19:25,SCG,Sydney,Hawthorn,
+23,26/08/2018 13:10,Gabba,Brisbane,West Coast,
+23,26/08/2018 15:20,MCG,Melbourne,GWS Giants,
+23,26/08/2018 16:40,Etihad Stadium,St Kilda,North Melbourne,

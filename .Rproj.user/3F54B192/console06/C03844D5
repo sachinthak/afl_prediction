@@ -1,80 +1,4 @@
 
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  data/afl-2018-AUSEasternStandardTime.csv
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  src/season_2018_predictions.R
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git com mit -m 'bug fix in the tournament simulation'
-[master 8b4a73b] bug fix in the tournament simulation
- 11 files changed, 436 insertions(+), 14 deletions(-)
- create mode 100644 data/afl-2018-AUSEasternStandardTime.csv
- create mode 100644 src/season_2018_predictions.R
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pus h origin m[K[K[K[Kin maser[K[Kter
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Counting objects: 24, done.
-Delta compression using up to 4 threads.
-Compressing objects:   4% (1/22)   Compressing objects:   9% (2/22)   Compressing objects:  13% (3/22)   Compressing objects:  18% (4/22)   Compressing objects:  22% (5/22)   Compressing objects:  27% (6/22)   Compressing objects:  31% (7/22)   Compressing objects:  36% (8/22)   Compressing objects:  40% (9/22)   Compressing objects:  45% (10/22)   Compressing objects:  50% (11/22)   Compressing objects:  54% (12/22)   Compressing objects:  59% (13/22)   Compressing objects:  63% (14/22)   Compressing objects:  68% (15/22)   Compressing objects:  72% (16/22)   Compressing objects:  77% (17/22)   Compressing objects:  81% (18/22)   Compressing objects:  86% (19/22)   Compressing objects:  90% (20/22)   Compressing objects:  95% (21/22)   Compressing objects: 100% (22/22)   Compressing objects: 100% (22/22), done.
-Writing objects:   4% (1/24)   Writing objects:   8% (2/24)   Writing objects:  12% (3/24)   Writing objects:  16% (4/24)   Writing objects:  20% (5/24)   Writing objects:  25% (6/24)   Writing objects:  29% (7/24)   Writing objects:  33% (8/24)   Writing objects:  37% (9/24)   Writing objects:  41% (10/24)   Writing objects:  45% (11/24)   Writing objects:  50% (12/24)   Writing objects:  54% (13/24)   Writing objects:  58% (14/24)   Writing objects:  62% (15/24)   Writing objects:  66% (16/24)   Writing objects:  70% (17/24)   Writing objects:  75% (18/24)   Writing objects:  79% (19/24)   Writing objects:  83% (20/24)   Writing objects:  87% (21/24)   Writing objects:  91% (22/24)   Writing objects:  95% (23/24)   Writing objects: 100% (24/24)   Writing objects: 100% (24/24), 6.45 KiB | 508.00 KiB/s, done.
-Total 24 (delta 9), reused 0 (delta 0)
-To bitbucket.org:sachintha/afl_prediction.git
-   c892b77..8b4a73b  master -> master
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ rm(list  -[K= ls())
-bash: syntax error near unexpected token `list'
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/44FB177A[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/D378A54B[m
-	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
-	[31mmodified:   lib/simple_point_spread_regression.R[m
-	[31mmodified:   munge/01-A.R[m
-	[31mmodified:   src/main.R[m
-	[31mmodified:   src/season_2018_predictions.R[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.gitignore[m
-	[31m2018_premiership_prob_after_9_matches.pdf[m
-	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
-	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
-	[31mpremiership_prob_after_20_matches.pdf[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add  -u
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git com mit -m 'bug fix and[K[K[K[K. added round  [K2 prec[Kdictions'
-[master 4df6c91] bug fix. added round 2 predictions
- 10 files changed, 142 insertions(+), 23 deletions(-)
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git pus h origin master
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Counting objects: 22, done.
-Delta compression using up to 4 threads.
-Compressing objects:   5% (1/20)   Compressing objects:  10% (2/20)   Compressing objects:  15% (3/20)   Compressing objects:  20% (4/20)   Compressing objects:  25% (5/20)   Compressing objects:  30% (6/20)   Compressing objects:  35% (7/20)   Compressing objects:  40% (8/20)   Compressing objects:  45% (9/20)   Compressing objects:  50% (10/20)   Compressing objects:  55% (11/20)   Compressing objects:  60% (12/20)   Compressing objects:  65% (13/20)   Compressing objects:  70% (14/20)   Compressing objects:  75% (15/20)   Compressing objects:  80% (16/20)   Compressing objects:  85% (17/20)   Compressing objects:  90% (18/20)   Compressing objects:  95% (19/20)   Compressing objects: 100% (20/20)   Compressing objects: 100% (20/20), done.
-Writing objects:   4% (1/22)   Writing objects:   9% (2/22)   Writing objects:  13% (3/22)   Writing objects:  18% (4/22)   Writing objects:  22% (5/22)   Writing objects:  27% (6/22)   Writing objects:  31% (7/22)   Writing objects:  36% (8/22)   Writing objects:  40% (9/22)   Writing objects:  45% (10/22)   Writing objects:  50% (11/22)   Writing objects:  54% (12/22)   Writing objects:  59% (13/22)   Writing objects:  63% (14/22)   Writing objects:  68% (15/22)   Writing objects:  72% (16/22)   Writing objects:  77% (17/22)   Writing objects:  81% (18/22)   Writing objects:  86% (19/22)   Writing objects:  90% (20/22)   Writing objects:  95% (21/22)   Writing objects: 100% (22/22)   Writing objects: 100% (22/22), 2.84 KiB | 78.00 KiB/s, done.
-Total 22 (delta 11), reused 0 (delta 0)
-To bitbucket.org:sachintha/afl_prediction.git
-   8b4a73b..4df6c91  master -> master
-
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git sta tus
-On branch master
 Your branch is up to date with 'origin/master'.
 
 Changes not staged for commit:
@@ -1048,3 +972,134 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ got [K[K[Kit add -u
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add data/e xpert_tips_2018_Round_8.RDS
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m  'added round 8 predictions. r[Kimprovements to the scraping of expert data and  removed k[K'[KKISS_OG_[KF_[K[K[KF_DEATH'[K from contro[Kibuton[K[Kin g[K[Kg to the expert tips'
+[master b796e6d] added round 8 predictions. improvements to the scraping of expert data and removed KISS_OF_DEATH from contributing to the expert tips
+ 22 files changed, 171 insertions(+), 162 deletions(-)
+ rewrite .Rproj.user/3F54B192/console06/INDEX001 (86%)
+ create mode 100644 data/expert_tips_2018_Round_8.RDS
+ rewrite data/retro_score_ensemble_bayesian.RDS (100%)
+ rewrite data/retro_score_ensemble_logistic.RDS (100%)
+ rewrite data/retro_score_simple_elo.RDS (100%)
+ rewrite data/retro_score_weighted_expert_tips.RDS (100%)
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git branch
+* [32mmaster[m
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origi n master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 33, done.
+Delta compression using up to 4 threads.
+Compressing objects:   3% (1/32)   Compressing objects:   6% (2/32)   Compressing objects:   9% (3/32)   Compressing objects:  12% (4/32)   Compressing objects:  15% (5/32)   Compressing objects:  18% (6/32)   Compressing objects:  21% (7/32)   Compressing objects:  25% (8/32)   Compressing objects:  28% (9/32)   Compressing objects:  31% (10/32)   Compressing objects:  34% (11/32)   Compressing objects:  37% (12/32)   Compressing objects:  40% (13/32)   Compressing objects:  43% (14/32)   Compressing objects:  46% (15/32)   Compressing objects:  50% (16/32)   Compressing objects:  53% (17/32)   Compressing objects:  56% (18/32)   Compressing objects:  59% (19/32)   Compressing objects:  62% (20/32)   Compressing objects:  65% (21/32)   Compressing objects:  68% (22/32)   Compressing objects:  71% (23/32)   Compressing objects:  75% (24/32)   Compressing objects:  78% (25/32)   Compressing objects:  81% (26/32)   Compressing objects:  84% (27/32)   Compressing objects:  87% (28/32)   Compressing objects:  90% (29/32)   Compressing objects:  93% (30/32)   Compressing objects:  96% (31/32)   Compressing objects: 100% (32/32)   Compressing objects: 100% (32/32), done.
+Writing objects:   3% (1/33)   Writing objects:   6% (2/33)   Writing objects:   9% (3/33)   Writing objects:  12% (4/33)   Writing objects:  15% (5/33)   Writing objects:  18% (6/33)   Writing objects:  21% (7/33)   Writing objects:  24% (8/33)   Writing objects:  27% (9/33)   Writing objects:  30% (10/33)   Writing objects:  33% (11/33)   Writing objects:  36% (12/33)   Writing objects:  39% (13/33)   Writing objects:  42% (14/33)   Writing objects:  45% (15/33)   Writing objects:  48% (16/33)   Writing objects:  51% (17/33)   Writing objects:  54% (18/33)   Writing objects:  57% (19/33)   Writing objects:  60% (20/33)   Writing objects:  63% (21/33)   Writing objects:  66% (22/33)   Writing objects:  69% (23/33)   Writing objects:  72% (24/33)   Writing objects:  75% (25/33)   Writing objects:  78% (26/33)   Writing objects:  81% (27/33)   Writing objects:  84% (28/33)   Writing objects:  87% (29/33)   Writing objects:  90% (30/33)   Writing objects:  93% (31/33)   Writing objects:  96% (32/33)   Writing objects: 100% (33/33)   Writing objects: 100% (33/33), 10.81 KiB | 197.00 KiB/s, done.
+Total 33 (delta 18), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   30d7104..b796e6d  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ round <- results[, gsub(pattern = 'Round \(.*\)',
+]0;~/my_stuff/current work/afl_prediction[?1034hSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ round <- resul ts[, gsub(pattern = 'Round \(.*\)',
+bash: syntax error near unexpected token `('
+`                        rou nd,'\\1')]
+> 
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/54328B27[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   README.md[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   data/retro_score_simple_elo.RDS[m
+	[31mmodified:   src/retro_score_simple_elo.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_elo_parameter_estimation.R[m
+	[31msrc/bayesian_elo_parameter_estimation.stan[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/bayesian_elo_paraameter_estimation.R
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add src/bayesian_elo_paraameter_estimation.R[Kstan 
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m 'Added estim[K[K[K[K[Kbayesia n el [Ko estimation'
+[master d9bf4e1] Added bayesian elo estimation
+ 2 files changed, 157 insertions(+)
+ create mode 100644 src/bayesian_elo_parameter_estimation.R
+ create mode 100644 src/bayesian_elo_parameter_estimation.stan
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git branch
+* [32mmaster[m
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin master
+Warning: Permanently added the RSA host key for IP address '18.205.93.1' to the list of known hosts.
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Connection closed by 18.205.93.1 port 22
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 1.67 KiB | 855.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   b796e6d..d9bf4e1  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/54328B27[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   README.md[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   data/retro_score_simple_elo.RDS[m
+	[31mmodified:   src/bayesian_elo_parameter_estimation.R[m
+	[31mmodified:   src/bayesian_elo_parameter_estimation.stan[m
+	[31mmodified:   src/retro_score_simple_elo.R[m
+	[31mmodified:   src/season_2018_predictions.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add -u

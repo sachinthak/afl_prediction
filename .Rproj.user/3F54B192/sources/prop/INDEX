@@ -27,6 +27,8 @@
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Freports%2FREADME.md="FC823608"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsimulate_tournaments.R="5C27B93F"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2FREADME.md="24AC79FB"
+~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_elo_parameter_estimation.R="960429AD"
+~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_elo_parameter_estimation.stan="8782D061"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_ensemble_fit.stan="E131B0DD"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fdownload_expert_tips.R="88FF7D9C"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fdownload_expert_tips_run_script.R="9C08C5BD"
