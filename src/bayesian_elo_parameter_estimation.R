@@ -38,7 +38,7 @@ input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = 
 
 # fit the stan model
 fit <- stan(file = 'src/bayesian_elo_parameter_estimation.stan', data = input_list_stan, 
-            iter = 5000, chains = 4)
+            iter = 20000, chains = 4, cores = 2)
 
 # do some plotting
 posterior <- as.matrix(fit)
@@ -57,7 +57,6 @@ rnd <- n_rounds
 mcmc_areas(posterior, regex_pars = paste0("elo_score\\[",n_rounds,",[[:digit:]]+\\]")) 
 
 
-
 # calculate the probabilities of the future matches
 n_sims <- nrow(posterior)
 future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(match){
@@ -66,5 +65,6 @@ future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(mat
   num_sim_wins/n_sims})]
 
 
-future_schedule[round == 'Round 21',]
+future_schedule[round == 'Round 22',]
+
 

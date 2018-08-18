@@ -1,4 +1,5 @@
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2FREADME.md="2DBC1606"
+~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fbayesian_elo_parameter_estimation_refactored.stan="FF035F6"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fcache%2FREADME.md="A6DC05C2"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fconfig%2Fglobal.dcf="54328B27"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fdata%2FREADME.md="DB31BD33"
@@ -29,6 +30,7 @@
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2FREADME.md="24AC79FB"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_elo_parameter_estimation.R="960429AD"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_elo_parameter_estimation.stan="8782D061"
+~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_elo_parameter_estimation_refactored.stan="E03199E2"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fbayesian_ensemble_fit.stan="E131B0DD"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fdownload_expert_tips.R="88FF7D9C"
 ~%2Fmy_stuff%2Fcurrent%20work%2Fafl_prediction%2Fsrc%2Fdownload_expert_tips_run_script.R="9C08C5BD"

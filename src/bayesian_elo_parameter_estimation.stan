@@ -180,5 +180,4 @@ generated quantities {
       futr_elo_score[rnd][team2_id] = prev_elo_team2 - elo_delta_team1;
     }
    }
-   
 }

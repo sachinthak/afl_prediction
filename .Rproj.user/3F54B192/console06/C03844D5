@@ -1120,3 +1120,84 @@ and the repository exists.
 Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin mastercommit -m 'fixed a bug''[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -u[K
 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[32mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[32mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[32mmodified:   src/bayesian_elo_parameter_estimation.R[m
+	[32mmodified:   src/bayesian_elo_parameter_estimation.stan[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m 'added futur e m[K[K[Ke[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr e match i[Ksimua[Klation'
+[master 45c1e5c] added future match simulation
+ 5 files changed, 105 insertions(+), 8 deletions(-)
+ rewrite .Rproj.user/3F54B192/console06/INDEX001 (74%)
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin master
+Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects:   2% (1/35)   Compressing objects:   5% (2/35)   Compressing objects:   8% (3/35)   Compressing objects:  11% (4/35)   Compressing objects:  14% (5/35)   Compressing objects:  17% (6/35)   Compressing objects:  20% (7/35)   Compressing objects:  22% (8/35)   Compressing objects:  25% (9/35)   Compressing objects:  28% (10/35)   Compressing objects:  31% (11/35)   Compressing objects:  34% (12/35)   Compressing objects:  37% (13/35)   Compressing objects:  40% (14/35)   Compressing objects:  42% (15/35)   Compressing objects:  45% (16/35)   Compressing objects:  48% (17/35)   Compressing objects:  51% (18/35)   Compressing objects:  54% (19/35)   Compressing objects:  57% (20/35)   Compressing objects:  60% (21/35)   Compressing objects:  62% (22/35)   Compressing objects:  65% (23/35)   Compressing objects:  68% (24/35)   Compressing objects:  71% (25/35)   Compressing objects:  74% (26/35)   Compressing objects:  77% (27/35)   Compressing objects:  80% (28/35)   Compressing objects:  82% (29/35)   Compressing objects:  85% (30/35)   Compressing objects:  88% (31/35)   Compressing objects:  91% (32/35)   Compressing objects:  94% (33/35)   Compressing objects:  97% (34/35)   Compressing objects: 100% (35/35)   Compressing objects: 100% (35/35), done.
+Writing objects:   2% (1/37)   Writing objects:   5% (2/37)   Writing objects:   8% (3/37)   Writing objects:  10% (4/37)   Writing objects:  13% (5/37)   Writing objects:  16% (6/37)   Writing objects:  18% (7/37)   Writing objects:  21% (8/37)   Writing objects:  24% (9/37)   Writing objects:  27% (10/37)   Writing objects:  29% (11/37)   Writing objects:  32% (12/37)   Writing objects:  35% (13/37)   Writing objects:  37% (14/37)   Writing objects:  40% (15/37)   Writing objects:  43% (16/37)   Writing objects:  45% (17/37)   Writing objects:  48% (18/37)   Writing objects:  51% (19/37)   Writing objects:  54% (20/37)   Writing objects:  56% (21/37)   Writing objects:  59% (22/37)   Writing objects:  62% (23/37)   Writing objects:  64% (24/37)   Writing objects:  67% (25/37)   Writing objects:  70% (26/37)   Writing objects:  72% (27/37)   Writing objects:  75% (28/37)   Writing objects:  78% (29/37)   Writing objects:  81% (30/37)   Writing objects:  83% (31/37)   Writing objects:  86% (32/37)   Writing objects:  89% (33/37)   Writing objects:  91% (34/37)   Writing objects:  94% (35/37)   Writing objects:  97% (36/37)   Writing objects: 100% (37/37)   Writing objects: 100% (37/37), 8.54 KiB | 171.00 KiB/s, done.
+Total 37 (delta 22), reused 0 (delta 0)
+To bitbucket.org:sachintha/afl_prediction.git
+   d9bf4e1..45c1e5c  master -> master
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
+]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
+Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git st atus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
+	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/2DBC1606[m
+	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
+	[31mmodified:   src/bayesian_elo_parameter_estimation.R[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2018_premiership_prob_after_18_matches.pdf[m
+	[31m2018_premiership_prob_after_9_matches.pdf[m
+	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
+	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
+	[31mcache/mismatched.venue.names.2018.RData[m
+	[31mcache/mismatched.venue.names.2018.hash[m
+	[31mpremiership_prob_after_20_matches.pdf[m
+	[31msrc/bayesian_ensemble_fit.rds[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
