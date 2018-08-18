@@ -35,7 +35,7 @@ scrape_season_results <- function(season = 2017)
       rnd <- grep('Round|Final', tbl$X1, value = T)
     }
     
-    # if the table has two rows it is describes a match
+    # if the table has two rows it describes a match
     if (nrow(tbl) == 2) {
       dat <- data.table(season = season,
                         round = rnd,
@@ -59,7 +59,7 @@ seasons <- 2000:2017
 res <- lapply(seasons, scrape_season_results)
 res <- rbindlist(res)
 past_results <- res
-schedules <- past_results[grep('Round',round), .(season,round,team1,team2,date_venue,date,venue)]
+schedules <- past_results[, .(season,round,team1,team2,date_venue,date,venue)]
 
 
 

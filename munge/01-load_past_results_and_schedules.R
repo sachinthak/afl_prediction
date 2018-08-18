@@ -1,6 +1,6 @@
 # load the past results and schedule --------------------------------------
 
-past_results <- readRDS('data/past_results.RDS')
+past_results <- readRDS('data/past_results.rds')
 past_results[, season := as.numeric(season)]
 past_results[,  date_venue := NULL]
 past_results[, result := NULL]
@@ -54,6 +54,11 @@ setcolorder(results_2018,names(past_results))
 past_results <- rbind(past_results,results_2018[!is.na(score_team1)])
 schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venue)])
 
+
+
+# create a duplicate coloumn of round for later use
+past_results[, round_full_desc := round]
+schedules[, round_full_desc := round]
 
 # Populate some statistics to handle home field advantage -----------------
 
