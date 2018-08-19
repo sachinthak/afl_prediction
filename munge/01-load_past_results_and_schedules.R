@@ -50,15 +50,50 @@ results_2018[ , date := as.character(date)]
 # set the coloumn order as the past_results
 setcolorder(results_2018,names(past_results))
 
-# combine with the past results and schedules
-past_results <- rbind(past_results,results_2018[!is.na(score_team1)])
-schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venue)])
-
-
-
 # create a duplicate coloumn of round for later use
 past_results[, round_full_desc := round]
 schedules[, round_full_desc := round]
+results_2018[,round_full_desc := round]
+
+# Append 1 and 2 for finals series to distinguish, i.e. Preliminary Final 1, Preliminary Final 2. 
+# I assume that in the data set they occur in the order. i.e. 2 after 1. 
+# Clearly this is not true as in 2017 semifinals. Address this issue later.
+past_results[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:.N), 
+             by =  .(season,round)]
+schedules[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:.N), 
+             by =  .(season,round)]
+
+
+# combine with the past results and schedules
+past_results <- rbind(past_results,results_2018[!is.na(score_team1)])
+schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venue,round_full_desc)])
+
+
+# ToDo: make sure that the already played matches in 2018 are excluded when rbinding with 
+#the finals template schedule
+schedules <- rbind(schedules,X2018.finals.series.template.schedule)
+
+# Replace the 'round' column for the final series with a numeric round.
+# For example 'Preliminary Final' with 'Round 24'.
+col_names_schedules <- names(schedules)
+col_names_past_results <- names(past_results)
+finals_series_offset <- data.table(round = c('Qualifying Final','Elimination Final',
+                                           'Semi Final','Preliminary Final',
+                                           'Grand Final'),
+                                 offset = c(1,1,2,3,4))
+non_finals_rounds <- schedules[grep('Round',round), .(non_final_rounds = uniqueN(round)), by = season]
+
+schedules <- finals_series_offset[schedules, on = 'round']
+schedules <- non_finals_rounds[schedules, on = 'season']
+schedules[grep('Final',round), round := paste0('Round ',non_final_rounds + offset)]
+
+past_results <- finals_series_offset[past_results, on = 'round']
+non_finals_rounds[, season := as.numeric(season)]
+past_results <- non_finals_rounds[past_results, on = 'season']
+past_results[grep('Final',round), round := paste0('Round ',non_final_rounds + offset)]
+
+schedules <- schedules[, (col_names_schedules), with = F]
+past_results <- past_results[,(col_names_past_results), with = F]
 
 # Populate some statistics to handle home field advantage -----------------
 
