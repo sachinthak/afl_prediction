@@ -1,6 +1,10 @@
 library(bayesplot)
 
 curr_season <- 2018
+final_8_fixed <- 0  # Do we have the final 8 fixed so far? Used in simulating the future matches
+final_4_fixed <- 0  # Do we have the final 4 fixed so far? Used in simulating the future matches
+final_2_fixed <- 0  # Do we have the final 2 fixed so far? Used in simulating the future matches
+premiership_team_fixed <- 0 # Do we have the premiership fixed so far? Used in simulating the 'future matches'
 
 results <- past_results[season == curr_season,]
 future_schedule <- schedules[season == curr_season][!results, on = c('round','team1','team2')]
@@ -22,10 +26,62 @@ futr_team1_ids <- sapply(future_schedule$team1, function(team){which(team == tea
 futr_team2_ids <- sapply(future_schedule$team2, function(team){which(team == team_list)})
 
 
+
 # get scores
 team1_score <- results$score_team1
 team2_score <- results$score_team2
 team1_win_indictr <- as.numeric(team1_score >= team2_score)
+
+
+# calculate for and against scores. Used for tie-breaking in the ranks when calculating the final 8
+for_against_scores_1 <- results[, .(for_score = sum(score_team1), against_score = sum(score_team2)), by = team1]
+for_against_scores_2 <- results[, .(for_score = sum(score_team2), against_score = sum(score_team1)), by = team2]
+setnames(for_against_scores_1,'team1','team')
+setnames(for_against_scores_2,'team2','team')
+for_against_scores <- rbind(for_against_scores_1,for_against_scores_2)
+for_against_scores <- for_against_scores[, .(for_score = sum(for_score), 
+                                             against_score = sum(against_score)), by = team]
+# reorder according to the team_list
+for_against_scores <- for_against_scores[sapply(team_list, function(t){which(t == team)}),] 
+for_against_ratio <- for_against_scores$for_score/for_against_scores$against_score 
+  
+# calculate team points for the ladder board
+points_ladder <- sapply(team_list, function(team){
+  # win is a 4 and draw is a 2
+  s1 <- as.numeric(results[team1 == team, 
+                           sum(ifelse(score_team1 >  score_team2,4,
+                               ifelse(score_team1 == score_team2,2,0)))])
+  s2 <- as.numeric(results[team2 == team, 
+                           sum(ifelse(score_team2 >  score_team1,4,
+                               ifelse(score_team1 == score_team2,2,0)))])
+  s1+s2
+})
+
+
+# encode round type (i.e. regular, qualifying, elimination, etc), since Stan cannot handle characters
+encode_rnd <- function(rnd){
+  if (rnd == 'Qualifying Final 1')
+    -1
+  else if (rnd == 'Qualifying Final 2')
+    -2
+  else if (rnd == 'Elimination Final 1')
+    -3
+  else if (rnd == 'Elimination Final 2')
+    -4
+  else if (rnd == 'Semi Final 1')
+    -5
+  else if (rnd == 'Semi Final 2')
+    -6
+  else if (rnd == 'Preliminary Final 1')
+    -7
+  else if (rnd == 'Preliminary Final 2')
+    -8
+  else if (rnd == 'Grand Final 1')
+    -9
+  else
+    0
+}
+futr_rnd_type <- sapply(future_schedule$round_full_desc,function(rnd)(encode_rnd(rnd)))
 
 # assemble input data to a list to be passed onto stan
 input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = nrow(results),
@@ -33,7 +89,11 @@ input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = 
                         team2_ids = as.numeric(team2_ids), team1_win_indictr = team1_win_indictr,
                         futr_team1_ids = futr_team1_ids, futr_team2_ids = futr_team2_ids,
                         futr_round_ids = futr_round_ids, first_futr_round = futr_round_ids[1],
-                        futr_n_rounds = futr_n_rounds, futr_n_matches = nrow(future_schedule))
+                        futr_n_rounds = futr_n_rounds, futr_n_matches = nrow(future_schedule),
+                        futr_rnd_type = futr_rnd_type, points_ladder = points_ladder,
+                        for_against_ratio = for_against_ratio, final_2_fixed = final_2_fixed,
+                        final_4_fixed = final_4_fixed, final_8_fixed = final_8_fixed, 
+                        premiership_team_fixed = premiership_team_fixed)
 
 
 # fit the stan model

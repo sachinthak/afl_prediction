@@ -46,6 +46,15 @@ results_2018[, venue_current := NULL]
 setnames(results_2018, 'venue_matched', 'venue')
 results_2018[ , date := as.character(date)]
 
+# later into the season https://fixturedownload.com introduces records corresponding to the 
+# the finals series into the csv file which we have downloaded and started processing. 
+# If they have done so we have to rename the round names of the finals series to be consistant 
+# with the past_results (which was sourced from a different source)
+results_2018[round == 'Round Finals W1', round := c('Qualifying Final' ,'Qualifying Final' ,
+                                                    'Elimination Final','Elimination Final')]
+results_2018[round == 'Round Semi Finals', round := 'Semi Final' ]
+results_2018[round == 'Round Prelim Finals', round := 'Preliminary Final' ]
+results_2018[round == 'Round Grand Final', round := 'Grand Final' ]
 
 # set the coloumn order as the past_results
 setcolorder(results_2018,names(past_results))
@@ -54,6 +63,13 @@ setcolorder(results_2018,names(past_results))
 past_results[, round_full_desc := round]
 schedules[, round_full_desc := round]
 results_2018[,round_full_desc := round]
+
+
+
+# combine with the past results and schedules
+past_results <- rbind(past_results,results_2018[!is.na(score_team1)])
+schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venue,round_full_desc)])
+
 
 # Append 1 and 2 for finals series to distinguish, i.e. Preliminary Final 1, Preliminary Final 2. 
 # I assume that in the data set they occur in the order. i.e. 2 after 1. 
@@ -64,14 +80,12 @@ schedules[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:
              by =  .(season,round)]
 
 
-# combine with the past results and schedules
-past_results <- rbind(past_results,results_2018[!is.na(score_team1)])
-schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venue,round_full_desc)])
 
-
-# ToDo: make sure that the already played matches in 2018 are excluded when rbinding with 
-#the finals template schedule
-schedules <- rbind(schedules,X2018.finals.series.template.schedule)
+# If the finals series is not already in the schedule add it using the template created
+# else dont add
+missing_schedule <- schedules[season == 2018, .(round_full_desc, exist = T)][X2018.finals.series.template.schedule, on = 'round_full_desc']
+missing_schedule <- missing_schedule[exist == F, .(season,round,team1,team2,date,venue,round_full_desc)]
+schedules <- rbind(schedules,missing_schedule)
 
 # Replace the 'round' column for the final series with a numeric round.
 # For example 'Preliminary Final' with 'Round 24'.

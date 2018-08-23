@@ -3,7 +3,7 @@
 
 - AFL tables for the past results https://afltables.com/afl/afl_index.html
 - current schedule from https://fixturedownload.com
-- Expert tipster data from Herald Sun
+- Expert tipster data from Herald Sun [No longer used anymore]
 
 
 # Updating the model data weekly

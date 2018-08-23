@@ -1,3 +1,7 @@
+functions {
+  
+}
+
 data{
   int n_matches;
   int n_rounds;
@@ -6,7 +10,7 @@ data{
   int team1_ids[n_matches];
   int team2_ids[n_matches];
   int team1_win_indictr[n_matches];
-  
+
   /* futr_ variables are used to simulate the upcoming scheduled matches */
   int futr_n_matches;
   int futr_team1_ids[futr_n_matches];
@@ -14,6 +18,20 @@ data{
   int futr_n_rounds;
   int first_futr_round;
   int futr_round_ids[futr_n_matches];
+  
+  int final_8_fixed; // used in simulating the future matches
+  int final_4_fixed; // used in simulating the future matches
+  int final_2_fixed; // used in simulating the future matches
+  int premiership_team_fixed; // used in simulating the future matches
+  
+  int final_8_team_ids_input[8]; // if the final 8 are determined we pass in the team ids
+  int final_4_team_ids_input[4]; // if the final 4 are determined we pass in the team ids
+  int final_2_team_ids_input[2]; // if the final 2 are determined we pass in the team ids
+  int premiership_team_id_input; // if the final 8 are determined we pass in the team ids
+  
+  int futr_rnd_type[futr_n_matches];
+  int points_ladder[n_teams];
+  real for_against_ratio[n_teams];
   
 }
 
@@ -93,10 +111,30 @@ generated quantities {
   int futr_match_outcome[futr_n_matches]; // 1 if team 1 wins 0 otherwise
   vector[n_teams] futr_elo_score[futr_n_rounds]; // to store upcoming simulated elo scores
   
+  int final8_sim[8]; // structure to store the team ids of final 8 (ordered by highest to lowest points)
+  int final4_sim[4]; // structure to store the team ids of final 4
+  int final2_sim[2]; // structure to store the team ids of final 2
+  int premiership_sim; // structure to store the premiership winner
+  
+  int futr_points_ladder[n_teams]; // to store the points for the simulated matches
+  
+  // if we have already supplied finals series teams then pre-poluate the above data structures
+  if (final_8_fixed == 1)
+    final8_sim = final_8_team_ids_input;
+  if (final_4_fixed == 1)
+    final4_sim = final_4_team_ids_input;
+  if (final_2_fixed == 1)
+    final2_sim = final_2_team_ids_input;  
+  if (premiership_team_fixed == 1)
+    premiership_sim = premiership_team_id_input;
+  
+  
+  
   for (n in 1:n_rounds)
     elo_score[n] = elo_pre_season;
     
   for (match in 1:n_matches){
+  
     int team1_id = team1_ids[match];
     int team2_id = team2_ids[match];
     int rnd_id = round_ids[match];
@@ -137,10 +175,20 @@ generated quantities {
   /* simulate the rest of the tournament */
    last_elo_score = elo_score[n_rounds];
    
+   // initialise the team points to the accumulated points from the actual matches played
+   futr_points_ladder = points_ladder;
+   
    for (n in 1:futr_n_rounds)
     futr_elo_score[n] = last_elo_score;
     
    for (match in 1:futr_n_matches){
+    
+    # check if this is this is the first week of the finals series (i.e. qualifying finals
+    # or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
+    if (futr_rnd_type[match] < 0 && futr_rnd_type > -5 ) & (final_8_fixed == 0){
+      return_final_8_teams()
+    }
+    
     int team1_id = futr_team1_ids[match];
     int team2_id = futr_team2_ids[match];
     int rnd_id = futr_round_ids[match]-first_futr_round+1; // offseting the rounds that have happends so far
@@ -152,7 +200,6 @@ generated quantities {
     real d;
     real logit_inv_d;
     real elo_delta_team1;
-    
     
     
     // get the previous elo for each team
@@ -179,5 +226,11 @@ generated quantities {
       futr_elo_score[rnd][team1_id] = prev_elo_team1 + elo_delta_team1;
       futr_elo_score[rnd][team2_id] = prev_elo_team2 - elo_delta_team1;
     }
+    
+    // accumulate points
+    if (futr_match_outcome[match] == 1)
+      futr_points_ladder[team1] += 4; // team 1 has won
+    else
+      futr_points_ladder[team2] += 4; // team 2 has won  
    }
 }
