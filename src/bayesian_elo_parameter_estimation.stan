@@ -1,5 +1,44 @@
 functions {
   
+  // sort by the points ladder and return the top 8 teams. Incase of a tie use the for_against_ratio to break the tie
+  int[] return_final_8_teams(int[] points_arr, real[] for_against_ratio_arr, int n_teams){
+    int sorted_team_ids[n_teams];
+    int points_arr_tmp[n_teams] = points_arr;
+    real for_against_ratio_arr_tmp[n_teams] = for_against_ratio_arr;
+    int final_8[8];
+    
+    for (n in 1:n_teams)
+      sorted_team_ids[n] = n;
+    
+    for (t1 in 1:n_teams-1)
+      for (t2 in t1+1:n_teams)
+        if (points_arr_tmp[t1]<points_arr_tmp[t2] || (points_arr_tmp[t1] == points_arr_tmp[t2] && for_against_ratio_arr_tmp[t1] < for_against_ratio_arr_tmp[t2])){
+          // tmp variables used for swapping;
+          int t_ind;
+          real t_real;
+          
+          // swap the team indices
+          t_ind = sorted_team_ids[t1];
+          sorted_team_ids[t1] = sorted_team_ids[t2];
+          sorted_team_ids[t2] = t_ind;
+          
+          // swap the points
+          t_ind = points_arr_tmp[t1];
+          points_arr_tmp[t1] = points_arr_tmp[t2];
+          points_arr_tmp[t2] = t_ind;
+          
+          // swap the  for_against_ratio
+          t_real = for_against_ratio_arr_tmp[t1];
+          for_against_ratio_arr_tmp[t1] = for_against_ratio_arr_tmp[t2];
+          for_against_ratio_arr_tmp[t2] = t_real;
+        }
+    
+    // generate the output to return
+    for (n in 1:8)
+      final_8[n] = sorted_team_ids[n];
+    
+    return(final_8);
+  }
 }
 
 data{
@@ -183,12 +222,13 @@ generated quantities {
     
    for (match in 1:futr_n_matches){
     
-    # check if this is this is the first week of the finals series (i.e. qualifying finals
-    # or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
-    if (futr_rnd_type[match] < 0 && futr_rnd_type > -5 ) & (final_8_fixed == 0){
-      return_final_8_teams()
+    // check if this is this is the first week of the finals series (i.e. qualifying finals
+    // or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
+    if (futr_rnd_type[match] < 0 && futr_rnd_type[match] > -5  && final_8_fixed == 0){
+      final8_sim = return_final_8_teams(futr_points_ladder,for_against_ratio,n_teams);
     }
     
+    if (futr_rnd_type[match] == 0){
     int team1_id = futr_team1_ids[match];
     int team2_id = futr_team2_ids[match];
     int rnd_id = futr_round_ids[match]-first_futr_round+1; // offseting the rounds that have happends so far
@@ -229,8 +269,9 @@ generated quantities {
     
     // accumulate points
     if (futr_match_outcome[match] == 1)
-      futr_points_ladder[team1] += 4; // team 1 has won
+      futr_points_ladder[team1_id] += 4; // team 1 has won
     else
-      futr_points_ladder[team2] += 4; // team 2 has won  
+      futr_points_ladder[team2_id] += 4; // team 2 has won  
+   }
    }
 }

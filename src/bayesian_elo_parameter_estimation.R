@@ -6,6 +6,12 @@ final_4_fixed <- 0  # Do we have the final 4 fixed so far? Used in simulating th
 final_2_fixed <- 0  # Do we have the final 2 fixed so far? Used in simulating the future matches
 premiership_team_fixed <- 0 # Do we have the premiership fixed so far? Used in simulating the 'future matches'
 
+# dummy ids or actual teams ids to pass on to stan
+final_8_team_ids_input <- 1:8
+final_4_team_ids_input <- 1:4
+final_2_team_ids_input <- 1:2
+premiership_team_id_input <- 1
+
 results <- past_results[season == curr_season,]
 future_schedule <- schedules[season == curr_season][!results, on = c('round','team1','team2')]
 
@@ -20,10 +26,10 @@ team_list <- sort(unique(union(results$team1,results$team2)))
 n_teams <- length(team_list)
 
 # get the ids of teams
-team1_ids <- sapply(results$team1, function(team){which(team == team_list)})
-team2_ids <- sapply(results$team2, function(team){which(team == team_list)})
-futr_team1_ids <- sapply(future_schedule$team1, function(team){which(team == team_list)})
-futr_team2_ids <- sapply(future_schedule$team2, function(team){which(team == team_list)})
+team1_ids <- sapply(results$team1, function(team){get_team_id(team,team_list)})
+team2_ids <- sapply(results$team2, function(team){get_team_id(team,team_list)})
+futr_team1_ids <- sapply(future_schedule$team1, function(team){get_team_id(team,team_list)})
+futr_team2_ids <- sapply(future_schedule$team2, function(team){get_team_id(team,team_list)})
 
 
 
@@ -58,29 +64,7 @@ points_ladder <- sapply(team_list, function(team){
 })
 
 
-# encode round type (i.e. regular, qualifying, elimination, etc), since Stan cannot handle characters
-encode_rnd <- function(rnd){
-  if (rnd == 'Qualifying Final 1')
-    -1
-  else if (rnd == 'Qualifying Final 2')
-    -2
-  else if (rnd == 'Elimination Final 1')
-    -3
-  else if (rnd == 'Elimination Final 2')
-    -4
-  else if (rnd == 'Semi Final 1')
-    -5
-  else if (rnd == 'Semi Final 2')
-    -6
-  else if (rnd == 'Preliminary Final 1')
-    -7
-  else if (rnd == 'Preliminary Final 2')
-    -8
-  else if (rnd == 'Grand Final 1')
-    -9
-  else
-    0
-}
+
 futr_rnd_type <- sapply(future_schedule$round_full_desc,function(rnd)(encode_rnd(rnd)))
 
 # assemble input data to a list to be passed onto stan
@@ -93,12 +77,14 @@ input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = 
                         futr_rnd_type = futr_rnd_type, points_ladder = points_ladder,
                         for_against_ratio = for_against_ratio, final_2_fixed = final_2_fixed,
                         final_4_fixed = final_4_fixed, final_8_fixed = final_8_fixed, 
-                        premiership_team_fixed = premiership_team_fixed)
+                        premiership_team_fixed = premiership_team_fixed, final_2_team_ids_input = final_2_team_ids_input,
+                        final_4_team_ids_input = final_4_team_ids_input, final_8_team_ids_input = final_8_team_ids_input,
+                        premiership_team_id_input = premiership_team_id_input)
 
 
 # fit the stan model
 fit <- stan(file = 'src/bayesian_elo_parameter_estimation.stan', data = input_list_stan, 
-            iter = 20000, chains = 4, cores = 2)
+            iter = 2000, chains = 4, cores = 2)
 
 # do some plotting
 posterior <- as.matrix(fit)
