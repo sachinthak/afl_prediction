@@ -2,13 +2,15 @@ library(bayesplot)
 
 curr_season <- 2018
 final_8_fixed <- 0  # Do we have the final 8 fixed so far? Used in simulating the future matches
-final_4_fixed <- 0  # Do we have the final 4 fixed so far? Used in simulating the future matches
+semi_final_4_fixed <- 0  # Do we have the semi final 4 fixed so far? Used in simulating the future matches
+prelim_final_4_fixed <- 0 # Do we have the prelim final 4 fixed so far? Used in simulating the future matches
 final_2_fixed <- 0  # Do we have the final 2 fixed so far? Used in simulating the future matches
 premiership_team_fixed <- 0 # Do we have the premiership fixed so far? Used in simulating the 'future matches'
 
 # dummy ids or actual teams ids to pass on to stan
 final_8_team_ids_input <- 1:8
-final_4_team_ids_input <- 1:4
+semi_final_4_team_ids_input <- 1:4
+prelim_final_4_team_ids_input <- 1:4
 final_2_team_ids_input <- 1:2
 premiership_team_id_input <- 1
 
@@ -76,9 +78,10 @@ input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = 
                         futr_n_rounds = futr_n_rounds, futr_n_matches = nrow(future_schedule),
                         futr_rnd_type = futr_rnd_type, points_ladder = points_ladder,
                         for_against_ratio = for_against_ratio, final_2_fixed = final_2_fixed,
-                        final_4_fixed = final_4_fixed, final_8_fixed = final_8_fixed, 
-                        premiership_team_fixed = premiership_team_fixed, final_2_team_ids_input = final_2_team_ids_input,
-                        final_4_team_ids_input = final_4_team_ids_input, final_8_team_ids_input = final_8_team_ids_input,
+                        semi_final_4_fixed = semi_final_4_fixed, prelim_final_4_fixed = prelim_final_4_fixed,
+                        final_8_fixed = final_8_fixed, premiership_team_fixed = premiership_team_fixed, 
+                        final_2_team_ids_input = final_2_team_ids_input, semi_final_4_team_ids_input = semi_final_4_team_ids_input,
+                        prelim_final_4_team_ids_input = prelim_final_4_team_ids_input, final_8_team_ids_input = final_8_team_ids_input,
                         premiership_team_id_input = premiership_team_id_input)
 
 
@@ -111,6 +114,14 @@ future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(mat
   num_sim_wins/n_sims})]
 
 
-future_schedule[round == 'Round 22',]
+future_schedule[round == 'Round 23',]
 
 
+posterior[,'final8_sim[7]']
+
+# summarise the premiership winning probabilities
+premiership_prob <- table(posterior[,'premiership_sim'])/nrow(posterior)
+premiership_prob <- as.data.table(premiership_prob,keep.rownames = T)
+setnames(premiership_prob,c('V1','N'),c('team_id','probability'))
+premiership_prob[, team_name := team_list[as.numeric(team_id)]]
+setorder(premiership_prob, -probability)

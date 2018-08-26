@@ -39,9 +39,59 @@ functions {
     
     return(final_8);
   }
+  
+  int[] return_team_ids_for_a_final_series_game(int[] final_8_arr,int[] semi_final_4_arr,int[] prelim_final_4_arr,int[] final_2_arr,int round_type){
+    int two_team_ids[2];  
+    
+    if (round_type == -1){ // QF 1 
+      two_team_ids[1] = final_8_arr[1];
+      two_team_ids[2] = final_8_arr[4];
+    }
+    
+    if (round_type == -2){ // QF 2
+      two_team_ids[1] = final_8_arr[2];
+      two_team_ids[2] = final_8_arr[3];
+    }
+    
+    if (round_type == -3){ // EF 1 
+      two_team_ids[1] = final_8_arr[5];
+      two_team_ids[2] = final_8_arr[8];
+    }
+    
+    if (round_type == -4){ // EF 2
+      two_team_ids[1] = final_8_arr[6];
+      two_team_ids[2] = final_8_arr[7];
+    }
+    
+    if (round_type == -5){ // SF 1
+      two_team_ids[1] = semi_final_4_arr[1];
+      two_team_ids[2] = semi_final_4_arr[2];
+    }
+    
+    if (round_type == -6){ // SF 2
+      two_team_ids[1] = semi_final_4_arr[3];
+      two_team_ids[2] = semi_final_4_arr[4];
+    }
+    
+    if (round_type == -7){ // PF 1
+      two_team_ids[1] = prelim_final_4_arr[1];
+      two_team_ids[2] = prelim_final_4_arr[2];
+    }
+    
+    if (round_type == -8){ // PF 2
+      two_team_ids[1] = prelim_final_4_arr[3];
+      two_team_ids[2] = prelim_final_4_arr[4];
+    }
+    
+    if (round_type == -9) // GF
+      two_team_ids = final_2_arr;
+    
+    return(two_team_ids); 
+  }
 }
 
 data{
+  
   int n_matches;
   int n_rounds;
   int n_teams;
@@ -59,12 +109,14 @@ data{
   int futr_round_ids[futr_n_matches];
   
   int final_8_fixed; // used in simulating the future matches
-  int final_4_fixed; // used in simulating the future matches
+  int semi_final_4_fixed; // used in simulating the future matches
+  int prelim_final_4_fixed; // used in simulating the future matches
   int final_2_fixed; // used in simulating the future matches
   int premiership_team_fixed; // used in simulating the future matches
   
   int final_8_team_ids_input[8]; // if the final 8 are determined we pass in the team ids
-  int final_4_team_ids_input[4]; // if the final 4 are determined we pass in the team ids
+  int semi_final_4_team_ids_input[4]; // if the semi final 4 are determined we pass in the team ids
+  int prelim_final_4_team_ids_input[4]; // if the prelim final 4 are determined we pass in the team ids
   int final_2_team_ids_input[2]; // if the final 2 are determined we pass in the team ids
   int premiership_team_id_input; // if the final 8 are determined we pass in the team ids
   
@@ -113,8 +165,6 @@ model{
     real logit_inv_d;
     real elo_delta_team1;
     
-    
-    
     // get the previous elo for each team
     if (rnd_id == 1){
        prev_elo_team1 = elo_pre_season[team1_id];
@@ -145,13 +195,15 @@ model{
 }
 
 generated quantities {
+ 
   vector[n_teams] elo_score[n_rounds]; // each round is a vector of elo scores
   vector[n_teams] last_elo_score; // used to store 
   int futr_match_outcome[futr_n_matches]; // 1 if team 1 wins 0 otherwise
   vector[n_teams] futr_elo_score[futr_n_rounds]; // to store upcoming simulated elo scores
   
   int final8_sim[8]; // structure to store the team ids of final 8 (ordered by highest to lowest points)
-  int final4_sim[4]; // structure to store the team ids of final 4
+  int semi_final4_sim[4]; // structure to store the team ids of semi final 4
+  int prelim_final4_sim[4]; // structure to store the team ids of prelim final 4
   int final2_sim[2]; // structure to store the team ids of final 2
   int premiership_sim; // structure to store the premiership winner
   
@@ -160,8 +212,10 @@ generated quantities {
   // if we have already supplied finals series teams then pre-poluate the above data structures
   if (final_8_fixed == 1)
     final8_sim = final_8_team_ids_input;
-  if (final_4_fixed == 1)
-    final4_sim = final_4_team_ids_input;
+  if (semi_final_4_fixed == 1)
+    semi_final4_sim = semi_final_4_team_ids_input;
+  if (prelim_final_4_fixed == 1)
+    prelim_final4_sim = prelim_final_4_team_ids_input;    
   if (final_2_fixed == 1)
     final2_sim = final_2_team_ids_input;  
   if (premiership_team_fixed == 1)
@@ -212,28 +266,22 @@ generated quantities {
   }
   
   /* simulate the rest of the tournament */
-   last_elo_score = elo_score[n_rounds];
+  last_elo_score = elo_score[n_rounds];
    
-   // initialise the team points to the accumulated points from the actual matches played
-   futr_points_ladder = points_ladder;
+  // initialise the team points to the accumulated points from the actual matches played
+  futr_points_ladder = points_ladder;
    
-   for (n in 1:futr_n_rounds)
-    futr_elo_score[n] = last_elo_score;
+  for (n in 1:futr_n_rounds)
+   futr_elo_score[n] = last_elo_score;
     
-   for (match in 1:futr_n_matches){
+  for (match in 1:futr_n_matches){
     
-    // check if this is this is the first week of the finals series (i.e. qualifying finals
-    // or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
-    if (futr_rnd_type[match] < 0 && futr_rnd_type[match] > -5  && final_8_fixed == 0){
-      final8_sim = return_final_8_teams(futr_points_ladder,for_against_ratio,n_teams);
-    }
-    
-    if (futr_rnd_type[match] == 0){
-    int team1_id = futr_team1_ids[match];
-    int team2_id = futr_team2_ids[match];
-    int rnd_id = futr_round_ids[match]-first_futr_round+1; // offseting the rounds that have happends so far
-    
-    // some variable declarations
+    // some variable declarations 
+    int team1_id;
+    int team2_id;
+    int winner_team_id;
+    int loser_team_id;
+  
     real prev_elo_team1;
     real prev_elo_team2;
     real elo_diff;
@@ -241,7 +289,27 @@ generated quantities {
     real logit_inv_d;
     real elo_delta_team1;
     
+    int rnd_id = futr_round_ids[match]-first_futr_round+1; // offseting the rounds that have happends so far 
     
+    // check if this is this is the first week of the finals series (i.e. qualifying finals
+    // or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
+    if (futr_rnd_type[match] < 0 && futr_rnd_type[match] > -5  && final_8_fixed == 0){
+      final8_sim = return_final_8_teams(futr_points_ladder,for_against_ratio,n_teams);
+    }
+    
+    
+    // get the two team ids
+    if (futr_rnd_type[match] == 0){ // regular round
+     team1_id = futr_team1_ids[match];
+     team2_id = futr_team2_ids[match];
+    } else { // a final series match
+      int two_team_ids[2] = return_team_ids_for_a_final_series_game(final8_sim,semi_final4_sim,
+      prelim_final4_sim,final2_sim,futr_rnd_type[match]);
+      team1_id = two_team_ids[1];
+      team2_id = two_team_ids[2];
+    }
+    
+   
     // get the previous elo for each team
     if (rnd_id == 1){
        prev_elo_team1 = last_elo_score[team1_id];
@@ -266,12 +334,59 @@ generated quantities {
       futr_elo_score[rnd][team1_id] = prev_elo_team1 + elo_delta_team1;
       futr_elo_score[rnd][team2_id] = prev_elo_team2 - elo_delta_team1;
     }
+   
+    // for convinience work out the winner/loser team ids
+    if (futr_match_outcome[match]){
+      winner_team_id = team1_id;
+      loser_team_id = team2_id;
+    } else {
+      winner_team_id = team2_id;
+      loser_team_id = team1_id;
+    }
     
     // accumulate points
-    if (futr_match_outcome[match] == 1)
-      futr_points_ladder[team1_id] += 4; // team 1 has won
-    else
-      futr_points_ladder[team2_id] += 4; // team 2 has won  
-   }
-   }
+    futr_points_ladder[winner_team_id] += 4; 
+      
+  
+    // update the placeholders if it is  QF1
+    if (futr_rnd_type[match] == -1){ 
+      prelim_final4_sim[1] = winner_team_id;
+      semi_final4_sim[1]  = loser_team_id;
+    }
+    
+    // update the placeholders if it is  QF2
+    if (futr_rnd_type[match] == -2){ 
+      prelim_final4_sim[3] = winner_team_id;
+      semi_final4_sim[3]  = loser_team_id;
+    }
+    
+    // update the placeholders if it is  EF1
+    if (futr_rnd_type[match] == -3)
+      semi_final4_sim[2] = winner_team_id;
+    
+    // update the placeholders if it is  EF2
+    if (futr_rnd_type[match] == -4)
+      semi_final4_sim[4] = winner_team_id;
+    
+    // update the placeholders if it is  SF1
+    if (futr_rnd_type[match] == -5)
+      prelim_final4_sim[4] = winner_team_id;
+    
+    // update the placeholders if it is  SF2
+    if (futr_rnd_type[match] == -6)
+      prelim_final4_sim[2] = winner_team_id;
+    
+    // update the placeholders if it is  PF1
+    if (futr_rnd_type[match] == -7)
+      final2_sim[1] = winner_team_id;
+    
+    // update the placeholders if it is  PF2
+    if (futr_rnd_type[match] == -8)
+      final2_sim[2] = winner_team_id;
+    
+    // update the placeholders if it is  GF
+    if (futr_rnd_type[match] == -9)
+      premiership_sim = winner_team_id;
+   
+}
 }
