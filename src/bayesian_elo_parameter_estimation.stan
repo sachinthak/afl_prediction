@@ -207,6 +207,7 @@ generated quantities {
   int final2_sim[2]; // structure to store the team ids of final 2
   int premiership_sim; // structure to store the premiership winner
   
+  int final8_fixed_var = final_8_fixed; // dummy variable
   int futr_points_ladder[n_teams]; // to store the points for the simulated matches
   
   // if we have already supplied finals series teams then pre-poluate the above data structures
@@ -293,8 +294,9 @@ generated quantities {
     
     // check if this is this is the first week of the finals series (i.e. qualifying finals
     // or elimination finals). if so if we havent already supplied the final 8 then determine the final 8 now.
-    if (futr_rnd_type[match] < 0 && futr_rnd_type[match] > -5  && final_8_fixed == 0){
+    if (futr_rnd_type[match] < 0 && futr_rnd_type[match] > -5  && final8_fixed_var == 0){
       final8_sim = return_final_8_teams(futr_points_ladder,for_against_ratio,n_teams);
+      final8_fixed_var = 1;
     }
     
     

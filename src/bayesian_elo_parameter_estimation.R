@@ -107,6 +107,7 @@ mcmc_areas(posterior, regex_pars = paste0("elo_score\\[",n_rounds,",[[:digit:]]+
 
 
 # calculate the probabilities of the future matches
+
 n_sims <- nrow(posterior)
 future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(match){
   col_name <- paste0('futr_match_outcome[',match,']')  
@@ -116,12 +117,7 @@ future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(mat
 
 future_schedule[round == 'Round 23',]
 
+# calculate the probabiliy of each team making a milestone in the finals series
+final_series_probabilities <- return_final_series_probabilities(simulated_samples = posterior, 
+                                                                team_list = team_list)
 
-posterior[,'final8_sim[7]']
-
-# summarise the premiership winning probabilities
-premiership_prob <- table(posterior[,'premiership_sim'])/nrow(posterior)
-premiership_prob <- as.data.table(premiership_prob,keep.rownames = T)
-setnames(premiership_prob,c('V1','N'),c('team_id','probability'))
-premiership_prob[, team_name := team_list[as.numeric(team_id)]]
-setorder(premiership_prob, -probability)
