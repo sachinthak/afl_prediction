@@ -1,14 +1,14 @@
 library(bayesplot)
 
 curr_season <- 2018
-final_8_fixed <- 0  # Do we have the final 8 fixed so far? Used in simulating the future matches
+final_8_fixed <- 1  # Do we have the final 8 fixed so far? Used in simulating the future matches
 semi_final_4_fixed <- 0  # Do we have the semi final 4 fixed so far? Used in simulating the future matches
 prelim_final_4_fixed <- 0 # Do we have the prelim final 4 fixed so far? Used in simulating the future matches
 final_2_fixed <- 0  # Do we have the final 2 fixed so far? Used in simulating the future matches
 premiership_team_fixed <- 0 # Do we have the premiership fixed so far? Used in simulating the 'future matches'
 
-# dummy ids or actual teams ids to pass on to stan
-final_8_team_ids_input <- 1:8
+# dummy ids or actual teams ids to pass on to stan. (Later on the code these will be fixed if we actually know them)
+final_8_team_ids_input <- 1:8 
 semi_final_4_team_ids_input <- 1:4
 prelim_final_4_team_ids_input <- 1:4
 final_2_team_ids_input <- 1:2
@@ -66,6 +66,28 @@ points_ladder <- sapply(team_list, function(team){
 })
 
 
+# temporary hack to get the final 8 and to correctly label the QF and EF matches
+if (final_8_fixed){
+  points_ladder_dat <- data.table(team = team_list, points = points_ladder, 
+                                for_against_ratio = for_against_ratio)
+  setorder(points_ladder_dat, -points, -for_against_ratio)
+  final_8_team_names <- points_ladder_dat[1:8,team]
+  final_8_team_ids_input <- sapply(final_8_team_names, function(team) {which(team == team_list)})
+  
+  # QF 1
+  future_schedule[grep('Final',round_full_desc) & team1 == final_8_team_names[1],  
+                                                            round_full_desc := 'Qualifying Final 1']
+  # QF 2
+  future_schedule[grep('Final',round_full_desc) & team1 == final_8_team_names[2],  
+                                                            round_full_desc := 'Qualifying Final 2']
+  
+  # EF 1
+  future_schedule[grep('Final',round_full_desc) & team1 == final_8_team_names[5],  
+                                                            round_full_desc := 'Elimination Final 1']
+  # EF 2
+  future_schedule[grep('Final',round_full_desc) & team1 == final_8_team_names[6],  
+                                                             round_full_desc := 'Elimination Final 2']
+}
 
 futr_rnd_type <- sapply(future_schedule$round_full_desc,function(rnd)(encode_rnd(rnd)))
 
@@ -87,7 +109,7 @@ input_list_stan <- list(round_ids = round_ids, n_rounds = n_rounds, n_matches = 
 
 # fit the stan model
 fit <- stan(file = 'src/bayesian_elo_parameter_estimation.stan', data = input_list_stan, 
-            iter = 2000, chains = 4, cores = 2)
+            iter = 20000, chains = 4, cores = 4)
 
 # do some plotting
 posterior <- as.matrix(fit)
@@ -115,7 +137,7 @@ future_schedule[, team1_win_prob := sapply(1:nrow(future_schedule), function(mat
   num_sim_wins/n_sims})]
 
 
-future_schedule[round == 'Round 23',]
+future_schedule[round == 'Round 24',]
 
 # calculate the probabiliy of each team making a milestone in the finals series
 final_series_probabilities <- return_final_series_probabilities(simulated_samples = posterior, 
