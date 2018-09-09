@@ -49,8 +49,10 @@ results_2018[ , date := as.character(date)]
 # later into the season https://fixturedownload.com introduces records corresponding to the 
 # the finals series into the csv file which we have downloaded and started processing. 
 # If they have done so we have to rename the round names of the finals series to be consistant 
-# with the past_results (which was sourced from a different source)
-results_2018[round == 'Round Finals W1', round := c('Qualifying Final' ,'Qualifying Final' ,
+# with the past_results (which was sourced from a different source). Note: Differentiating the 
+# W1 of finals in to QF and EF should be based on the points latter, which we do not do  here. This
+# will be later addressed.
+results_2018[round == 'Round Finals W1', round := c('Qualifying Final','Qualifying Final',
                                                     'Elimination Final','Elimination Final')]
 results_2018[round == 'Round Semi Finals', round := 'Semi Final' ]
 results_2018[round == 'Round Prelim Finals', round := 'Preliminary Final' ]
@@ -73,7 +75,8 @@ schedules <- rbind(schedules, results_2018[,.(season,round,team1,team2,date,venu
 
 # Append 1 and 2 for finals series to distinguish, i.e. Preliminary Final 1, Preliminary Final 2. 
 # I assume that in the data set they occur in the order. i.e. 2 after 1. 
-# Clearly this is not true as in 2017 semifinals. Address this issue later.
+# Clearly this is not true as in 2017 semifinals. The proper labelling of 1 and 2 happens further 
+# down the road
 past_results[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:.N), 
              by =  .(season,round)]
 schedules[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:.N), 
@@ -84,8 +87,16 @@ schedules[grep('Final',round),  round_full_desc := paste0(round_full_desc,' ',1:
 # If the finals series is not already in the schedule add it using the template created
 # else dont add
 missing_schedule <- schedules[season == 2018, .(round_full_desc, exist = T)][X2018.finals.series.template.schedule, on = 'round_full_desc']
-missing_schedule <- missing_schedule[exist == F, .(season,round,team1,team2,date,venue,round_full_desc)]
+missing_schedule <- missing_schedule[is.na(exist), .(season,round,team1,team2,date,venue,round_full_desc)]
 schedules <- rbind(schedules,missing_schedule)
+
+#
+ladder_pos_and_finals_winners <- populate_ladders_and_final_series_winners(past_results) 
+  # a function that returns following format season,ladder_pos1,ladder_pos2,...,ladder_pos8,
+  # qf1_winner, qf2_winner, el1_winner, ef2_winner, sf1_winner,sf2_winner, prem_winner do
+identify_the_finals_series_number(ladder_pos_and_finals_winners,schedules)
+identify_the_finals_series_number(ladder_pos_and_finals_winners,past_results)
+#
 
 # Replace the 'round' column for the final series with a numeric round.
 # For example 'Preliminary Final' with 'Round 24'.
