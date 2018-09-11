@@ -1,3 +1,8 @@
+#' Populate a table of top 8 ladder positions and  finals series winners
+#'
+#' @param results_history Data table with match outcomes
+#'
+#' @return A table with each season as a row and columns such as ladder_position_1,semi_final_1_winner, etc.
 populate_ladders_and_final_series_winners <- function(results_history)
 {
   # restrict the results to just the regular rounds
@@ -93,9 +98,9 @@ populate_ladders_and_final_series_winners <- function(results_history)
                                                 'Preliminary_Final_2','Preliminary_Final_1')]
   prelimfinal_results[ , winner := ifelse(score_team1 > score_team2, team1,team2)]
   prelimfinal_results <- dcast.data.table(prelimfinal_results, formula = season ~ round_full_desc, value.var = 'winner')
-
+  setnames(prelimfinal_results, c('Preliminary_Final_1','Preliminary_Final_2'), c('Preliminary_Final_1_winner','Preliminary_Final_2_winner'))
   
-  premiership_results <- results_history[grep('Grand Final',round),]
+  premiership_results <- results_history[grep('Grand Final',round),][score_team1 != score_team2]
   premiership_results[ , winner := ifelse(score_team1 > score_team2, team1,team2)]
   premiership_results <- premiership_results[, .(season, Grand_Final_winner = winner)]
   

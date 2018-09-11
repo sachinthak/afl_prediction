@@ -90,13 +90,13 @@ missing_schedule <- schedules[season == 2018, .(round_full_desc, exist = T)][X20
 missing_schedule <- missing_schedule[is.na(exist), .(season,round,team1,team2,date,venue,round_full_desc)]
 schedules <- rbind(schedules,missing_schedule)
 
-#
+# a function that returns following format season,ladder_pos1,ladder_pos2,...,ladder_pos8,
+# qf1_winner, qf2_winner, el1_winner, ef2_winner, sf1_winner,sf2_winner, prem_winner do
 ladder_pos_and_finals_winners <- populate_ladders_and_final_series_winners(past_results) 
-  # a function that returns following format season,ladder_pos1,ladder_pos2,...,ladder_pos8,
-  # qf1_winner, qf2_winner, el1_winner, ef2_winner, sf1_winner,sf2_winner, prem_winner do
-identify_the_finals_series_number(ladder_pos_and_finals_winners,schedules)
-identify_the_finals_series_number(ladder_pos_and_finals_winners,past_results)
-#
+
+schedules <- relabel_the_finals_series_matches(ladder_pos_and_finals_winners,schedules)
+past_results <- relabel_the_finals_series_matches(ladder_pos_and_finals_winners,past_results)
+
 
 # Replace the 'round' column for the final series with a numeric round.
 # For example 'Preliminary Final' with 'Round 24'.
