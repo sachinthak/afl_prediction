@@ -109,10 +109,6 @@ data{
   int futr_round_ids[futr_n_matches];
   
   int final_8_fixed; // used in simulating the future matches
-  int semi_final_4_fixed; // used in simulating the future matches
-  int prelim_final_4_fixed; // used in simulating the future matches
-  int final_2_fixed; // used in simulating the future matches
-  int premiership_team_fixed; // used in simulating the future matches
   
   int final_8_team_ids_input[8]; // if the final 8 are determined we pass in the team ids
   int semi_final_4_team_ids_input[4]; // if the semi final 4 are determined we pass in the team ids
@@ -210,17 +206,12 @@ generated quantities {
   int final8_fixed_var = final_8_fixed; // dummy variable
   int futr_points_ladder[n_teams]; // to store the points for the simulated matches
   
-  // if we have already supplied finals series teams then pre-poluate the above data structures
-  if (final_8_fixed == 1)
-    final8_sim = final_8_team_ids_input;
-  if (semi_final_4_fixed == 1)
-    semi_final4_sim = semi_final_4_team_ids_input;
-  if (prelim_final_4_fixed == 1)
-    prelim_final4_sim = prelim_final_4_team_ids_input;    
-  if (final_2_fixed == 1)
-    final2_sim = final_2_team_ids_input;  
-  if (premiership_team_fixed == 1)
-    premiership_sim = premiership_team_id_input;
+  // if we have already supplied finals series teams then pre-poluate the above data structures (if they are not finalised it would still populate with dummy entries but they will get overridden eventually)
+  final8_sim = final_8_team_ids_input;
+  semi_final4_sim = semi_final_4_team_ids_input;
+  prelim_final4_sim = prelim_final_4_team_ids_input;    
+  final2_sim = final_2_team_ids_input;  
+  premiership_sim = premiership_team_id_input;
   
   
   

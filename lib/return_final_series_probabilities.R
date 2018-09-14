@@ -35,5 +35,7 @@ return_final_series_probabilities <- function(simulated_samples, team_list)
                                        final2 = 0, premiership = 0)
   final_series_probability_dat <- rbind(final_series_probability_dat,unsuccessful_teams_dat)
   
+  final_series_probability_dat[is.na(final_series_probability_dat)] <- 0
+  setorder(final_series_probability_dat, -premiership,-prelim_final4,-semi_final4,-final8)
   return(final_series_probability_dat)
 }
