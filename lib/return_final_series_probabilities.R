@@ -23,7 +23,7 @@ return_final_series_probabilities <- function(simulated_samples, team_list)
 
   final_series_probability_dat <- rbindlist(final_series_probability_dat)
   final_series_probability_dat <- dcast.data.table(final_series_probability_dat, 
-                                                 formula = team_name ~ milestone,value.var =  'probability')
+                                                 formula = team_name ~ milestone,value.var =  'probability',fill = 0)
   setcolorder(final_series_probability_dat,c('team_name','final8','semi_final4','prelim_final4','final2','premiership'))
   setorder(final_series_probability_dat, -premiership)
   

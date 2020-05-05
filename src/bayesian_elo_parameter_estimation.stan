@@ -148,10 +148,24 @@ model{
   for (n in 1:n_rounds)
     elo_score[n] = elo_pre_season;
   
-  
+  # default 
   K ~ normal(100,50);
   xi ~ normal(400,100);
   
+  # sensitiyivity analysis case 1 - try with  log normal prior 
+   
+   #K ~ lognormal(log(100^2/sqrt(100^2+50^2)),sqrt(log(1 + 50^2/100^2)));
+   #xi ~ lognormal(log(400^2/sqrt(400^2+100^2)),sqrt(log(1 + 100^2/400^2))); 
+
+  # sensitiyivity analysis case 2 - student t with same mean
+  #K ~ student_t(3,100,50);
+  #xi ~ student_t(3,400,100); 
+  
+
+  # sensitiyivity analysis case 3 - student t with shifted mean and wide tail
+  #K ~ student_t(3,80,100);
+  #xi ~ student_t(3,200,200); 
+
   for (match in 1:n_matches){
     int team1_id = team1_ids[match];
     int team2_id = team2_ids[match];

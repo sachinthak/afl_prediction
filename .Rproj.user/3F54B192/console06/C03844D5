@@ -1,91 +1,4 @@
 
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.gitignore[m
-	[31m2018_premiership_prob_after_18_matches.pdf[m
-	[31m2018_premiership_prob_after_9_matches.pdf[m
-	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
-	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
-	[31mcache/mismatched.venue.names.2018.RData[m
-	[31mcache/mismatched.venue.names.2018.hash[m
-	[31mpremiership_prob_after_20_matches.pdf[m
-	[31msrc/retro_score_weighted_expert_tips.R[m
-
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git commit -m 'wrote scrip s[Kts o[Kto scrape expert dat[K[K[Ktis[Kps from herals[Kd sun'
-[master 2e86f24] wrote scripts to scrape expert tips from herald sun
- 12 files changed, 179 insertions(+), 11 deletions(-)
- create mode 100644 data/expert_tips_2018_Round_1.RDS
- create mode 100644 data/expert_tips_2018_Round_2.RDS
- create mode 100644 data/expert_tips_2018_Round_3.RDS
- create mode 100644 data/expert_tips_2018_Round_4.RDS
- create mode 100644 data/expert_tips_2018_Round_5.RDS
- create mode 100644 data/param_grid.rds
- create mode 100644 lib/expert_tips_download_helper.R
- create mode 100644 lib/scrape_expert_tips.R
- create mode 100644 munge/03-load_parameter_tuning_results.R
- create mode 100644 munge/04-load_expert_tips.R
- create mode 100644 src/download_expert_tips_run_script.R
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit branch
-* [32mmaster[m
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git push origin mastr[Ker
-Enter passphrase for key '/Users/sachintha/.ssh/id_rsa': 
-Counting objects: 40, done.
-Delta compression using up to 4 threads.
-Compressing objects:   2% (1/38)   Compressing objects:   5% (2/38)   Compressing objects:   7% (3/38)   Compressing objects:  10% (4/38)   Compressing objects:  13% (5/38)   Compressing objects:  15% (6/38)   Compressing objects:  18% (7/38)   Compressing objects:  21% (8/38)   Compressing objects:  23% (9/38)   Compressing objects:  26% (10/38)   Compressing objects:  28% (11/38)   Compressing objects:  31% (12/38)   Compressing objects:  34% (13/38)   Compressing objects:  36% (14/38)   Compressing objects:  39% (15/38)   Compressing objects:  42% (16/38)   Compressing objects:  44% (17/38)   Compressing objects:  47% (18/38)   Compressing objects:  50% (19/38)   Compressing objects:  52% (20/38)   Compressing objects:  55% (21/38)   Compressing objects:  57% (22/38)   Compressing objects:  60% (23/38)   Compressing objects:  63% (24/38)   Compressing objects:  65% (25/38)   Compressing objects:  68% (26/38)   Compressing objects:  71% (27/38)   Compressing objects:  73% (28/38)   Compressing objects:  76% (29/38)   Compressing objects:  78% (30/38)   Compressing objects:  81% (31/38)   Compressing objects:  84% (32/38)   Compressing objects:  86% (33/38)   Compressing objects:  89% (34/38)   Compressing objects:  92% (35/38)   Compressing objects:  94% (36/38)   Compressing objects:  97% (37/38)   Compressing objects: 100% (38/38)   Compressing objects: 100% (38/38), done.
-Writing objects:   2% (1/40)   Writing objects:   5% (2/40)   Writing objects:   7% (3/40)   Writing objects:  10% (4/40)   Writing objects:  12% (5/40)   Writing objects:  15% (6/40)   Writing objects:  17% (7/40)   Writing objects:  20% (8/40)   Writing objects:  22% (9/40)   Writing objects:  25% (10/40)   Writing objects:  27% (11/40)   Writing objects:  30% (12/40)   Writing objects:  32% (13/40)   Writing objects:  35% (14/40)   Writing objects:  37% (15/40)   Writing objects:  40% (16/40)   Writing objects:  42% (17/40)   Writing objects:  45% (18/40)   Writing objects:  47% (19/40)   Writing objects:  50% (20/40)   Writing objects:  52% (21/40)   Writing objects:  55% (22/40)   Writing objects:  57% (23/40)   Writing objects:  60% (24/40)   Writing objects:  62% (25/40)   Writing objects:  65% (26/40)   Writing objects:  70% (28/40)   Writing objects:  72% (29/40)   Writing objects:  75% (30/40)   Writing objects:  77% (31/40)   Writing objects:  80% (32/40)   Writing objects:  82% (33/40)   Writing objects:  85% (34/40)   Writing objects:  87% (35/40)   Writing objects:  90% (36/40)   Writing objects:  92% (37/40)   Writing objects:  95% (38/40)   Writing objects:  97% (39/40)   Writing objects: 100% (40/40)   Writing objects: 100% (40/40), 24.05 KiB | 417.00 KiB/s, done.
-Total 40 (delta 18), reused 0 (delta 0)
-To bitbucket.org:sachintha/afl_prediction.git
-   16b7373..2e86f24  master -> master
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionYou have new mail in /var/mail/sachintha
-Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5[m
-	[31mmodified:   .Rproj.user/3F54B192/console06/C03844D5.env[m
-	[31mmodified:   .Rproj.user/3F54B192/console06/INDEX001[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/9C1C5578[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/A2FD72A7[m
-	[31mmodified:   .Rproj.user/3F54B192/sources/prop/INDEX[m
-	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
-	[31mmodified:   data/afl-2018-AUSEasternStandardTime.csv[m
-	[31mmodified:   lib/elo_functions.R[m
-	[31mmodified:   munge/04-load_expert_tips.R[m
-	[31mmodified:   src/parameter_tuning.R[m
-	[31mmodified:   src/season_2018_predictions.R[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.gitignore[m
-	[31m2018_premiership_prob_after_18_matches.pdf[m
-	[31m2018_premiership_prob_after_9_matches.pdf[m
-	[31mcache/afl.2018.AUSEasternStandardTime.RData[m
-	[31mcache/afl.2018.AUSEasternStandardTime.hash[m
-	[31mcache/mismatched.venue.names.2018.RData[m
-	[31mcache/mismatched.venue.names.2018.hash[m
-	[31mdata/retro_score_ensemble_logistic.RDS[m
-	[31mdata/retro_score_simple_elo.RDS[m
-	[31mdata/retro_score_weighted_expert_tips.RDS[m
-	[31mmunge/05-load_retro_scores.R[m
-	[31mpremiership_prob_after_20_matches.pdf[m
-	[31mprofiling/compare_models_historical_head_to_head.R[m
-	[31msrc/restro_score_simple_elo.R[m
-	[31msrc/retro_score_ensemble_logistic.R[m
-	[31msrc/retro_score_weighted_expert_tips.R[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add retro[K[K[K[K[Ksrc/retro_score_*
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add profiling/compare_mmodels_historical_head_to_head.R 
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add munge/05-load_retroo_scores.R 
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git add ret[K[K[Kdata/retro_score_* .RDS
 ]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git status
@@ -1086,4 +999,97 @@ git: 'add.Rproj.user/3F54B192/console06/C03844D5' is not a git command. See 'git
 Sachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git branch
 * [32mhandle_finals[m
   master[m
-]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ [KSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$  
+]0;~/my_stuff/current work/afl_prediction[?1034hSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ log
+usage:
+    log <command>
+
+global options:
+    -?, --help
+    -q, --quiet
+    -v, --verbose
+
+examples:
+    log show
+    log collect
+    log erase --all
+    log help stream
+
+commands:
+    collect, config, erase, show, stream, stats
+
+further help:
+    log help <command>
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git log
+[?1h=[33mcommit c5be8791eb11d9c398f20141fe5e213434980ecc[m[33m ([m[1;36mHEAD -> [m[1;32msimulate_from_any_round[m[33m, [m[1;32mlabel_f[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;32minals[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Sat Sep 22 14:25:21 2018 +1000[m
+[m
+    preliminary finals predicted[m
+[m
+[33mcommit c236a7f7d508659cbc6377682efeb8d138118f60[m[33m ([m[1;31morigin/label_finals[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Fri Sep 14 19:26:06 2018 +1000[m
+[m
+    automated finding the finals team ids[m
+:[K[K[?1l>]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git log
+[?1h=[33mcommit c5be8791eb11d9c398f20141fe5e213434980ecc[m[33m ([m[1;36mHEAD -> [m[1;32msimulate_from_any_round[m[33m, [m[1;32mlabel_f[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;32minals[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Sat Sep 22 14:25:21 2018 +1000[m
+[m
+    preliminary finals predicted[m
+[m
+[33mcommit c236a7f7d508659cbc6377682efeb8d138118f60[m[33m ([m[1;31morigin/label_finals[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Fri Sep 14 19:26:06 2018 +1000[m
+[m
+    automated finding the finals team ids[m
+:[K[K[?1l>]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git branch
+[?1h=  handle_finals[m[m
+  label_finals[m[m
+  master[m[m
+* [32msimulate_from_any_round[m[m
+[K[?1l>]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git chc[Keckout master
+error: Your local changes to the following files would be overwritten by checkout:
+	.Rproj.user/3F54B192/console06/C03844D5
+	.Rproj.user/3F54B192/console06/INDEX001
+	.Rproj.user/3F54B192/sources/prop/2DBC1606
+	.Rproj.user/3F54B192/sources/prop/INDEX
+	.Rproj.user/shared/notebooks/paths
+	data/afl-2018-AUSEasternStandardTime.csv
+	src/bayesian_elo_parameter_estimation.R
+Please commit your changes or stash them before you switch branches.
+Aborting
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ pwd
+/Users/sachintha/my_stuff/current work/afl_prediction
+]0;~/my_stuff/current work/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ cd ..
+]0;~/my_stuff/current workSachintha-Karunaratnes-MacBook-Pro:current work sachintha$ cd gu[Kithub_afl_prediction/
+]0;~/my_stuff/current work/github_afl_predictionSachintha-Karunaratnes-MacBook-Pro:github_afl_prediction sachintha$ ls
+[1m[34mafl_prediction[39;49m[0m
+]0;~/my_stuff/current work/github_afl_predictionSachintha-Karunaratnes-MacBook-Pro:github_afl_prediction sachintha$ cd afl_prediction/
+]0;~/my_stuff/current work/github_afl_prediction/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ ls
+README.html          [1m[34mconfig[39;49m[0m               [1m[34mlib[39;49m[0m                  [1m[34msrc[39;49m[0m
+README.md            [1m[34mdata[39;49m[0m                 [1m[34mlogs[39;49m[0m                 [1m[34mtests[39;49m[0m
+TODO                 [1m[34mdiagnostics[39;49m[0m          [1m[34mmunge[39;49m[0m
+afl_prediction.Rproj [1m[34mdocs[39;49m[0m                 [1m[34mprofiling[39;49m[0m
+[1m[34mcache[39;49m[0m                [1m[34mgraphs[39;49m[0m               [1m[34mreports[39;49m[0m
+]0;~/my_stuff/current work/github_afl_prediction/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git v[Klog
+[?1h=[33mcommit 7a30f3d8226dc09391b013580f720b0e355cd021[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HE[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31m[m[33m[m[1;31mAD[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Tue Sep 4 15:48:16 2018 +1000[m
+[m
+    updated after round 23 and hack for coding finals series[m
+[m
+[33mcommit 7a10e6d06a8f7cf30a5263cf69cdac4e7e0425d2[m[33m ([m[1;31morigin/handle_finals[m[33m)[m[m
+Author: Sachintha Karunaratne <sachintha84@gmail.com>[m
+Date:   Sun Sep 2 19:58:39 2018 +1000[m
+[m
+    Fixed a bug in the stan code which didnt do the final series simulation properly[m
+:[K[K[?1l>]0;~/my_stuff/current work/github_afl_prediction/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ ls
+README.html          [1m[34mconfig[39;49m[0m               [1m[34mlib[39;49m[0m                  [1m[34msrc[39;49m[0m
+README.md            [1m[34mdata[39;49m[0m                 [1m[34mlogs[39;49m[0m                 [1m[34mtests[39;49m[0m
+TODO                 [1m[34mdiagnostics[39;49m[0m          [1m[34mmunge[39;49m[0m
+afl_prediction.Rproj [1m[34mdocs[39;49m[0m                 [1m[34mprofiling[39;49m[0m
+[1m[34mcache[39;49m[0m                [1m[34mgraphs[39;49m[0m               [1m[34mreports[39;49m[0m
+]0;~/my_stuff/current work/github_afl_prediction/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ git branch
+[?1h=* [32mmaster[m[m
+[K[?1l>]0;~/my_stuff/current work/github_afl_prediction/afl_predictionSachintha-Karunaratnes-MacBook-Pro:afl_prediction sachintha$ 
