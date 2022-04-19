@@ -1,7 +1,7 @@
 library(bayesplot)
 
-curr_season <- 2018
-final_8_fixed <- 1  # Do we have the final 8 fixed so far? Used in simulating the future matches
+curr_season <- 2022
+final_8_fixed <- 0  # Do we have the final 8 fixed so far? Used in simulating the future matches
 semi_final_4_fixed <- 0  # Do we have the semi final 4 fixed so far? Used in simulating the future matches
 prelim_final_4_fixed <- 0 # Do we have the prelim final 4 fixed so far? Used in simulating the future matches
 final_2_fixed <- 0  # Do we have the final 2 fixed so far? Used in simulating the future matches
@@ -125,7 +125,7 @@ mcmc_areas(posterior, regex_pars = paste0("elo_score\\[[[:digit:]]+,",team_id,"\
 
 #  plot the ELO distributions for all teams as of last round
 rnd <- n_rounds
-mcmc_areas(posterior, regex_pars = paste0("elo_score\\[",n_rounds,",[[:digit:]]+\\]")) 
+mcmc_areas(posterior, regex_pars = paste0("^elo_score\\[",n_rounds,",[[:digit:]]+\\]")) 
 
 
 # calculate the probabilities of the future matches

@@ -41,3 +41,9 @@ to set up the environment.
 
 ### Run the predictions for the current round 
   - Run src/season_2018_predictions.R after editing the round
+  
+### update 2022
+  - Once a year the data/past_results_xxxx.rds and data/schedules_xxxx.rds (where xxxx is the previous year) need to be updated
+  - use src/generatre_past_results.rds to do that. 
+  - you would need to download the afl-xxxx-AUSEasternStandardTime file from https://fixturedownload.com and copy it to the data folder
+  - would need slight edits to src/generatre_past_results.rds but the changes should be obvious

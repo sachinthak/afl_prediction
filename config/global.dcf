@@ -1,4 +1,4 @@
-version: 0.8
+version: 0.10.2
 data_loading: TRUE
 data_loading_header: TRUE
 data_ignore:
@@ -10,7 +10,9 @@ logging_level: INFO
 load_libraries: TRUE
 libraries: data.table, ggplot2, stringr, lubridate, rvest, rstan
 as_factors: TRUE
-data_tables: FALSE
 attach_internal_libraries: FALSE
-cache_loaded_data:  TRUE
+cache_loaded_data: TRUE
 sticky_variables: NONE
+tables_type: data_frame
+underscore_variables: FALSE
+cache_file_format: RData
